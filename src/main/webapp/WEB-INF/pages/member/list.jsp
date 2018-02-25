@@ -46,13 +46,13 @@
                                                     <thead>
                                                     <tr>
                                                         <th data-column-id="id" data-width="5%">序号</th>
-                                                        <th data-column-id="name" data-width="8%">跟踪号</th>
-                                                        <%--<th data-column-id="eqName" data-width="10%">设备名称</th>--%>
-                                                        <%--<th data-column-id="orderDesc" data-width="20%">故障描述</th>--%>
-                                                        <%--<th data-column-id="locName" data-width="10%">设备位置</th>--%>
-                                                        <%--<th data-column-id="eqClass" data-width="12%">设备分类</th>--%>
-                                                        <%--<th data-column-id="nodeTime" data-width="10%">生成时间</th>--%>
-                                                        <%--<th data-column-id="nodeState" data-width="5%">报修状态</th>--%>
+                                                        <th data-column-id="name" data-width="8%">会员姓名</th>
+                                                        <th data-column-id="cardNo" data-width="10%">会员编号</th>
+                                                        <th data-column-id="createTime" data-width="20%">创建时间</th>
+                                                        <th data-column-id="enterDate" data-width="10%">加入时间</th>
+                                                        <th data-column-id="hasPhoto" data-width="12%">是否有照片</th>
+                                                        <th data-column-id="sortNo" data-width="10%">排序</th>
+                                                        <th data-column-id="status" data-width="5%">状态</th>
                                                     </tr>
                                                     </thead>
                                                 </table>

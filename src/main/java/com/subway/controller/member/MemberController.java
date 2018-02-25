@@ -11,6 +11,7 @@ import com.subway.domain.workOrder.WorkOrderReportCart;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.service.locations.LocationsService;
+import com.subway.service.member.MemberSearchService;
 import com.subway.service.member.MemberService;
 import com.subway.service.workOrder.WorkOrderReportCartService;
 import com.subway.service.workOrder.WorkOrderReportService;
@@ -52,6 +53,9 @@ public class MemberController extends BaseController {
     @Autowired
     MemberService memberService;
 
+    @Autowired
+    MemberSearchService  memberSearchService;
+
 
 
 
@@ -69,16 +73,14 @@ public class MemberController extends BaseController {
     @ResponseBody
     public MyPage data(HttpSession session, HttpServletRequest request, @RequestParam(value = "current", defaultValue = "0") int current, @RequestParam(value = "rowCount", defaultValue = "10") Long rowCount, @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
         String location = SessionUtil.getCurrentUserLocationBySession(session);
-        if (searchPhrase != null && !searchPhrase.equals("")) {
-            searchPhrase = location + "," + searchPhrase;
-        } else {
-            searchPhrase = location + ",,,,";
-        }
-
-        log.info("searchPhrase-------------------" + searchPhrase);
+//        if (searchPhrase != null && !searchPhrase.equals("")) {
+//            searchPhrase = location + "," + searchPhrase;
+//        } else {
+//            searchPhrase = location + ",";
+//        }
         Map<String, String[]> parameterMap = request.getParameterMap();
         Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-        return new PageUtils().searchBySortService(equipmentSearchService, searchPhrase, 4, current, rowCount, pageable);
+        return new PageUtils().searchBySortService(memberSearchService, searchPhrase, 1, current, rowCount, pageable);
     }
 
 
