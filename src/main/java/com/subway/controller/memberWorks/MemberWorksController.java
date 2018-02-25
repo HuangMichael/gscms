@@ -4,17 +4,11 @@ package com.subway.controller.memberWorks;
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
 import com.subway.domain.memberWorks.MemberWorks;
-import com.subway.domain.workOrder.VworkOrderReportBill;
-import com.subway.domain.workOrder.WorkOrderReportCart;
-import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.service.locations.LocationsService;
-import com.subway.service.member.MemberSearchService;
-import com.subway.service.member.MemberService;
 import com.subway.service.memberWorks.MemberWorksSearchService;
 import com.subway.service.memberWorks.MemberWorksService;
 import com.subway.service.workOrder.WorkOrderReportCartService;
-import com.subway.utils.DateUtils;
 import com.subway.utils.PageUtils;
 import com.subway.utils.SessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -22,19 +16,17 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
-import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
-import java.util.Date;
 import java.util.List;
 import java.util.Map;
 
 
 /**
- *
+ * 会员作品
  */
 @Controller
 @EnableAutoConfiguration
@@ -53,8 +45,6 @@ public class MemberWorksController extends BaseController {
 
     @Autowired
     MemberWorksSearchService memberWorksSearchService;
-
-
 
 
     /**
@@ -99,13 +89,13 @@ public class MemberWorksController extends BaseController {
     }
 
 
-//    /**
-//     * @param id
-//     * @return
-//     */
-//    @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
-//    @ResponseBody
-//    public MemberWorks findById(@PathVariable  Long id) {
-//        return memberWorksService.findById(id);
-//    }
+    /**
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public MemberWorks findById(@PathVariable Long id) {
+        return memberWorksService.findById(id);
+    }
 }

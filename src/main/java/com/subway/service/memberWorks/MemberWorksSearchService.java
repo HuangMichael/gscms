@@ -1,7 +1,9 @@
 package com.subway.service.memberWorks;
 
 import com.subway.dao.member.MemberRepository;
+import com.subway.dao.memberWorks.MemberWorksRepository;
 import com.subway.domain.member.Member;
+import com.subway.domain.memberWorks.MemberWorks;
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,16 +20,16 @@ import java.util.List;
 public class MemberWorksSearchService extends BaseService implements SortedSearchable {
 
     @Autowired
-    MemberRepository memberRepository;
+    MemberWorksRepository memberWorksRepository;
 
     /**
      * @param searchPhrase
      * @param paramsSize
      * @return
      */
-    public List<Member> findByConditions(String searchPhrase, int paramsSize) {
+    public List<MemberWorks> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberRepository.findByNameContaining(array[0]);
+        return memberWorksRepository.findByNameContaining(array[0]);
     }
 
     /**
@@ -35,9 +37,9 @@ public class MemberWorksSearchService extends BaseService implements SortedSearc
      * @param paramsSize
      * @return
      */
-    public Page<Member> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
+    public Page<MemberWorks> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberRepository.findByNameContaining(array[0], pageable);
+        return memberWorksRepository.findByNameContaining(array[0], pageable);
     }
 
 
