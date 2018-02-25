@@ -8,8 +8,8 @@ import com.subway.domain.workOrder.WorkOrderReportCart;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.service.locations.LocationsService;
-import com.subway.service.member.MemberSearchService;
-import com.subway.service.member.MemberService;
+import com.subway.service.member.PavilionAuthorService;
+import com.subway.service.pavilionAuthor.PavilionAuthorSearchService;
 import com.subway.service.workOrder.WorkOrderReportCartService;
 import com.subway.utils.DateUtils;
 import com.subway.utils.PageUtils;
@@ -46,10 +46,10 @@ public class MemberController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    MemberService memberService;
+    PavilionAuthorService memberService;
 
     @Autowired
-    MemberSearchService  memberSearchService;
+    PavilionAuthorSearchService memberSearchService;
 
 
 

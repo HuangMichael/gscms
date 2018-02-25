@@ -1,6 +1,7 @@
 package com.subway.service.member;
 
 import com.subway.dao.member.MemberRepository;
+import com.subway.domain.member.Member;
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;

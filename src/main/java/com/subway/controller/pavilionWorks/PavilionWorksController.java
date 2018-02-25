@@ -6,8 +6,8 @@ import com.subway.domain.app.MyPage;
 import com.subway.domain.memberWorks.MemberWorks;
 import com.subway.service.app.ResourceService;
 import com.subway.service.locations.LocationsService;
-import com.subway.service.memberWorks.MemberWorksSearchService;
-import com.subway.service.memberWorks.MemberWorksService;
+import com.subway.service.memberWorks.PavilionWorksSearchService;
+import com.subway.service.memberWorks.PavilionWorksService;
 import com.subway.service.workOrder.WorkOrderReportCartService;
 import com.subway.utils.PageUtils;
 import com.subway.utils.SessionUtil;
@@ -31,7 +31,7 @@ import java.util.Map;
 @Controller
 @EnableAutoConfiguration
 @RequestMapping("/memberWorks")
-public class MemberWorksController extends BaseController {
+public class PavilionWorksController extends BaseController {
 
     @Autowired
     WorkOrderReportCartService workOrderReportCartService;
@@ -41,10 +41,10 @@ public class MemberWorksController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    MemberWorksService memberWorksService;
+    PavilionWorksService memberWorksService;
 
     @Autowired
-    MemberWorksSearchService memberWorksSearchService;
+    PavilionWorksSearchService memberWorksSearchService;
 
 
     /**

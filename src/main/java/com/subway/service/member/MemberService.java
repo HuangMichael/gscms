@@ -1,6 +1,7 @@
 package com.subway.service.member;
 
 import com.subway.dao.member.MemberRepository;
+import com.subway.domain.member.Member;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;

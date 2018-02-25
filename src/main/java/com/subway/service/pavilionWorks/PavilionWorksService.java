@@ -13,7 +13,7 @@ import java.util.List;
  * 会员信息接口
  */
 @Service
-public class MemberWorksService {
+public class PavilionWorksService {
     @Autowired
     MemberWorksRepository memberWorksRepository;
 

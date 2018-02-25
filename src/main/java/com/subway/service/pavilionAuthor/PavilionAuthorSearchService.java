@@ -1,7 +1,7 @@
-package com.subway.service.memberWorks;
+package com.subway.service.pavilionAuthor;
 
-import com.subway.dao.memberWorks.MemberWorksRepository;
-import com.subway.domain.memberWorks.MemberWorks;
+import com.subway.dao.pavilionAuthor.PavilionAuthorRepository;
+import com.subway.domain.pavilionAuthor.PavilionAuthor;
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,19 +15,19 @@ import java.util.List;
  * 设备新置查询业务类
  */
 @Service
-public class MemberWorksSearchService extends BaseService implements SortedSearchable {
+public class PavilionAuthorSearchService extends BaseService implements SortedSearchable {
 
     @Autowired
-    MemberWorksRepository memberWorksRepository;
+    PavilionAuthorRepository pavilionAuthorRepository;
 
     /**
      * @param searchPhrase
      * @param paramsSize
      * @return
      */
-    public List<MemberWorks> findByConditions(String searchPhrase, int paramsSize) {
+    public List<PavilionAuthor> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberWorksRepository.findByNameContaining(array[0]);
+        return pavilionAuthorRepository.findByNameContaining(array[0]);
     }
 
     /**
@@ -35,9 +35,9 @@ public class MemberWorksSearchService extends BaseService implements SortedSearc
      * @param paramsSize
      * @return
      */
-    public Page<MemberWorks> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
+    public Page<PavilionAuthor> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberWorksRepository.findByNameContaining(array[0], pageable);
+        return pavilionAuthorRepository.findByNameContaining(array[0], pageable);
     }
 
 

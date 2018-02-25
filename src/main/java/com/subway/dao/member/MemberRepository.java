@@ -1,6 +1,7 @@
 package com.subway.dao.member;
 
 
+import com.subway.domain.member.Member;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;

@@ -1,4 +1,4 @@
-package com.subway.controller.member;
+package com.subway.controller.pavilionAuthor;
 
 
 import com.subway.controller.common.BaseController;
@@ -8,8 +8,8 @@ import com.subway.domain.workOrder.WorkOrderReportCart;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.service.locations.LocationsService;
-import com.subway.service.member.MemberSearchService;
-import com.subway.service.member.MemberService;
+import com.subway.service.member.PavilionAuthorService;
+import com.subway.service.pavilionAuthor.PavilionAuthorSearchService;
 import com.subway.service.workOrder.WorkOrderReportCartService;
 import com.subway.utils.DateUtils;
 import com.subway.utils.PageUtils;
@@ -35,8 +35,8 @@ import java.util.Map;
  */
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/member")
-public class MemberController extends BaseController {
+@RequestMapping("/pavilionWorks")
+public class PavilionAuthorController extends BaseController {
 
     @Autowired
     WorkOrderReportCartService workOrderReportCartService;
@@ -46,10 +46,10 @@ public class MemberController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    MemberService memberService;
+    PavilionAuthorService memberService;
 
     @Autowired
-    MemberSearchService  memberSearchService;
+    PavilionAuthorSearchService  pavilionAuthorSearchService;
 
 
 
@@ -75,7 +75,7 @@ public class MemberController extends BaseController {
 //        }
         Map<String, String[]> parameterMap = request.getParameterMap();
         Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-        return new PageUtils().searchBySortService(memberSearchService, searchPhrase, 1, current, rowCount, pageable);
+        return new PageUtils().searchBySortService(pavilionAuthorSearchService, searchPhrase, 1, current, rowCount, pageable);
     }
 
 
