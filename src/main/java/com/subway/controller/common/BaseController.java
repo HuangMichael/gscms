@@ -45,6 +45,7 @@ public class BaseController {
         List<VRoleAuthView> appMenus = resourceService.findAppMenusByController(httpSession, controllerName.toUpperCase());
         modelMap.put("appMenus", appMenus);
         String url = "/" + StringUtils.lowerCaseCamel(controllerName) + "/list";
+        log.info("url------------" + url);
         return url;
     }
 

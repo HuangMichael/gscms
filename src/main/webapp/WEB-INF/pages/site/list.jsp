@@ -39,16 +39,6 @@
 
                                                 <input class="form-control" id="locName" type="text" name="locName"
                                                        placeholder="位置"/>
-
-                                                <%----%>
-                                                <%--<select class="form-control" id="location" name="location"--%>
-                                                <%--style="width:100%" required>--%>
-                                                <%--<template v-for="option in locs">--%>
-                                                <%--<option :value="option.location">--%>
-                                                <%--{{option.locName }}--%>
-                                                <%--</option>--%>
-                                                <%--</template>--%>
-                                                <%--</select>--%>
                                             </div>
 
                                             <div class="col-md-2">
@@ -63,8 +53,6 @@
                                     </div>
                                 </div>
                             </div>
-
-
                         </div>
                     </div>
                     <!-- /BOX -->
