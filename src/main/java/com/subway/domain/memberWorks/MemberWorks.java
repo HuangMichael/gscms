@@ -1,7 +1,6 @@
 package com.subway.domain.memberWorks;
 
 
-import com.subway.domain.member.Member;
 import com.subway.domain.units.Unit;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
