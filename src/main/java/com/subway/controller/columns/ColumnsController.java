@@ -3,10 +3,10 @@ package com.subway.controller.columns;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
-import com.subway.domain.memberWorks.MemberWorks;
+import com.subway.domain.columns.Columns;
 import com.subway.service.app.ResourceService;
-import com.subway.service.memberWorks.MemberWorksSearchService;
-import com.subway.service.memberWorks.MemberWorksService;
+import com.subway.service.columns.ColumnsSearchService;
+import com.subway.service.columns.ColumnsService;
 import com.subway.utils.PageUtils;
 import com.subway.utils.SessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +34,10 @@ public class ColumnsController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    MemberWorksService memberWorksService;
+    ColumnsService columnsService;
 
     @Autowired
-    MemberWorksSearchService  memberWorksSearchService;
+    ColumnsSearchService  columnsSearchService;
 
 
     /**
@@ -61,7 +61,7 @@ public class ColumnsController extends BaseController {
 //        }
         Map<String, String[]> parameterMap = request.getParameterMap();
         Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-        return new PageUtils().searchBySortService(memberWorksSearchService, searchPhrase, 1, current, rowCount, pageable);
+        return new PageUtils().searchBySortService(columnsSearchService, searchPhrase, 1, current, rowCount, pageable);
     }
 
 
@@ -76,9 +76,9 @@ public class ColumnsController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-        List<MemberWorks> dataList = memberWorksService.findAll();
-        memberWorksSearchService.setDataList(dataList);
-        memberWorksSearchService.exportExcel(request, response, docName, titles, colNames);
+        List<Columns> dataList = columnsService.findAll();
+        columnsSearchService.setDataList(dataList);
+        columnsSearchService.exportExcel(request, response, docName, titles, colNames);
     }
 
 
@@ -88,7 +88,7 @@ public class ColumnsController extends BaseController {
      */
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public MemberWorks findById(@PathVariable Long id) {
-        return memberWorksService.findById(id);
+    public Columns findById(@PathVariable Long id) {
+        return columnsService.findById(id);
     }
 }
