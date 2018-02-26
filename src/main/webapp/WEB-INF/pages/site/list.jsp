@@ -20,11 +20,11 @@
                                 <ul class="nav nav-tabs" id="myTab">
                                     <li class="active"><a href="#tab_1_0" data-toggle="tab"
                                                           style="font-family: 微软雅黑;font-weight: bold">
-                                        <i class="fa fa-home" id="eq"></i>用户信息</a>
+                                        <i class="fa fa-home" id="eq"></i>站点信息</a>
                                     </li>
                                     <li><a href="#tab_1_1" data-toggle="tab"
                                            style="font-family: 微软雅黑;font-weight: bold">
-                                        <i class="fa fa-flag" id="eqDetail"></i>用户详细信息</a>
+                                        <i class="fa fa-flag" id="eqDetail"></i>站点详细信息</a>
                                     </li>
                                 </ul>
                                 <div class="tab-content">
