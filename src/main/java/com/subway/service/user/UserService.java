@@ -1,9 +1,6 @@
 package com.subway.service.user;
 
-import com.subway.dao.locations.VlocationsRepository;
-import com.subway.dao.person.PersonRepository;
 import com.subway.dao.user.UserRepository;
-import com.subway.domain.locations.Vlocations;
 import com.subway.domain.person.Person;
 import com.subway.domain.user.User;
 import com.subway.object.ReturnObject;
@@ -12,7 +9,6 @@ import com.subway.service.commonData.CommonDataService;
 import com.subway.utils.CommonStatusType;
 import com.subway.utils.MD5Util;
 import com.subway.utils.RedisUtils;
-import com.subway.utils.StringUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.cache.annotation.CacheConfig;
 import org.springframework.cache.annotation.Cacheable;
@@ -34,11 +30,8 @@ public class UserService extends BaseService {
     @Autowired
     UserRepository userRepository;
 
-    @Autowired
-    PersonRepository personRepository;
 
-    @Autowired
-    VlocationsRepository vlocationsRepository;
+
 
     @Autowired
     CommonDataService commonDataService;
@@ -106,19 +99,6 @@ public class UserService extends BaseService {
     }
 
 
-    /**
-     * 对用户进行加密
-     */
-    public User update(Long userId, Long personId, Long locationId, String status) {
-        User user = userRepository.findById(userId);
-        Person person = personRepository.findById(personId);
-        Vlocations vlocations = vlocationsRepository.findById(locationId);
-        user.setPerson(person);
-        user.setVlocations(vlocations);
-        // user.setLocation(vlocations.getLocation());
-        user.setStatus(status);
-        return userRepository.save(user);
-    }
 
 
     /**
@@ -209,20 +189,22 @@ public class UserService extends BaseService {
      * @return
      */
     public ReturnObject grantDataAuth(Long locationId, String userIds) {
-        Vlocations vlocations = vlocationsRepository.findById(locationId);
-        String userIdArray[] = userIds.split(",");
-        Long userId = null;
-        User user = null;
-        List<User> users = new ArrayList<User>();
-        for (String str : userIdArray) {
-            userId = Long.parseLong(str);
-            user = userRepository.findById(userId);
-            user.setVlocations(vlocations);
-            userRepository.save(user);
-            users.add(user);
-        }
-        String msg = vlocations.getLocName() + users.size() + "个用户";
-        return commonDataService.getReturnType(!users.isEmpty(), msg + "数据授权成功", "数据授权失败，请重试");
+//        Vlocations vlocations = vlocationsRepository.findById(locationId);
+//        String userIdArray[] = userIds.split(",");
+//        Long userId = null;
+//        User user = null;
+//        List<User> users = new ArrayList<User>();
+//        for (String str : userIdArray) {
+//            userId = Long.parseLong(str);
+//            user = userRepository.findById(userId);
+//            user.setVlocations(vlocations);
+//            userRepository.save(user);
+//            users.add(user);
+//        }
+//        String msg = vlocations.getLocName() + users.size() + "个用户";
+//        return commonDataService.getReturnType(!users.isEmpty(), msg + "数据授权成功", "数据授权失败，请重试");
+
+   return null;
     }
 
 
@@ -252,9 +234,9 @@ public class UserService extends BaseService {
         boolean result = false;
         User user = userRepository.findById(userId);
         if (user != null) {
-            user.setVlocations(null);
+//            user.setVlocations(null);
             user = userRepository.save(user);
-            result = user.getVlocations() == null;
+//            result = user.getVlocations() == null;
         }
         return result;
     }

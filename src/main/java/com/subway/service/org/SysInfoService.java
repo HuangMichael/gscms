@@ -1,7 +1,6 @@
 package com.subway.service.org;
 
 import com.subway.dao.app.org.OrgRepository;
-import com.subway.dao.macCost.MatCostRepository;
 import com.subway.domain.app.org.SystemInfo;
 import com.subway.service.app.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -20,10 +19,6 @@ public class SysInfoService extends BaseService {
 
     @Autowired
     public OrgRepository orgRepository;
-
-    @Autowired
-    public MatCostRepository matCostRepository;
-
 
     /**
      * @param sysName 系统参数名称

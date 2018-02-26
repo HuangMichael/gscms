@@ -1,13 +1,11 @@
 package com.subway.controller.common;
 
 
-import com.subway.dao.locations.LocationsRepository;
 import com.subway.utils.SessionUtil;
 import lombok.Data;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.apache.tomcat.util.http.fileupload.servlet.ServletFileUpload;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -29,8 +27,6 @@ import javax.servlet.http.HttpServletRequest;
 @Data
 public class FileController implements ServletContextAware {
 
-    @Autowired
-    LocationsRepository locationsRepository;
 
     //Spring这里是通过实现ServletContextAware接口来注入ServletContext对象
     ServletContext servletContext;

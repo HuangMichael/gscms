@@ -87,22 +87,4 @@ public interface UserRepository extends CrudRepository<User, Long>, PagingAndSor
     @Query("select e.id from User e order by e.id asc")
     List<Long> findAllId();
 
-
-    /**
-     * @param userName
-     * @param locName
-     * @return
-     */
-    List<User> findByUserNameContainsAndVlocations_LocNameContains(String userName, String locName);
-
-
-    /**
-     * @param userName
-     * @param locName
-     * @param pageable
-     * @return
-     */
-    Page<User> findByUserNameContainsAndVlocations_LocNameContains(String userName, String locName, Pageable pageable);
-
-
 }

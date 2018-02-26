@@ -1,14 +1,9 @@
 package com.subway.controller.app;
 
-import com.subway.dao.equipments.VeqClassRepository;
 import com.subway.domain.app.org.SystemInfo;
 import com.subway.domain.user.User;
 import com.subway.object.ReturnObject;
 import com.subway.service.commonData.CommonDataService;
-import com.subway.service.equipmentsClassification.EquipmentsClassificationService;
-import com.subway.service.line.LineService;
-import com.subway.service.line.StationService;
-import com.subway.service.locations.LocationsService;
 import com.subway.service.org.SysInfoService;
 import com.subway.service.user.UserService;
 import com.subway.utils.ConstantUtils;
@@ -39,20 +34,6 @@ public class LoginController {
     @Autowired
     SysInfoService sysInfoService;
 
-    @Autowired
-    LocationsService locationsService;
-
-    @Autowired
-    LineService lineService;
-
-    @Autowired
-    StationService stationService;
-
-    @Autowired
-    EquipmentsClassificationService equipmentsClassificationService;
-
-    @Autowired
-    VeqClassRepository veqClassRepository;
 
     @Autowired
     CommonDataService commonDataService;
@@ -64,8 +45,6 @@ public class LoginController {
         SystemInfo systemInfo = sysInfoService.findBySysName("system_name");
         if (session.getId() != null) {
             request.removeAttribute("currentUser");
-            request.removeAttribute("locationsList");
-            request.removeAttribute("equipmentsClassificationList");
             request.getSession().invalidate();
         }
         modelMap.put("sysName", systemInfo.getDescription());

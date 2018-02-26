@@ -1,10 +1,9 @@
 package com.subway.domain.user;
 
 
-import com.subway.domain.locations.Vlocations;
 import com.subway.domain.person.Person;
 import com.subway.domain.role.Role;
-import lombok.*;
+import lombok.Data;
 import org.codehaus.jackson.annotate.JsonIgnore;
 
 import javax.persistence.*;
@@ -35,9 +34,9 @@ public class User {
     @JoinColumn(name = "person_id")
     private Person person;
 
-    @OneToOne
-    @JoinColumn(name = "vlocations_id")
-    private Vlocations vlocations;
+//    @OneToOne
+    @Column(name = "vlocations_id")
+    private Long vlocations;
 
     /*    @Column(length = 20)
         private String location;*/

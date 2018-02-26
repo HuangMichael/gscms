@@ -53,9 +53,9 @@ public class SessionUtil {
     public static String getCurrentUserLocationBySession(HttpSession session) {
         User user = (User) session.getAttribute("currentUser");
         String location = null;
-        if (user != null) {
-            location = user.getVlocations().getLocation();
-        }
+//        if (user != null) {
+//            location = user.getVlocations().getLocation();
+//        }
         return location;
     }
 

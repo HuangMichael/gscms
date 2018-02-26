@@ -1,14 +1,12 @@
-package com.subway.controller.memberWorks;
+package com.subway.controller.pavilionWorks;
 
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
 import com.subway.domain.memberWorks.MemberWorks;
 import com.subway.service.app.ResourceService;
-import com.subway.service.locations.LocationsService;
 import com.subway.service.memberWorks.PavilionWorksSearchService;
 import com.subway.service.memberWorks.PavilionWorksService;
-import com.subway.service.workOrder.WorkOrderReportCartService;
 import com.subway.utils.PageUtils;
 import com.subway.utils.SessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -30,14 +28,9 @@ import java.util.Map;
  */
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/memberWorks")
+@RequestMapping("/pavilionWorks")
 public class PavilionWorksController extends BaseController {
 
-    @Autowired
-    WorkOrderReportCartService workOrderReportCartService;
-
-    @Autowired
-    LocationsService locationsService;
     @Autowired
     ResourceService resourceService;
     @Autowired
@@ -84,8 +77,8 @@ public class PavilionWorksController extends BaseController {
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
         List<MemberWorks> dataList = memberWorksService.findAll();
-        workOrderReportCartService.setDataList(dataList);
-        workOrderReportCartService.exportExcel(request, response, docName, titles, colNames);
+        memberWorksSearchService.setDataList(dataList);
+        memberWorksSearchService.exportExcel(request, response, docName, titles, colNames);
     }
 
 
