@@ -46,13 +46,11 @@
                                                     <thead>
                                                     <tr>
                                                         <th data-column-id="id" data-width="5%">序号</th>
-                                                        <th data-column-id="name" data-width="8%">会员姓名</th>
-                                                        <%--<th data-column-id="cardNo" data-width="10%">会员编号</th>--%>
-                                                        <%--<th data-column-id="createTime" data-width="20%">创建时间</th>--%>
-                                                        <%--<th data-column-id="enterDate" data-width="10%">加入时间</th>--%>
-                                                        <%--<th data-column-id="hasPhoto" data-width="12%">是否有照片</th>--%>
+                                                        <th data-column-id="name" data-width="10%">作者姓名</th>
+                                                        <th data-column-id="hasPhoto" data-width="10%">是否有照片</th>
+                                                        <th data-column-id="createTime" data-width="10%">创建时间</th>
                                                         <th data-column-id="sortNo" data-width="10%">排序</th>
-                                                        <th data-column-id="status" data-width="5%">状态</th>
+                                                        <th data-column-id="status" data-width="10%">状态</th>
                                                     </tr>
                                                     </thead>
                                                 </table>

@@ -4,6 +4,7 @@ package com.subway.dao.user;
 import com.subway.domain.user.User;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
+import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.data.repository.PagingAndSortingRepository;
@@ -14,7 +15,7 @@ import java.util.List;
 /**
  * Created by huangbin on 2016/1/8 0008.
  */
-public interface UserRepository extends CrudRepository<User, Long>, PagingAndSortingRepository<User, Long> {
+public interface UserRepository extends JpaRepository<User, Long> {
     /**
      * 查询所有菜单
      */
@@ -52,7 +53,6 @@ public interface UserRepository extends CrudRepository<User, Long>, PagingAndSor
      */
     List<User> findByUserNameAndStatus(String userName, String status);
 
-
     /**
      * 查询不在当前角色中的用户信息
      */
@@ -86,5 +86,20 @@ public interface UserRepository extends CrudRepository<User, Long>, PagingAndSor
      */
     @Query("select e.id from User e order by e.id asc")
     List<Long> findAllId();
+
+
+    /**
+     * @param name
+     * @return
+     */
+    List<User> findByUserNameContaining(String name);
+
+
+    /**
+     * @param name
+     * @param pageable
+     * @return
+     */
+    Page<User> findByUserNameContaining(String name,Pageable pageable);
 
 }

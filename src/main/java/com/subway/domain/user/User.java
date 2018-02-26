@@ -34,12 +34,6 @@ public class User {
     @JoinColumn(name = "person_id")
     private Person person;
 
-//    @OneToOne
-    @Column(name = "vlocations_id")
-    private Long vlocations;
-
-    /*    @Column(length = 20)
-        private String location;*/
     @ManyToMany(fetch = FetchType.EAGER)
     @JoinTable(name = "t_role_user", joinColumns = {@JoinColumn(name = "user_id")}, inverseJoinColumns = {@JoinColumn(name = "role_id")})
     private List<Role> roleList;

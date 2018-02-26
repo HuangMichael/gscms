@@ -4,6 +4,7 @@ package com.subway.controller.user;
 import com.subway.controller.common.BaseController;
 import com.subway.dao.user.UserRepository;
 import com.subway.domain.app.MyPage;
+import com.subway.domain.person.Person;
 import com.subway.domain.user.User;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
@@ -53,7 +54,6 @@ public class UserController extends BaseController {
 //    PersonRepository personRepository;
 
 
-
     @Autowired
     ResourceService resourceService;
 
@@ -77,7 +77,7 @@ public class UserController extends BaseController {
                        @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
         Map<String, String[]> parameterMap = request.getParameterMap();
         Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-        return new PageUtils().searchBySortService(userSearchService, searchPhrase, 2, current, rowCount, pageable);
+        return new PageUtils().searchBySortService(userSearchService, searchPhrase, 1, current, rowCount, pageable);
     }
 
 
@@ -198,6 +198,7 @@ public class UserController extends BaseController {
     }
 
 
+
     /**
      * @param request  请求
      * @param response 响应
@@ -208,7 +209,7 @@ public class UserController extends BaseController {
      */
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
-    public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames, @RequestParam("sort") String[] sort) {
+    public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
         List<User> dataList = userSearchService.findByConditions(param, 2);
         userService.setDataList(dataList);
         userService.exportExcel(request, response, docName, titles, colNames);
