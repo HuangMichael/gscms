@@ -1,5 +1,6 @@
 package com.subway.domain.pavilionWorks;
 
+import com.subway.domain.columns.Columns;
 import com.subway.domain.pavilionAuthor.PavilionAuthor;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -20,8 +21,9 @@ public class PavilionWorks implements Serializable {
     private Long id;//序号 主键
 
 
-    @Column(length = 20, nullable = false)
-    private String colName;//所属栏目名称
+    @ManyToOne(fetch = FetchType.LAZY)
+    @JoinColumn(name = "columns_id", referencedColumnName = "id")
+    private Columns columns;  //所属栏目名称
 
 
     @ManyToOne(fetch = FetchType.LAZY)

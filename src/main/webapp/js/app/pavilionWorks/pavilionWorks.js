@@ -9,10 +9,8 @@ $(function () {
 
     //导出必须配置的两个量
     dataTableName = "#pavilionWorksListTable";
-    docName = "会员作品";
+    docName = "展馆作品";
     mainObject = "pavilionWorks";
-
-
     initSelect();
 
     var searchVue = new Vue({
