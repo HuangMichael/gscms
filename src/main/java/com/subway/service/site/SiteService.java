@@ -2,6 +2,7 @@ package com.subway.service.site;
 
 import com.subway.dao.site.SiteRepository;
 import com.subway.domain.site.Site;
+import com.subway.service.app.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -11,7 +12,7 @@ import java.util.List;
  * 站点信息接口
  */
 @Service
-public class SiteService {
+public class SiteService extends BaseService{
     @Autowired
     SiteRepository siteRepository;
 
