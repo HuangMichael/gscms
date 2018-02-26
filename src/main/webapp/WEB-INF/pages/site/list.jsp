@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-users"></i>用户信息</h4>
+                            <h4><i class="fa fa-users"></i>站点信息</h4>
                         </div>
 
                         <%@ include file="../common/common-menubar.jsp" %>

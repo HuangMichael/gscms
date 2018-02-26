@@ -8,9 +8,9 @@ $(function () {
 
 
     //导出必须配置的两个量
-    dataTableName = "#memberListTable";
+    dataTableName = "#pavilionAuthorListTable";
     docName = "会员信息";
-    mainObject = "member";
+    mainObject = "pavilionAuthor";
 
 
     initSelect();

@@ -20,35 +20,9 @@
                     <!-- PAGE HEADER-->
                     <%@include file="../common/common-breadcrumb.jsp" %>
                     <div class="clearfix">
-                        <span class="date-range pull-right">
-											<div class="btn-group">
-												<a class="js_update btn btn-default" id="currentMonth"
-                                                   onclick="loadChartData(addMonth(0))">当月</a>
-												<a class="js_update btn btn-default" id="lastMonth"
-                                                   onclick="loadChartData(addMonth(-1))">上月</a>
-												 <a class="js_update btn btn-default"><input class="Wdate form-control"
-                                                                                             type="text"
-                                                                                             onClick="WdatePicker({maxDate:'%y-%M-%d',dateFmt: 'yyyy-MM', isShowToday: false, isShowClear: false})"
-                                                                                             id="setupDate"
-                                                                                             style="width:80%"
-                                                                                             name="setupDate"
-                                                 /></a>
-                                                <a class="js_update btn btn-default" id="displayBtn">显示</a>
-											</div>
-										</span>
-                        <!-- /DATE RANGE PICKER -->
                     </div>
 
                     <div class="row">
-                        <div class="col-md-6">
-                            <div id="highCharts0"></div>
-                        </div>
-                        <div class="col-md-6">
-                            <div id="highCharts1"></div>
-                        </div>
-                        <div class="col-md-12">
-                            <div id="highCharts2"></div>
-                        </div>
 
                     </div>
                 </div>

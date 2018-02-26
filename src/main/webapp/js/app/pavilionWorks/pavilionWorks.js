@@ -8,9 +8,9 @@ $(function () {
 
 
     //导出必须配置的两个量
-    dataTableName = "#memberWorksListTable";
+    dataTableName = "#pavilionWorksListTable";
     docName = "会员作品";
-    mainObject = "memberWorks";
+    mainObject = "pavilionWorks";
 
 
     initSelect();
@@ -20,7 +20,7 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "会员名称"}
+        {"param": "name", "paramDesc": "作品名称"}
     ];
 
     initBootGrid(dataTableName);

@@ -4,6 +4,8 @@ package com.subway.controller.member;
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
 import com.subway.service.app.ResourceService;
+import com.subway.service.member.MemberSearchService;
+import com.subway.service.member.MemberService;
 import com.subway.service.member.PavilionAuthorService;
 import com.subway.service.pavilionAuthor.PavilionAuthorSearchService;
 import com.subway.utils.PageUtils;
@@ -24,7 +26,7 @@ import java.util.Map;
 
 
 /**
- *
+ *会员控制器类
  */
 @Controller
 @EnableAutoConfiguration
@@ -34,9 +36,9 @@ public class MemberController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    PavilionAuthorService memberService;
+    MemberService memberService;
     @Autowired
-    PavilionAuthorSearchService memberSearchService;
+    MemberSearchService memberSearchService;
 
     /**
      * 分页查询

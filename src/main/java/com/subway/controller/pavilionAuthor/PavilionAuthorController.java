@@ -33,7 +33,7 @@ public class PavilionAuthorController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    PavilionAuthorService memberService;
+    PavilionAuthorService pavilionAuthorService;
     @Autowired
     PavilionAuthorSearchService pavilionAuthorSearchService;
 
