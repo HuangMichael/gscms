@@ -58,11 +58,11 @@
                         <h2 class="bigintro">${sysName}用户登录</h2>
 
                         <div class="divide-40" id="msg" style="font-size: large;color:blue">${error}</div>
-                        <form role="form" id="loginForm" name="loginForm" method="post" action="/login">
+                        <form  id="loginForm" name="loginForm" method="post" action="/login">
                             <div class="form-group">
                                 <label for="userName">用户名</label>
                                 <i class="fa fa-user"></i>
-                                <input type="text" class="form-control" id="userName" name="userName" required>
+                                <input  class="form-control" id="userName" name="userName" required>
 
                                 <div id="msg0" class="divide-10"></div>
                             </div>
@@ -75,7 +75,7 @@
                             </div>
                             <div>
                                 <label class="checkbox"> <input type="checkbox" class="uniform"> 记住密码</label>
-                                <button type="submit" class="btn btn-danger" id="loginBtn">登录</button>
+                                <button  class="btn btn-danger" id="loginBtn">登录</button>
                             </div>
                         </form>
                         <!-- SOCIAL LOGIN -->
