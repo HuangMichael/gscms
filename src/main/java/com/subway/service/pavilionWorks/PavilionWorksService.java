@@ -1,7 +1,7 @@
-package com.subway.service.memberWorks;
+package com.subway.service.pavilionWorks;
 
-import com.subway.dao.memberWorks.MemberWorksRepository;
-import com.subway.domain.memberWorks.MemberWorks;
+import com.subway.dao.pavilionWorks.PavilionWorksRepository;
+import com.subway.domain.pavilionWorks.PavilionWorks;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
@@ -15,29 +15,29 @@ import java.util.List;
 @Service
 public class PavilionWorksService {
     @Autowired
-    MemberWorksRepository memberWorksRepository;
+    PavilionWorksRepository pavilionWorksRepository;
 
     /**
      * @return 查询所有的会员
      */
-    public List<MemberWorks> findAll() {
-        return memberWorksRepository.findAll();
+    public List<PavilionWorks> findAll() {
+        return pavilionWorksRepository.findAll();
     }
 
 
     /**
      * @return 查询所有的会员
      */
-    public Page<MemberWorks> findAll(Pageable pageable) {
-        return memberWorksRepository.findAll(pageable);
+    public Page<PavilionWorks> findAll(Pageable pageable) {
+        return pavilionWorksRepository.findAll(pageable);
     }
 
 
     /**
      * @return 查询所有的会员
      */
-    public List<MemberWorks> findByName(String name) {
-        return memberWorksRepository.findByNameContaining(name);
+    public List<PavilionWorks> findByName(String name) {
+        return pavilionWorksRepository.findByNameContaining(name);
     }
 
 
@@ -45,7 +45,7 @@ public class PavilionWorksService {
      * @param id
      * @return 根据ID查询会员
      */
-    public MemberWorks findById(Long id) {
-        return memberWorksRepository.findById(id);
+    public PavilionWorks findById(Long id) {
+        return pavilionWorksRepository.findById(id);
     }
 }

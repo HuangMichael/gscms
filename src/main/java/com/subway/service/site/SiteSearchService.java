@@ -1,7 +1,7 @@
-package com.subway.service.pavilionWorks;
+package com.subway.service.site;
 
-import com.subway.dao.memberWorks.MemberWorksRepository;
-import com.subway.domain.memberWorks.MemberWorks;
+import com.subway.dao.site.SiteRepository;
+import com.subway.domain.site.Site;
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,22 +12,21 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * 设备新置查询业务类
+ * 站点信息接口
  */
 @Service
-public class PavilionWorksSearchService extends BaseService implements SortedSearchable {
-
+public class SiteSearchService extends BaseService implements SortedSearchable {
     @Autowired
-    MemberWorksRepository memberWorksRepository;
+    SiteRepository siteRepository;
 
     /**
      * @param searchPhrase
      * @param paramsSize
      * @return
      */
-    public List<MemberWorks> findByConditions(String searchPhrase, int paramsSize) {
+    public List<Site> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberWorksRepository.findByNameContaining(array[0]);
+        return siteRepository.findByNameContaining(array[0]);
     }
 
     /**
@@ -35,10 +34,8 @@ public class PavilionWorksSearchService extends BaseService implements SortedSea
      * @param paramsSize
      * @return
      */
-    public Page<MemberWorks> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
+    public Page<Site> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberWorksRepository.findByNameContaining(array[0], pageable);
+        return siteRepository.findByNameContaining(array[0], pageable);
     }
-
-
 }

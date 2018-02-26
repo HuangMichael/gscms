@@ -32,15 +32,9 @@
                                         <div class="form-group" style="margin-bottom:10px;position:inherit"
                                              id="searchBox">
                                             <div class="col-md-2">
-                                                <input class="form-control" id="userName" type="text" name="userName"
-                                                       placeholder="用户名"/>
+                                                <input class="form-control" id="name" name="name"
+                                                       placeholder="站点名称"/>
                                             </div>
-                                            <div class="col-md-2">
-
-                                                <input class="form-control" id="locName" type="text" name="locName"
-                                                       placeholder="位置"/>
-                                            </div>
-
                                             <div class="col-md-2">
                                                 <button id="searchBtn" class="btn btn-default" onclick="search()">查询
                                                 </button>
@@ -64,6 +58,6 @@
     </div>
 </div>
 <%@include file="../common/common-foot.jsp" %>
-<script type="text/javascript" src="/js/app/user/user.js"></script>
+<script type="text/javascript" src="/js/app/site/site.js"></script>
 
 

@@ -5,8 +5,8 @@ import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
 import com.subway.domain.memberWorks.MemberWorks;
 import com.subway.service.app.ResourceService;
-import com.subway.service.memberWorks.PavilionWorksSearchService;
-import com.subway.service.memberWorks.PavilionWorksService;
+import com.subway.service.memberWorks.MemberWorksSearchService;
+import com.subway.service.memberWorks.MemberWorksService;
 import com.subway.utils.PageUtils;
 import com.subway.utils.SessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +34,10 @@ public class MemberWorksController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    PavilionWorksService memberWorksService;
+    MemberWorksService memberWorksService;
 
     @Autowired
-    PavilionWorksSearchService memberWorksSearchService;
+    MemberWorksSearchService  memberWorksSearchService;
 
 
     /**

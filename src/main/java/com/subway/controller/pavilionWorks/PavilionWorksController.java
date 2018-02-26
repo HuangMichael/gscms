@@ -4,9 +4,11 @@ package com.subway.controller.pavilionWorks;
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
 import com.subway.domain.memberWorks.MemberWorks;
+import com.subway.domain.pavilionWorks.PavilionWorks;
 import com.subway.service.app.ResourceService;
-import com.subway.service.memberWorks.PavilionWorksSearchService;
-import com.subway.service.memberWorks.PavilionWorksService;
+
+import com.subway.service.pavilionWorks.PavilionWorksSearchService;
+import com.subway.service.pavilionWorks.PavilionWorksService;
 import com.subway.utils.PageUtils;
 import com.subway.utils.SessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -34,10 +36,10 @@ public class PavilionWorksController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    PavilionWorksService memberWorksService;
+    PavilionWorksService pavilionWorksService;
 
     @Autowired
-    PavilionWorksSearchService memberWorksSearchService;
+    PavilionWorksSearchService pavilionWorksSearchService;
 
 
     /**
@@ -61,7 +63,7 @@ public class PavilionWorksController extends BaseController {
 //        }
         Map<String, String[]> parameterMap = request.getParameterMap();
         Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-        return new PageUtils().searchBySortService(memberWorksSearchService, searchPhrase, 1, current, rowCount, pageable);
+        return new PageUtils().searchBySortService(pavilionWorksSearchService, searchPhrase, 1, current, rowCount, pageable);
     }
 
 
@@ -76,9 +78,9 @@ public class PavilionWorksController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-        List<MemberWorks> dataList = memberWorksService.findAll();
-        memberWorksSearchService.setDataList(dataList);
-        memberWorksSearchService.exportExcel(request, response, docName, titles, colNames);
+        List<PavilionWorks> dataList = pavilionWorksService.findAll();
+        pavilionWorksSearchService.setDataList(dataList);
+        pavilionWorksSearchService.exportExcel(request, response, docName, titles, colNames);
     }
 
 
@@ -88,7 +90,7 @@ public class PavilionWorksController extends BaseController {
      */
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public MemberWorks findById(@PathVariable Long id) {
-        return memberWorksService.findById(id);
+    public PavilionWorks findById(@PathVariable Long id) {
+        return pavilionWorksService.findById(id);
     }
 }

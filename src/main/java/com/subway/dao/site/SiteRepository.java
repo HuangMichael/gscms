@@ -1,6 +1,8 @@
 package com.subway.dao.site;
 
 import com.subway.domain.site.Site;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.stereotype.Repository;
 
@@ -22,4 +24,19 @@ public interface SiteRepository extends JpaRepository<Site, Long> {
      * @return 根据ID查询站点
      */
     Site findById(Long id);
+
+
+    /**
+     * @param name  站点名称
+     * @return 根据站点名称查询
+     */
+    List<Site> findByNameContaining(String name);
+
+
+    /**
+     * @param name     站点名称
+     * @param pageable 根据站点名称查询
+     * @return
+     */
+    Page<Site> findByNameContaining(String name, Pageable pageable);
 }
