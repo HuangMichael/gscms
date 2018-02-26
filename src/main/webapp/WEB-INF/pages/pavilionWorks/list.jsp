@@ -42,7 +42,7 @@
                                                 <table id="memberListTable"
                                                        class="table table-bordered table-hover table-striped"
                                                        data-toggle="bootgrid" data-ajax="true"
-                                                       data-url="/member/data">
+                                                       data-url="/pavilionWorks/data">
                                                     <thead>
                                                     <tr>
                                                         <th data-column-id="id" data-width="5%">序号</th>
@@ -72,4 +72,4 @@
         <!-- /CONTENT-->
     </div>
 </div>
-<script type="text/javascript" src="/js/app/member/member.js"></script>
+<script type="text/javascript" src="/js/app/pavilionWorks/pavilionWorks.js"></script>
