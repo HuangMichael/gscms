@@ -11,6 +11,7 @@ import com.subway.service.etl.EtlService;
 import com.subway.service.etl.EtlTableService;
 import com.subway.utils.PageUtils;
 import jxl.write.WriteException;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
@@ -33,6 +34,7 @@ import java.util.Map;
  */
 @Controller
 @RequestMapping("/etl")
+@Slf4j
 public class EtlController extends BaseController {
     @Autowired
     EtlService etlService;
