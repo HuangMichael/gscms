@@ -411,13 +411,7 @@ function initBootGrid(dataTableName) {
     var config = {
         selection: true,
         multiSelect: true,
-        sorting: true,
-        formatters: {
-            "commands": function (column, row) {
-                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
-                    "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
-            }
-        }
+        sorting: true
     }
     //初始化加载列表
     $(dataTableName).bootgrid(config).on("selected.rs.jquery.bootgrid", function (e, rows) {
@@ -491,88 +485,8 @@ function initBootGridMenu(dataTableName, config) {
 
 
 /**
- * 查询我的位置
+ * 查询信息
  */
-function getMyLocs() {
-    // var url = "/commonData/findMyLoc";
-    // $.getJSON(url, function (data) {
-    //     locs = data;
-    // });
-    return locs;
-}
-
-
-/**
- *查询我的位置
- * */
-function findMyLoc() {
-    var url_location = "/commonData/findMyLoc";
-    $.getJSON(url_location, function (data) {
-        locs = data;
-    });
-    return locs;
-}
-
-
-/**
- *查询我的位置
- * */
-function findUnits() {
-    var url_units = "/commonData/findUnits";
-    $.getJSON(url_units, function (data) {
-        units = data;
-    });
-    return units;
-}
-
-
-/**
- *查询我的位置
- * */
-function findEqClass() {
-    var url_eqclass = "/commonData/findVEqClass";
-    $.getJSON(url_eqclass, function (data) {
-        eqClasses = data;
-    });
-    return eqClasses;
-}
-
-/**
- * 查询我的位置
- */
-function findMyEqs() {
-    var url = "/commonData/findMyEqs";
-    $.getJSON(url, function (data) {
-        eqs = data;
-    });
-    return eqs;
-}
-
-/**
- * 查询所有线路
- */
-function getAllLines() {
-    var url = "/line/findAllLines";
-    $.getJSON(url, function (data) {
-        lines = data;
-    });
-    return lines;
-}
-
-
-/**
- * 查询我的位置
- */
-function getAllStations() {
-//初始化为第一条线路id
-    var url = "/station/findAll";
-    $.getJSON(url, function (data) {
-        stations = data;
-    });
-    return stations;
-}
-
-
 function search() {
     //组装模型
     var params = $("#searchBox :input");
@@ -609,7 +523,6 @@ function getSearchConfig() {
             searchParams += value + ",";
         }
     });
-    console.log("searchParams-------------" + searchParams);
     return searchParams;
 
 }
@@ -640,15 +553,6 @@ function initSearchDate() {
 
 
 $(function () {
-
-
-    //初始化加载设备分类  设备位置
-
-
-    // locs = findMyLoc();
-    // eqClasses = findEqClass();
-
-
     //取消异步加载
     $.ajaxSettings.async = false;
     //监听回车查询
