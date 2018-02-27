@@ -22,7 +22,7 @@ public class PropertyUtil {
         props = new Properties();
         InputStream in = null;
         try {
-            in = PropertyUtil.class.getClassLoader().getResourceAsStream("application.properties");
+            in = PropertyUtil.class.getClassLoader().getResourceAsStream("autoCode.properties");
             props.load(in);
         } catch (FileNotFoundException e) {
             log.error("application.properties文件未找到");
