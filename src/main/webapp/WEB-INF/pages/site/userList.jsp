@@ -14,6 +14,7 @@
         <th data-column-id="endTime" data-sortable="true" data-width="10%">结束时间</th>
         <th data-column-id="sortNo" data-sortable="true" data-width="10%">排序</th>
         <th data-column-id="status" data-sortable="true" data-width="10%">状态</th>
+        <th data-column-id="commands" data-formatter="commands" data-sortable="false">操作</th>
     </tr>
     </thead>
 </table>

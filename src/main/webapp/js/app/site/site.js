@@ -1,4 +1,3 @@
-
 $(function () {
     //导出必须配置的两个量
     dataTableName = "#siteListTable";
@@ -17,7 +16,6 @@ $(function () {
     ];
 
     initBootGrid(dataTableName);
-
     $("#searchBtn").trigger("click");
 
 
