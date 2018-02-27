@@ -8,6 +8,7 @@ import com.subway.service.commonData.CommonDataService;
 import com.subway.utils.SessionUtil;
 import com.subway.utils.StringUtils;
 import lombok.Data;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.logging.Log;
 import org.apache.commons.logging.LogFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,10 +29,10 @@ import java.util.Map;
 @Controller
 @Data
 @EnableAutoConfiguration
+@Slf4j
 public class BaseController {
-    protected Log log = LogFactory.getLog(this.getClass());
     @Autowired
-    ResourceService resourceService;
+    protected ResourceService resourceService;
 
     @Autowired
     CommonDataService commonDataService;
