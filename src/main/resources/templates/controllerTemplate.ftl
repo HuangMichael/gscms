@@ -11,10 +11,7 @@ import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestParam;
-import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -53,5 +50,16 @@ Map
 <String, String[]> parameterMap = request.getParameterMap();
 Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
 return new PageUtils().searchBySortService(${className}SearchService, searchPhrase, 1, current, rowCount, pageable);
+}
+
+
+/**
+* @param id ${comment}id
+* @return 根据${comment}id查询
+*/
+@RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
+@ResponseBody
+public ${className?cap_first} findById(@PathVariable("id") Long id) {
+return ${className}Service.findById(id);
 }
 }

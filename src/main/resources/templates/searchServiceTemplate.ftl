@@ -30,7 +30,7 @@ ${className?cap_first}Repository  ${className}Repository;
 */
 public List< ${className?cap_first}> findByConditions(String searchPhrase, int paramsSize) {
 String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-return  ${className}Repository.findByNameContaining(array[0]);
+return  ${className}Repository.findAll();
 }
 
 /**
@@ -40,5 +40,7 @@ return  ${className}Repository.findByNameContaining(array[0]);
 */
 public Page< ${className?cap_first}> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
 String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-return  ${className}Repository.findByNameContaining(array[0], pageable);
+return  ${className}Repository.findAll( pageable);
+}
+
 }
