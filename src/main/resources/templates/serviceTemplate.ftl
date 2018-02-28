@@ -25,25 +25,25 @@ ${className?cap_first}Repository ${className}Repository;
 * @return 查询所有的${comment}
 */
 public List
-<Member> findAll() {
-    return  ${className}Repository.findAll();
-    }
+<${className?cap_first}> findAll() {
+return  ${className}Repository.findAll();
+}
 
 
-    /**
-    * @return 查询所有的${comment}
-    */
-    public Page< ${className?cap_first}> findAll(Pageable pageable) {
-    return  ${className}Repository.findAll(pageable);
-    }
+/**
+* @return 查询所有的${comment}
+*/
+public Page< ${className?cap_first}> findAll(Pageable pageable) {
+return  ${className}Repository.findAll(pageable);
+}
 
 
-    /**
-    * @param id
-    * @return 根据ID查询${comment}
-    */
-    public  ${className?cap_first} findById(Long id) {
-    return  ${className}Repository.findById(id);
-    }
+/**
+* @param id
+* @return 根据ID查询${comment}
+*/
+public  ${className?cap_first} findById(Long id) {
+return  ${className}Repository.getOne(id);
+}
 
-    }
+}
