@@ -7,9 +7,9 @@ import java.util.Map;
 * ${comment}业务类
 *  huangbin
 */
+@Service
 
-
-public interface ${className?cap_first}Service {
+public class ${className?cap_first}Service extends BaseService {
 
 
 @Autowired
