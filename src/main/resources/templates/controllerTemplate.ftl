@@ -62,4 +62,22 @@ return new PageUtils().searchBySortService(${className}SearchService, searchPhra
 public ${className?cap_first} findById(@PathVariable("id") Long id) {
 return ${className}Service.findById(id);
 }
+
+/**
+* @param request  请求
+* @param response 响应
+* @param param    查询关键字
+* @param docName  文档名称
+* @param titles   标题集合
+* @param colNames 列名称
+*/
+@ResponseBody
+@RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
+public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
+List< ${className?cap_first}> dataList = ${className}SearchService.findByConditions(param, 2);
+${className}Service.setDataList(dataList);
+${className}Service.exportExcel(request, response, docName, titles, colNames);
+}
+
+
 }
