@@ -2,17 +2,49 @@ package com.subway.${className};
 
 import java.util.List;
 import java.util.Map;
-public interface ${className?cap_first}Service {
-    //分页查询
-	List<Map<String,Object>> queryPageList(${className?cap_first}  ${className} );
 
-	//新增
-	int ${className}Save(${className?cap_first}  ${className} );
-	
-	//修改
-	int ${className}Modify(${className?cap_first}  ${className} );
-	
-	//删除
-	int ${className}Dele(${className?cap_first}  ${className} );
+/**
+* ${comment}业务类
+*  huangbin
+*/
+
+
+public interface ${className?cap_first}Service {
+
+
+@Autowired
+${className?cap_first}Repository ${className?cap_first}Repository;
+
+/**
+* @return 查询所有的${comment}
+*/
+public List<Member> findAll() {
+    return  ${className}Repository.findAll();
+    }
+
+
+    /**
+    * @return 查询所有的${comment}
+    */
+    public Page< ${className?cap_first}> findAll(Pageable pageable) {
+        return  ${className}Repository.findAll(pageable);
+        }
+
+
+        /**
+        * @return 查询所有的${comment}
+        */
+        public List< ${className?cap_first}> findByName(String name) {
+            return  ${className}Repository.findByNameContaining(name);
+            }
+
+
+            /**
+            * @param id
+            * @return 根据ID查询${comment}
+            */
+            public  ${className?cap_first} findById(Long id) {
+            return  ${className}Repository.findById(id);
+            }
 
 }

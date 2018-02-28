@@ -41,7 +41,12 @@ function genApp() {
         appId: selectedId[0]
     };
     $.post(url, data, function (data) {
-        showMessageBox("info", data.result, data.resultDesc);
+        if (data.result) {
+            showMessageBox("info", data["resultDesc"]);
+        } else {
+            showMessageBox("danger", data["resultDesc"]);
+
+        }
     })
 
 }
