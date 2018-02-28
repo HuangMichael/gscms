@@ -4,23 +4,21 @@ package com.subway.controller.dev;
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
 import com.subway.object.ReturnObject;
-import com.subway.service.app.ResourceService;
 import com.subway.service.commonData.CommonDataService;
 import com.subway.service.dev.AppSearchService;
 import com.subway.service.dev.AppService;
-import com.subway.service.member.MemberSearchService;
-import com.subway.service.member.MemberService;
 import com.subway.utils.PageUtils;
-import com.subway.utils.SessionUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.*;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpServletRequest;
-import javax.servlet.http.HttpSession;
 import java.util.Map;
 
 
@@ -59,15 +57,15 @@ public class AppController extends BaseController {
 
 
     /**
-     * @param id
+     * @param appId
      * @return
      */
-    @RequestMapping(value = "/autoCode/{id}", method = RequestMethod.POST)
+    @RequestMapping(value = "/autoCode", method = RequestMethod.POST)
     @ResponseBody
-    public ReturnObject autoCode(@PathVariable("id") Long id) {
+    public ReturnObject autoCode(@RequestParam("appId") Long appId) {
         //根据应用选择的应用配置信息
-        appService.autoCode(id);
-        return commonDataService.getReturnType(true, "", "");
+        boolean result = appService.autoCode(appId);
+        return commonDataService.getReturnType(result, "应用生成成功", "应用生成失败");
     }
 
 

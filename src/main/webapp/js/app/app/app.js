@@ -29,3 +29,19 @@ $(function () {
 
 
 });
+
+
+function genApp() {
+    var selectedId = $(dataTableName).bootgrid("getSelectedRows");
+
+    console.log(selectedId);
+    var url = "/app/autoCode";
+    var data = {
+        appId: selectedId[0]
+    };
+    $.post(url, data, function (data) {
+
+        alert(data);
+    })
+
+}
