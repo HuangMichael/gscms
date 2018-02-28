@@ -1,4 +1,4 @@
-package com.subway.domain.${className};
+package com.subway.${className};
 
 import lombok.Data;
 
