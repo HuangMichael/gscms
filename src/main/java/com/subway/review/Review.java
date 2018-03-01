@@ -3,6 +3,7 @@ package com.subway.review;
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
  * �����б�实体�?
@@ -14,7 +15,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "t_review")
 @Data
-public class Review {
+public class Review implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)

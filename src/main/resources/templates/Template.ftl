@@ -3,6 +3,7 @@ package com.subway.${className};
 import lombok.Data;
 
 import javax.persistence.*;
+import java.io.Serializable;
 
 /**
 * ${comment}实体类
@@ -14,7 +15,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "${tableName}")
 @Data
-public class ${className?cap_first} {
+public class ${className?cap_first}  implements Serializable {
 
 <#list columnMap?keys as key>
 private String ${key};
