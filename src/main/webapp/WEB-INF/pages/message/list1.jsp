@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="container">
@@ -30,7 +30,7 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="关键字"/>
+                                                           placeholder="留言内容"/>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <button id="searchBtn" class="btn btn-default" onclick="search()">查询
@@ -45,9 +45,8 @@
                                                     <thead>
                                                     <tr>
                                                         <th data-column-id="id" data-width="5%">序号</th>
-                                                        <th data-column-id="content" data-width="55%">内容</th>
-                                                        <th data-column-id="sortNo" data-width="10%">排序</th>
-                                                        <th data-column-id="status" data-width="5%">状态</th>
+                                                        <th data-column-id="id" data-type="numeric" data-identifier="true" data-visible="false" data-width="5%">ID</th>
+                                                        <th data-column-id="content" data-width="80%">留言内容</th>
                                                     </tr>
                                                     </thead>
                                                 </table>

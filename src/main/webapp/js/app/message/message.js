@@ -1,5 +1,5 @@
 /**
- * Created by huangbin on 2016/11/2.
+ * Created by huangbin on 2018-3-1 09:46:42.
 
  */
 
@@ -7,9 +7,9 @@
 $(function () {
 
 
-    //瀵煎嚭蹇呴』閰嶇疆鐨勪袱涓噺
+//导出必须配置的两个量
     dataTableName = "#messageListTable";
-    docName = "鐣欒█淇℃伅";
+    docName = "留言管理";
     mainObject = "message";
 
 
@@ -20,7 +20,7 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "鐣欒█鍐呭"}
+        {"param": "name", "paramDesc": "关键字"}
     ];
 
     initBootGrid(dataTableName);

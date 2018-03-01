@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="container">
@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>留言信息</h4>
+                            <h4><i class="fa fa-table"></i>${comment}</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>留言信息</a>
+                                                    <i class="fa fa-home" id="eq"></i>${comment}</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -30,7 +30,7 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="关键字"/>
+                                                           placeholder="会员名称"/>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <button id="searchBtn" class="btn btn-default" onclick="search()">查询
@@ -38,14 +38,14 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade in active" id="tab_1_0">
-                                                <table id="messageListTable"
+                                                <table id="${className}ListTable"
                                                        class="table table-bordered table-hover table-striped"
                                                        data-toggle="bootgrid" data-ajax="true"
-                                                       data-url="/message/data">
+                                                       data-url="/${className}/data">
                                                     <thead>
                                                     <tr>
                                                         <th data-column-id="id" data-width="5%">序号</th>
-                                                        <th data-column-id="content" data-width="55%">内容</th>
+
                                                         <th data-column-id="sortNo" data-width="10%">排序</th>
                                                         <th data-column-id="status" data-width="5%">状态</th>
                                                     </tr>
@@ -67,4 +67,4 @@
         <!-- /CONTENT-->
     </div>
 </div>
-<script type="text/javascript" src="/js/app/message/message.js"></script>
+<script type="text/javascript" src="/js/app/${className}/${className}.js"></script>

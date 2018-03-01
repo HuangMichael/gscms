@@ -9,7 +9,13 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-
+/**
+* ${comment}业务类
+*
+* @author huangbin
+* @generate by autoCode
+* @Date 2018-3-1
+*/
 @Service
 public class ${className?cap_first}Service extends BaseService {
 

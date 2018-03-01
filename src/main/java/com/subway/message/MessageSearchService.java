@@ -1,4 +1,4 @@
-package com.subway.${className};
+package com.subway.message;
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -8,28 +8,28 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
-* ${comment}‰∏öÂä°Êü•ËØ¢Á±ª
+* ¡Ù—‘π‹¿Ì“µŒÒ≤È—Ø¿‡
 *
 * @author huangbin
 * @generate by autoCode
 * @Date 2018-3-1
 */
 @Service
-public class  ${className?cap_first}SearchService extends BaseService implements SortedSearchable {
+public class  MessageSearchService extends BaseService implements SortedSearchable {
 
 @Autowired
-${className?cap_first}Repository  ${className}Repository;
+MessageRepository  messageRepository;
 
 
-public List< ${className?cap_first}> findByConditions(String searchPhrase, int paramsSize) {
+public List< Message> findByConditions(String searchPhrase, int paramsSize) {
 String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-return  ${className}Repository.findAll();
+return  messageRepository.findAll();
 }
 
 
-public Page< ${className?cap_first}> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
+public Page< Message> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
 String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-return  ${className}Repository.findAll( pageable);
+return  messageRepository.findAll( pageable);
 }
 
 }
