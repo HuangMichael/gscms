@@ -40,13 +40,13 @@ public class AutoGenerationJavaCode {
     static {
 
 
-        templateList.add(new com.subway.template.Template("Template.ftl",  ".java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
-        templateList.add(new com.subway.template.Template("serviceTemplate.ftl",  "Service.java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
-        templateList.add(new com.subway.template.Template("searchServiceTemplate.ftl",  "SearchService.java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
-        templateList.add(new com.subway.template.Template("repositoryTemplate.ftl",  "Repository.java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
-        templateList.add(new com.subway.template.Template("controllerTemplate.ftl",  "Controller.java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
-        templateList.add(new com.subway.template.Template("jsTemplate.ftl",  ".js", "E:\\dev\\gscms\\src\\main\\webapp\\js\\app\\"));
-        templateList.add(new com.subway.template.Template("listTemplate.ftl",  "list.jsp", "E:\\dev\\gscms\\src\\main\\webapp\\WEB-INF\\pages\\"));
+        templateList.add(new com.subway.template.Template("Template.ftl", ".java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
+        templateList.add(new com.subway.template.Template("serviceTemplate.ftl", "Service.java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
+        templateList.add(new com.subway.template.Template("searchServiceTemplate.ftl", "SearchService.java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
+        templateList.add(new com.subway.template.Template("repositoryTemplate.ftl", "Repository.java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
+        templateList.add(new com.subway.template.Template("controllerTemplate.ftl", "Controller.java", "E:\\dev\\gscms\\src\\main\\java\\com\\subway\\"));
+        templateList.add(new com.subway.template.Template("jsTemplate.ftl", ".js", "E:\\dev\\gscms\\src\\main\\webapp\\js\\app\\"));
+        templateList.add(new com.subway.template.Template("listTemplate.ftl", "list.jsp", "E:\\dev\\gscms\\src\\main\\webapp\\WEB-INF\\pages\\"));
     }
 
 
@@ -103,12 +103,12 @@ public class AutoGenerationJavaCode {
 
             log.info("path-------" + path);
             String filePath = "";
-            if (template.getFileName().equals(".java")) {
+            if (template.getFileName().endsWith(".java")) {
                 filePath = template.getFileUrl() + "/" + className + "/" + StringUtils.upperCaseFirstOne(className) + template.getFileName();
-            } else if (template.getFileName().equals(".js")) {
-                filePath = template.getFileUrl() + "/" + className + "/" + template.getFileName();
-            } else if (template.getFileName().equals(".jsp")) {
-                filePath = template.getFileUrl() + "list.jsp";
+            } else if (template.getFileName().endsWith(".js")) {
+                filePath = template.getFileUrl() + "/" + className + "/" + className + template.getFileName();
+            } else if (template.getFileName().endsWith(".jsp")) {
+                filePath = template.getFileUrl() + "/" + className + "/" + "list.jsp";
             }
 
             log.info("filePath-----------" + filePath);
