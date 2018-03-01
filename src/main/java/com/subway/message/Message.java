@@ -14,8 +14,9 @@ public class Message {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private long id;
-    @Column(length = 20, unique = true, nullable = false)
+    @Column(name = "id", length = 11, nullable = false)
+
+    private String id;
     private String content;
 
 }

@@ -2,10 +2,7 @@ package com.subway.message;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
-import com.subway.domain.person.Person;
 import com.subway.service.app.ResourceService;
-import com.subway.message.MessageSearchService;
-import com.subway.message.MessageService;
 import com.subway.utils.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -76,8 +73,10 @@ public class MessageController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-        List<Message> dataList = messageSearchService.findByConditions(param, 0);
+        List<Message> dataList = messageSearchService.findByConditions(param, 2);
         messageService.setDataList(dataList);
         messageService.exportExcel(request, response, docName, titles, colNames);
     }
+
+
 }

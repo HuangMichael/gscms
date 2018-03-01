@@ -3,8 +3,6 @@ package com.subway.${className};
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
 import com.subway.service.app.ResourceService;
-import com.subway.${className}.${className?cap_first}SearchService;
-import com.subway.${className}.${className?cap_first}Service;
 import com.subway.utils.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
@@ -14,12 +12,15 @@ import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
+import java.util.List;
 import java.util.Map;
 
 
 /**
 *${comment}控制器类
+* @author huangbin
 */
 @Controller
 @EnableAutoConfiguration
