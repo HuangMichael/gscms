@@ -91,7 +91,7 @@ public class AutoGenerationJavaCode {
 
 
         for (com.subway.template.Template template : templateList) {
-            Template temp = cfg.getTemplate(template.getTemplateName());
+            Template temp = cfg.getTemplate(template.getTemplateName(), "gbk");
 
             String path = template.getFileUrl() + "\\" + className + "\\";
             File dir = new File(path);
@@ -99,9 +99,6 @@ public class AutoGenerationJavaCode {
             if (!dir.exists()) {
                 dir.mkdir();
             }
-
-
-            log.info("path-------" + path);
             String filePath = "";
             if (template.getFileName().endsWith(".java")) {
                 filePath = template.getFileUrl() + "/" + className + "/" + StringUtils.upperCaseFirstOne(className) + template.getFileName();
@@ -110,8 +107,6 @@ public class AutoGenerationJavaCode {
             } else if (template.getFileName().endsWith(".jsp")) {
                 filePath = template.getFileUrl() + "/" + className + "/" + "list.jsp";
             }
-
-            log.info("filePath-----------" + filePath);
             File docFile = new File(filePath);
             Writer docOut = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(docFile)));
             temp.process(rootMap, docOut);
@@ -132,9 +127,15 @@ public class AutoGenerationJavaCode {
         pStemt = conn.prepareStatement(sql);
         ResultSetMetaData rsmd = pStemt.getMetaData();
 
+
         Map<String, Object> columnMap = new HashMap<>();
         int size = rsmd.getColumnCount();
+
+        String cn = "";
         for (int i = 0; i < size; i++) {
+
+            cn = rsmd.getColumnName(i);
+            log.info("cn----------------" + cn);
             String columnName = dealColumnName(rsmd, i);
             columnMap.put(columnName, columnName);
         }
