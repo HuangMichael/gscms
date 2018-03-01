@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="container">
@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>ÁïôË®Ä‰ø°ÊÅØ</h4>
+                            <h4><i class="fa fa-table"></i>¡Ù—‘π‹¿Ì</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>ÁïôË®Ä‰ø°ÊÅØ</a>
+                                                    <i class="fa fa-home" id="eq"></i>¡Ù—‘π‹¿Ì</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -30,10 +30,10 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="ÂÖ≥ÈîÆÂ≠ó"/>
+                                                           placeholder="ª·‘±√˚≥∆"/>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">Êü•ËØ¢
+                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">≤È—Ø
                                                     </button>
                                                 </div>
                                             </div>
@@ -44,10 +44,10 @@
                                                        data-url="/message/data">
                                                     <thead>
                                                     <tr>
-                                                        <th data-column-id="id" data-width="5%">Â∫èÂè∑</th>
-                                                        <th data-column-id="content" data-width="55%">ÂÜÖÂÆπ</th>
-                                                        <th data-column-id="sortNo" data-width="10%">ÊéíÂ∫è</th>
-                                                        <th data-column-id="status" data-width="5%">Áä∂ÊÄÅ</th>
+                                                        <th data-column-id="id" data-width="5%">–Ú∫≈</th>
+
+                                                        <th data-column-id="sortNo" data-width="10%">≈≈–Ú</th>
+                                                        <th data-column-id="status" data-width="5%">◊¥Ã¨</th>
                                                     </tr>
                                                     </thead>
                                                 </table>

@@ -1,4 +1,4 @@
-package com.subway.message;
+package com.subway.template;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
@@ -18,7 +18,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
-* 留言管理控制器类
+* 模板管理控制器类
 *
 * @author huangbin
 * @generate by autoCode
@@ -26,15 +26,15 @@ import java.util.Map;
 */
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/message")
-public class MessageController extends BaseController {
+@RequestMapping("/template")
+public class TemplateController extends BaseController {
 
 @Autowired
 ResourceService resourceService;
 @Autowired
-MessageService messageService;
+TemplateService templateService;
 @Autowired
-MessageSearchService messageSearchService;
+TemplateSearchService templateSearchService;
 
 
 @RequestMapping(value = "/data", method = RequestMethod.POST)
@@ -43,23 +43,23 @@ public MyPage data(HttpSession session, HttpServletRequest request, @RequestPara
 Map
 <String, String[]> parameterMap = request.getParameterMap();
 Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-return new PageUtils().searchBySortService(messageSearchService, searchPhrase, 1, current, rowCount, pageable);
+return new PageUtils().searchBySortService(templateSearchService, searchPhrase, 1, current, rowCount, pageable);
 }
 
 
 @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
 @ResponseBody
-public Message findById(@PathVariable("id") Long id) {
-return messageService.findById(id);
+public Template findById(@PathVariable("id") Long id) {
+return templateService.findById(id);
 }
 
 
 @ResponseBody
 @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
 public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-List< Message> dataList = messageSearchService.findByConditions(param, 2);
-messageService.setDataList(dataList);
-messageService.exportExcel(request, response, docName, titles, colNames);
+List< Template> dataList = templateSearchService.findByConditions(param, 2);
+templateService.setDataList(dataList);
+templateService.exportExcel(request, response, docName, titles, colNames);
 }
 
 
