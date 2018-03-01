@@ -128,10 +128,7 @@ public class AutoGenerationJavaCode {
         ResultSetMetaData rsmd = pStemt.getMetaData();
         Map<String, Object> columnMap = new HashMap<>();
         int size = rsmd.getColumnCount();
-        String cn;
         for (int i = 0; i < size; i++) {
-            cn = rsmd.getColumnName(i);
-            log.info("cn----------------" + cn);
             String columnName = dealColumnName(rsmd, i);
             columnMap.put(columnName, columnName);
         }
