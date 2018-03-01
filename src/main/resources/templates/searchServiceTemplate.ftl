@@ -12,10 +12,7 @@ import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
-/**
-* ${comment}查询业务类
-*  huangbin
-*/
+
 
 @Service
 public class  ${className?cap_first}SearchService extends BaseService implements SortedSearchable {
@@ -23,21 +20,13 @@ public class  ${className?cap_first}SearchService extends BaseService implements
 @Autowired
 ${className?cap_first}Repository  ${className}Repository;
 
-/**
-* @param searchPhrase
-* @param paramsSize
-* @return
-*/
+
 public List< ${className?cap_first}> findByConditions(String searchPhrase, int paramsSize) {
 String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
 return  ${className}Repository.findAll();
 }
 
-/**
-* @param searchPhrase
-* @param paramsSize
-* @return
-*/
+
 public Page< ${className?cap_first}> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
 String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
 return  ${className}Repository.findAll( pageable);

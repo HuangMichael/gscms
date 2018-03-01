@@ -4,9 +4,7 @@ import lombok.Data;
 
 import javax.persistence.*;
 
-/**
-* ${comment}信息
-*/
+
 @Entity
 @Table(name = "${tableName}")
 @Data
