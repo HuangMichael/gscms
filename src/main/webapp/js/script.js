@@ -651,13 +651,6 @@ var App = function () {
     };
     return {
         init: function () {
-            if (App.isPage("workOrder")) {
-                handleCalendar();
-                handleGritter()
-            }
-            if (App.isPage("equipments")) {
-                // handleRaty()
-            }
             if (App.isPage("portal")) {
                 handleCalendar();
                 handleGritter()

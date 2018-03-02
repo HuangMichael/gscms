@@ -2,7 +2,6 @@ package com.subway.dao.dev;
 
 
 import com.subway.domain.dev.App;
-import com.subway.domain.member.Member;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.CrudRepository;

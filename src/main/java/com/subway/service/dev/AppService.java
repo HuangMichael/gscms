@@ -1,9 +1,7 @@
 package com.subway.service.dev;
 
 import com.subway.dao.dev.AppRepository;
-import com.subway.dao.member.MemberRepository;
 import com.subway.domain.dev.App;
-import com.subway.domain.member.Member;
 import com.subway.service.app.BaseService;
 import com.subway.utils.autoCode.AutoGenerationJavaCode;
 import org.springframework.beans.factory.annotation.Autowired;

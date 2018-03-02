@@ -1,46 +1,55 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<form class="form-horizontal myform"  id="detailForm">
+<form class="form-horizontal myform" id="detailForm" method="post">
     <div class="form-group">
         <div class="col-md-2 col-sm-2 col-lg-2">
             <label for="name">站点名称</label>
         </div>
         <div class="col-md-4 col-sm-4 col-lg-4">
-           <input class="form-control" id ="name" name ="name"  v-model="site.name">
+            <input class="form-control" id="name" name="name" v-model="site.name" required>
+        </div>
+        <div class="col-md-2 col-sm-2 col-lg-2">
+            <label for="status">域名</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <input class="form-control" id="domainName" name="domainName" v-model="site.domainName">
         </div>
     </div>
     <div class="form-group">
-        <%--<div class="col-md-2 col-sm-2 col-lg-2">--%>
-            <%--<label for="locations_id">我的位置</label>--%>
-        <%--</div>--%>
-        <%--<div class="col-md-4 col-sm-4 col-lg-4">--%>
-            <%--<select v-model="user.vlocations.id" class="form-control" id="locations_id" name="vlocations.id"--%>
-                    <%--required style="width:100%" required>--%>
-                <%--<template v-for="option in locs">--%>
-                    <%--<option :value="option.id" v-if="option.id == user.vlocations.id" selected>--%>
-                        <%--{{option.locName }}--%>
-                    <%--</option>--%>
-                    <%--<option :value="option.id" v-else>--%>
-                        <%--{{option.locName }}--%>
-                    <%--</option>--%>
-                <%--</template>--%>
-            <%--</select>--%>
-        <%--</div>--%>
+        <div class="col-md-2 col-sm-2 col-lg-2">
+            <label for="name">开始时间</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <input class="form-control" id="beginTime" name="beginTime" v-model="site.beginTime">
+        </div>
+        <div class="col-md-2 col-sm-2 col-lg-2">
+            <label for="status">结束时间</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <input class="form-control" id="endTime" name="endTime" v-model="site.endTime">
+        </div>
+    </div>
 
-    <div class="col-md-2 col-sm-2 col-lg-2">
-        <label for="status">状态</label>
-    </div>
-    <div class="col-md-4 col-sm-4 col-lg-4">
-        <select class="form-control" id="status" name="status" required v-model="site.status" style="width:100%"
-                required>
-            <option value="1" selected>启用</option>
-            <option value="0">禁用</option>
-        </select>
-    </div>
+    <div class="form-group">
+        <div class="col-md-2 col-sm-2 col-lg-2">
+            <label for="name">部署主机</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <input class="form-control" id="deployHost" name="deployHost" v-model="site.deployHost">
+        </div>
+        <div class="col-md-2 col-sm-2 col-lg-2">
+            <label for="status">状态</label>
+        </div>
+        <div class="col-md-4 col-sm-4 col-lg-4">
+            <select class="form-control" id="status" name="status" required v-model="site.status" style="width:100%"
+                    required>
+                <option value="1" selected>启用</option>
+                <option value="0">禁用</option>
+            </select>
+        </div>
     </div>
     <div class="modal-footer">
-        <button  id="saveBtn" name="saveBtn" class="btn btn-primary btn-danger">保存记录
-        </button>
+        <button id="saveBtn" name="saveBtn" class="btn btn-primary btn-danger" type="submit">保存记录</button>
     </div>
 </form>
 

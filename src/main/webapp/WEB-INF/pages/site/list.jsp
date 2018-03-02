@@ -13,7 +13,6 @@
                         <div class="box-title">
                             <h4><i class="fa fa-users"></i>站点信息</h4>
                         </div>
-
                         <%@ include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
                             <div class="tabbable">
@@ -49,7 +48,6 @@
                             </div>
                         </div>
                     </div>
-                    <!-- /BOX -->
                 </div>
             </div>
             <%@include file="../common/common-back2top.jsp" %>
@@ -57,7 +55,18 @@
         <!-- /CONTENT-->
     </div>
 </div>
+<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">&times;</button>
+                <h4 class="modal-title" id="myModalLabel">新增记录</h4>
+            </div>
+            <div class="modal-body">
+                <%@include file="form.jsp" %>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
+</div>
 <%@include file="../common/common-foot.jsp" %>
 <script type="text/javascript" src="/js/app/site/site.js"></script>
-
-
