@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>栏目信息</h4>
+                            <h4><i class="fa fa-table"></i>վ�����</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>栏目信息</a>
+                                                    <i class="fa fa-home" id="eq"></i>վ�����</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -30,7 +30,7 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="会员名称"/>
+                                                           placeholder="关键�?"/>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <button id="searchBtn" class="btn btn-default" onclick="search()">查询
@@ -44,10 +44,7 @@
                                                        data-url="/columns/data">
                                                     <thead>
                                                     <tr>
-                                                        <th data-column-id="id" data-width="5%">序号</th>
-                                                        <th data-column-id="id" data-type="numeric" data-identifier="true" data-visible="false" data-width="5%">ID</th>
-                                                        <th data-column-id="sortNo" data-width="10%">排序</th>
-                                                        <th data-column-id="status" data-width="5%">状态</th>
+                                                        <%@include file="tableList.jsp" %>
                                                     </tr>
                                                     </thead>
                                                 </table>

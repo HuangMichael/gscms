@@ -21,6 +21,9 @@ public class App {
     private String name; //栏目名称
 
     @Column(length = 50, nullable = false)
+    private String packageName; //包名
+
+    @Column(length = 50, nullable = false)
     private String className; //栏目类别
 
     @Column(length = 20, nullable = false)

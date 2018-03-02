@@ -1,5 +1,6 @@
 package com.subway.columns;
 
+
 import com.subway.site.Site;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
@@ -41,3 +42,4 @@ public class Columns implements Serializable {
     @Column(length = 1, nullable = false)
     private String status;//״̬
 }
+

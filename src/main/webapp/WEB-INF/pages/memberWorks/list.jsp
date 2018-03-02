@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>会员作品</h4>
+                            <h4><i class="fa fa-table"></i>锟斤拷员锟斤拷品</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>会员作品</a>
+                                                    <i class="fa fa-home" id="eq"></i>锟斤拷员锟斤拷品</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -44,10 +44,7 @@
                                                        data-url="/memberWorks/data">
                                                     <thead>
                                                     <tr>
-                                                        <th data-column-id="id" data-width="5%">搴忓彿</th>
-
-                                                        <th data-column-id="sortNo" data-width="10%">鎺掑簭</th>
-                                                        <th data-column-id="status" data-width="5%">鐘舵??</th>
+                                                        <%@include file="tableList.jsp" %>
                                                     </tr>
                                                     </thead>
                                                 </table>
