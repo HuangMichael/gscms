@@ -18,7 +18,6 @@ public class TableConfig implements Serializable {
     @Column(name = "id", length = 11, nullable = false)
     private Long id; //序号
 
-
     @Column(length = 50, nullable = false)
     private String tableName; //表的名称
 
@@ -30,7 +29,6 @@ public class TableConfig implements Serializable {
 
     @Column(length = 100, nullable = false)
     private String serviceName; //业务类名称
-
 
     @Column(length = 100, nullable = false)
     private String searchServiceName; //查询业务类名称

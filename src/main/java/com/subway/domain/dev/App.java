@@ -1,5 +1,7 @@
 package com.subway.domain.dev;
 
+import com.subway.domain.person.Person;
+import com.subway.tableConfig.TableConfig;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -28,6 +30,10 @@ public class App {
 
     @Column(length = 20, nullable = false)
     private String tableName;//生效时间
+
+    @OneToOne
+    @JoinColumn(name = "table_config_id")
+    private TableConfig tableConfig;
 
     @Column(length = 50, nullable = false)
     private String appDesc;//生效时间
