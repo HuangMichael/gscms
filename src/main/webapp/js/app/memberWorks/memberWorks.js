@@ -1,5 +1,5 @@
 /**
- * Created by huangbin on 2016/11/2.
+ * Created by huangbin on 2018-3-1 09:46:42.
 
  */
 
@@ -7,9 +7,9 @@
 $(function () {
 
 
-    //导出必须配置的两个量
+//导出必须配置的两个量
     dataTableName = "#memberWorksListTable";
-    docName = "会员作品";
+    docName = "��Ա��Ʒ";
     mainObject = "memberWorks";
 
 
@@ -20,7 +20,7 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "会员名称"}
+        {"param": "name", "paramDesc": "关键�?"}
     ];
 
     initBootGrid(dataTableName);
