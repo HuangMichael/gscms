@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>��Ա����</h4>
+                            <h4><i class="fa fa-table"></i>会员信息</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>��Ա����</a>
+                                                    <i class="fa fa-home" id="eq"></i>会员信息</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -45,9 +45,14 @@
                                                     <thead>
                                                     <tr>
                                                         <th data-column-id="id" data-width="5%">序号</th>
-
-                                                        <th data-column-id="sortNo" data-width="10%">排序</th>
-                                                        <th data-column-id="status" data-width="5%">状�??</th>
+                                                        <th data-column-id="id" data-type="numeric" data-identifier="true" data-visible="false" data-width="5%">ID</th>
+                                                        <th data-column-id="name" data-width="10%">会员名称</th>
+                                                        <th data-column-id="cardNo" data-width="10%">会员证号</th>
+                                                        <th data-column-id="enterDate" data-width="10%">加入时间</th>
+                                                        <th data-column-id="createTime" data-width="10%">创建时间</th>
+                                                        <th data-column-id="hasPhoto" data-width="10%">是否有照片</th>
+                                                        <th data-column-id="memberType" data-width="10%">会员类型</th>
+                                                        <th data-column-id="status" data-width="5%">状态</th>
                                                     </tr>
                                                     </thead>
                                                 </table>

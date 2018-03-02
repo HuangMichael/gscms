@@ -1,7 +1,5 @@
-package com.subway.service.site;
+package com.subway.site;
 
-import com.subway.dao.site.SiteRepository;
-import com.subway.domain.site.Site;
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,30 +10,28 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Á´ôÁÇπ‰ø°ÊÅØÊé•Âè£
+ * ’æµ„π‹¿Ì‰∏öÂä°Êü•ËØ¢Á±?
+ *
+ * @author huangbin
+ * @generate by autoCode
+ * @Date 2018-3-1
  */
 @Service
 public class SiteSearchService extends BaseService implements SortedSearchable {
+
     @Autowired
     SiteRepository siteRepository;
 
-    /**
-     * @param searchPhrase
-     * @param paramsSize
-     * @return
-     */
+
     public List<Site> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return siteRepository.findByNameContaining(array[0]);
+        return siteRepository.findAll();
     }
 
-    /**
-     * @param searchPhrase
-     * @param paramsSize
-     * @return
-     */
+
     public Page<Site> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return siteRepository.findByNameContaining(array[0], pageable);
+        return siteRepository.findAll(pageable);
     }
+
 }

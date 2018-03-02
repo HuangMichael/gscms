@@ -1,6 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
-<%@include file="../common/common-head.jsp" %>
+<%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="container">
     <div class="row">
         <div id="content" class="col-lg-12">
@@ -11,43 +11,55 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-users"></i>站点信息</h4>
+                            <h4><i class="fa fa-table"></i>վ�����</h4>
                         </div>
-                        <%@ include file="../common/common-menubar.jsp" %>
+                        <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
-                            <div class="tabbable">
-                                <ul class="nav nav-tabs" id="myTab">
-                                    <li class="active"><a href="#tab_1_0" data-toggle="tab"
-                                                          style="font-family: 微软雅黑;font-weight: bold">
-                                        <i class="fa fa-home" id="eq"></i>站点信息</a>
-                                    </li>
-                                    <li><a href="#tab_1_1" data-toggle="tab"
-                                           style="font-family: 微软雅黑;font-weight: bold">
-                                        <i class="fa fa-flag" id="eqDetail"></i>站点详细信息</a>
-                                    </li>
-                                </ul>
-                                <div class="tab-content">
-                                    <div class="tab-pane fade in active" id="tab_1_0">
-                                        <div class="form-group" style="margin-bottom:10px;position:inherit"
-                                             id="searchBox">
-                                            <div class="col-md-2">
-                                                <input class="form-control" id="name" name="name"
-                                                       placeholder="站点名称"/>
+                            <div id="contentDiv">
+                                <div class="box-body">
+                                    <div class="tabbable">
+                                        <ul class="nav nav-tabs" id="myTab">
+                                            <li class="active">
+                                                <a href="#tab_1_0" data-toggle="tab">
+                                                    <i class="fa fa-home" id="eq"></i>վ�����</a>
+                                            </li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div class="form-group" style="margin-bottom:10px;position:inherit"
+                                                 id="searchBox">
+                                                <div class="col-md-2">
+                                                    <input class="form-control" id="name"
+                                                           name="name"
+                                                           placeholder="会员名称"/>
+                                                </div>
+                                                <div class="col-md-2">
+                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">查询
+                                                    </button>
+                                                </div>
                                             </div>
-                                            <div class="col-md-2">
-                                                <button id="searchBtn" class="btn btn-default" onclick="search()">查询
-                                                </button>
+                                            <div class="tab-pane fade in active" id="tab_1_0">
+                                                <table id="siteListTable"
+                                                       class="table table-bordered table-hover table-striped"
+                                                       data-toggle="bootgrid" data-ajax="true"
+                                                       data-url="/site/data">
+                                                    <thead>
+                                                    <tr>
+                                                        <th data-column-id="id" data-width="5%">序号</th>
+
+                                                        <th data-column-id="sortNo" data-width="10%">排序</th>
+                                                        <th data-column-id="status" data-width="5%">状�??</th>
+                                                    </tr>
+                                                    </thead>
+                                                </table>
                                             </div>
+
                                         </div>
-                                        <%@include file="userList.jsp" %>
-                                    </div>
-                                    <div class="tab-pane fade" id="tab_1_1" style="padding: 20px">
-                                        <%@include file="form.jsp" %>
                                     </div>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- /BOX -->
                 </div>
             </div>
             <%@include file="../common/common-back2top.jsp" %>
@@ -55,18 +67,4 @@
         <!-- /CONTENT-->
     </div>
 </div>
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-    <div class="modal-dialog">
-        <div class="modal-content">
-            <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal">&times;</button>
-                <h4 class="modal-title" id="myModalLabel">新增记录</h4>
-            </div>
-            <div class="modal-body">
-                <%@include file="form.jsp" %>
-            </div>
-        </div><!-- /.modal-content -->
-    </div><!-- /.modal -->
-</div>
-<%@include file="../common/common-foot.jsp" %>
 <script type="text/javascript" src="/js/app/site/site.js"></script>

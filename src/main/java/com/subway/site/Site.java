@@ -1,4 +1,4 @@
-package com.subway.domain.site;
+package com.subway.site;
 
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;

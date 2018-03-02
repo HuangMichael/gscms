@@ -1,6 +1,6 @@
 package com.subway.domain.columns;
 
-import com.subway.domain.site.Site;
+import com.subway.site.Site;
 import lombok.Data;
 import org.springframework.format.annotation.DateTimeFormat;
 
