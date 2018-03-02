@@ -77,7 +77,7 @@ public class AutoGenerationJavaCode {
     public void genCode() throws IOException, TemplateException, ClassNotFoundException,
             SQLException {
         Configuration cfg = new Configuration(new Version("2.3.27-incubating"));
-        cfg.setDefaultEncoding("UTF-8");
+        cfg.setDefaultEncoding("GBK");
         String className = dealTableName();
         String fileName = dealClassName(className);
         Map<String, Object> columnMap = getColumn();

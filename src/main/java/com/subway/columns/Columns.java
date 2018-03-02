@@ -1,4 +1,4 @@
-package com.subway.domain.columns;
+package com.subway.columns;
 
 import com.subway.site.Site;
 import lombok.Data;
@@ -9,7 +9,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * æ ç›®ä¿¡æ¯
+ * À¸Ä¿ĞÅÏ¢
  */
 @Entity
 @Table(name = "T_COLUMNS")
@@ -21,23 +21,23 @@ public class Columns implements Serializable {
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "site_id", referencedColumnName = "id")
-    private Site site;  //ç«™ç‚¹åç§°
+    private Site site;  //Õ¾µãÃû³Æ
 
     @Column(length = 20, nullable = false)
-    private String name; //æ ç›®åç§°
+    private String name; //À¸Ä¿Ãû³Æ
 
     @Column(length = 20, nullable = false)
-    private String type; //æ ç›®ç±»åˆ«
+    private String type; //À¸Ä¿Àà±ğ
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private Date beginTime;//ç”Ÿæ•ˆæ—¶é—´
+    private Date beginTime;//ÉúĞ§Ê±¼ä
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private Date endTime;//å¤±æ•ˆæ—¶é—´
+    private Date endTime;//Ê§Ğ§Ê±¼ä
 
     @Column(length = 20, nullable = false)
-    private String sortNo;//æ’åº
+    private String sortNo;//ÅÅĞò
 
     @Column(length = 1, nullable = false)
-    private String status;//çŠ¶æ€
+    private String status;//×´Ì¬
 }
