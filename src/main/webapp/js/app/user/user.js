@@ -31,7 +31,7 @@ $(function () {
     mainObject = "user";
     //初始化从数据库获取列表数据
     searchModel = [{"param": "userName", "paramDesc": "用户名"}];
-    locs = findMyLoc();
+    locs = [];
 
     var person_location = "/commonData/findActivePerson";
     $.getJSON(person_location, function (data) {

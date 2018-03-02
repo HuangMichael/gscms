@@ -92,7 +92,6 @@
         var url = "/commonData/reload";
         $.getJSON(url, function (data) {
             showMessageBox("info", "数据加载成功");
-            console.log("data-----------" + JSON.stringify(data));
         });
     }
 
@@ -152,14 +151,8 @@
      * @returns {number} 查询过期的工单数量
      */
     function getExpiredCount() {
-        $.ajaxSettings.async = false;
-        var expiredCount = 0;
-        var url = "/workOrderFix/findExpired";
-        $.getJSON(url, function (data) {
-            expiredCount = data;
-            $("#expiredOrderSize").html(expiredCount);
-        });
-        return expiredCount;
+
+        return 0;
     }
 
 </script>

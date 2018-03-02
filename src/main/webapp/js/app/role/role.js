@@ -45,7 +45,7 @@ $(function () {
     mainObject = "role";
     //初始化从数据库获取列表数据
     searchModel = [{"param": "roleName", "paramDesc": "角色名称"}, {"param": "roleDesc", "paramDesc": "角色描述"}];
-    locs = findMyLoc();
+    // locs = findMyLoc();
     var person_location = "/commonData/findActivePerson";
     $.getJSON(person_location, function (data) {
         persons = data;
@@ -63,7 +63,7 @@ $(function () {
         el: formName,
         data: {
             role: findById(selectedIds[pointer]),
-            locs: locs,
+            // locs: locs,
             persons: persons
         }
     });

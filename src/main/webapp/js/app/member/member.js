@@ -13,7 +13,7 @@ $(function () {
     mainObject = "member";
 
 
-    initSelect();
+    // initSelect();
 
     var searchVue = new Vue({
         el: "#searchBox"
