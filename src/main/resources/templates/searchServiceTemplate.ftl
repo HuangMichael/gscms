@@ -1,4 +1,4 @@
-package com.subway.${className};
+package com.subway.${subDirName};
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;

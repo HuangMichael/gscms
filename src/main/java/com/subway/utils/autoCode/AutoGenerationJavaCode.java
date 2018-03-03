@@ -150,8 +150,10 @@ public class AutoGenerationJavaCode {
             } else if (template.getFileName().equals("tableList.jsp")) {
                 filePath = template.getFileUrl() + "/" + subDirName + "/" + "tableList.jsp";
             }
-            File docFile = new File(filePath);
 
+
+            log.info("filePath---------------"+filePath);
+            File docFile = new File(filePath);
             if (!docFile.exists()) {
                 Writer docOut = new BufferedWriter(new OutputStreamWriter(new FileOutputStream(docFile)));
                 temp.process(rootMap, docOut);

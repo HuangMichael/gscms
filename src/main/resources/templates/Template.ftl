@@ -1,4 +1,4 @@
-package com.subway.${className};
+package com.subway.${subDirName};
 
 import lombok.Data;
 

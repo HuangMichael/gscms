@@ -1,13 +1,11 @@
 package com.subway.message;
 
-import java.util.List;
-import java.util.Map;
 
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
 /**
- * 留言管理数据库访问接口
+ * 留言信息数据库访问接口
  *
  * @author huangbin
  * @generate by autoCode

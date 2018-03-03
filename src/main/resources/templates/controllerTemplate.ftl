@@ -1,4 +1,4 @@
-package com.subway.${className};
+package com.subway.${subDirName};
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;

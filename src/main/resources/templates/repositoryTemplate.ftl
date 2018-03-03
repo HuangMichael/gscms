@@ -1,4 +1,4 @@
-package com.subway.${className};
+package com.subway.${subDirName};
 import java.util.List;
 import java.util.Map;
 import org.springframework.data.jpa.repository.JpaRepository;

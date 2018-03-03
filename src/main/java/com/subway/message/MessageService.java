@@ -10,7 +10,7 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
- * 留言管理业务类
+ * 留言信息业务类
  *
  * @author huangbin
  * @generate by autoCode
@@ -23,7 +23,8 @@ public class MessageService extends BaseService {
     @Autowired
     MessageRepository messageRepository;
 
-    public List <Message> findAll() {
+    public List
+            <Message> findAll() {
         return messageRepository.findAll();
     }
 
