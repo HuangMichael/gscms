@@ -1,14 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<th data-column-id="id" data-width="5%">ÐòºÅ</th>
-<th data-column-id="audit_status" data-width="5%">ÉóºË×´Ì¬</th>
-<th data-column-id="content" data-width="5%">ÄÚÈÝ</th>
-<th data-column-id="create_time" data-width="5%">´´½¨Ê±¼ä</th>
-<th data-column-id="creator" data-width="5%">´´½¨ÈË</th>
-<th data-column-id="focus_pic_url" data-width="5%">½¹µãÍ¼Æ¬</th>
-<th data-column-id="release_time" data-width="5%">·¢²¼Ê±¼ä</th>
-<th data-column-id="sort_no" data-width="5%">ÅÅÐò</th>
-<th data-column-id="status" data-width="5%">×´Ì¬</th>
-<th data-column-id="title" data-width="5%">±êÌâ</th>
-<th data-column-id="columns_id" data-width="5%">ËùÊôÀ¸Ä¿</th>
-<th data-column-id="site_id" data-width="5%">ËùÊôÕ¾µã</th>
-
+<th data-column-id="id" data-width="5%">åºå·</th>
+<th data-column-id="site_id" data-width="5%">ç«™ç‚¹</th>
+<th data-column-id="columns_id" data-width="5%">æ ç›®</th>
+<th data-column-id="title" data-width="5%">æ ‡é¢˜</th>
+<th data-column-id="content" data-width="5%">å†…å®¹</th>
+<th data-column-id="focus_pic_url" data-width="5%">ç„¦ç‚¹å›¾ç‰‡</th>
+<th data-column-id="create_time" data-width="5%">åˆ›å»ºæ—¶é—´</th>
+<th data-column-id="creator" data-width="5%">åˆ›å»ºäºº</th>
+<th data-column-id="release_time" data-width="5%">å‘å¸ƒæ—¶é—´</th>
+<th data-column-id="sort_no" data-width="5%">æŽ’åº</th>
+<th data-column-id="status" data-width="5%">çŠ¶æ€</th>
+<th data-column-id="audit_status" data-width="5%">å®¡æ ¸çŠ¶æ€</th>

@@ -1,7 +1,6 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
-<link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/default.min.css">
 <div class="container">
     <div class="row">
         <div id="content" class="col-lg-12">
@@ -45,12 +44,7 @@
                                                        data-url="/pavilionAuthor/data">
                                                     <thead>
                                                     <tr>
-                                                        <th data-column-id="id" data-width="5%">序号</th>
-                                                        <th data-column-id="name" data-width="10%">作者姓名</th>
-                                                        <th data-column-id="hasPhoto" data-width="10%">是否有照片</th>
-                                                        <th data-column-id="createTime" data-width="10%">创建时间</th>
-                                                        <th data-column-id="sortNo" data-width="10%">排序</th>
-                                                        <th data-column-id="status" data-width="10%">状态</th>
+                                                        <%@include file="tableList.jsp" %>
                                                     </tr>
                                                     </thead>
                                                 </table>

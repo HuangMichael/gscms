@@ -395,12 +395,12 @@ function exportExcelByName(dataTableName, nodeState, docName) {
 function initSelect() {
 
 
-    $("select").select2({
+  /*  $("select").select2({
         theme: "bootstrap",
         tags: "true",
         placeholder: "请选择...",
         allowClear: true
-    });
+    });*/
 }
 
 

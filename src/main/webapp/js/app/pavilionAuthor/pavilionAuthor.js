@@ -13,7 +13,6 @@ $(function () {
     mainObject = "pavilionAuthor";
 
 
-    initSelect();
 
     var searchVue = new Vue({
         el: "#searchBox"

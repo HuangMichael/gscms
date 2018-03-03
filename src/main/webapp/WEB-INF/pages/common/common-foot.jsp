@@ -1,3 +1,4 @@
+<%@ page contentType="text/html;charset=UTF-8" %>
 <script type="text/javascript" src="js/jquery/jquery-2.0.3.min.js"></script>
 <script type="text/javascript" src="js/vue/vue.js"></script>
 <script type="text/javascript" src="bootstrap-dist/js/bootstrap.js"></script>

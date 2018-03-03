@@ -30,10 +30,10 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="�ؼ���"/>
+                                                           placeholder="关键字"/>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">��ѯ
+                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">查询
                                                     </button>
                                                 </div>
                                             </div>

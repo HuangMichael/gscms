@@ -11,7 +11,6 @@ $(function () {
     dataTableName = "#pavilionWorksListTable";
     docName = "展馆作品";
     mainObject = "pavilionWorks";
-    initSelect();
 
     var searchVue = new Vue({
         el: "#searchBox"
