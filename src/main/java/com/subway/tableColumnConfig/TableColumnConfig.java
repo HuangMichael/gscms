@@ -42,7 +42,7 @@ public class TableColumnConfig implements Serializable {
 
     @ManyToOne
     @JoinColumn(name = "table_id", referencedColumnName = "id", nullable = false)
-    private TableConfig table; //所对应的EtlTable
+    private TableConfig tableConfig; //所对应的EtlTable
 
 
     @Column(length = 2)

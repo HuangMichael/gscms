@@ -15,21 +15,21 @@ import java.util.List;
 * @Date 2018-3-1
 */
 @Service
-public class  ${className?cap_first}SearchService extends BaseService implements SortedSearchable {
+public class  ${className}SearchService extends BaseService implements SortedSearchable {
 
 @Autowired
-${className?cap_first}Repository  ${className}Repository;
+${className}Repository  ${subDirName}Repository;
 
 
-public List< ${className?cap_first}> findByConditions(String searchPhrase, int paramsSize) {
+public List< ${className}> findByConditions(String searchPhrase, int paramsSize) {
 String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-return  ${className}Repository.findAll();
+return  ${subDirName}Repository.findAll();
 }
 
 
-public Page< ${className?cap_first}> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
+public Page< ${className}> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
 String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-return  ${className}Repository.findAll( pageable);
+return  ${subDirName}Repository.findAll( pageable);
 }
 
 }

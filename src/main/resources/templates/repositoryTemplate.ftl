@@ -12,7 +12,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 * @Date 2018-3-1
 */
 
-public interface ${className?cap_first}Repository extends JpaRepository<${className?cap_first}, Long> {
+public interface ${className}Repository extends JpaRepository<${className}, Long> {
 
 
 }

@@ -27,6 +27,9 @@ public class TableConfig implements Serializable {
     @Column(length = 100, nullable = false)
     private String domainName; //实体类名称
 
+    @Column(length = 50, nullable = false)
+    private String shortName; //实体类名称
+
     @Column(length = 100, nullable = false)
     private String serviceName; //业务类名称
 

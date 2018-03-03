@@ -26,40 +26,39 @@ import java.util.Map;
 */
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/${className}")
-public class ${className?cap_first}Controller extends BaseController {
+@RequestMapping("/${subDirName}")
+public class ${className}Controller extends BaseController {
 
 @Autowired
 ResourceService resourceService;
 @Autowired
-${className?cap_first}Service ${className}Service;
+${className}Service ${subDirName}Service;
 @Autowired
-${className?cap_first}SearchService ${className}SearchService;
+${className}SearchService ${subDirName}SearchService;
 
 
 @RequestMapping(value = "/data", method = RequestMethod.POST)
 @ResponseBody
 public MyPage data(HttpSession session, HttpServletRequest request, @RequestParam(value = "current", defaultValue = "0") int current, @RequestParam(value = "rowCount", defaultValue = "10") Long rowCount, @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
-Map
-<String, String[]> parameterMap = request.getParameterMap();
+Map<String, String[]> parameterMap = request.getParameterMap();
 Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-return new PageUtils().searchBySortService(${className}SearchService, searchPhrase, 1, current, rowCount, pageable);
+return new PageUtils().searchBySortService(${subDirName}SearchService, searchPhrase, 1, current, rowCount, pageable);
 }
 
 
 @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
 @ResponseBody
-public ${className?cap_first} findById(@PathVariable("id") Long id) {
-return ${className}Service.findById(id);
+public ${className} findById(@PathVariable("id") Long id) {
+return ${subDirName}Service.findById(id);
 }
 
 
 @ResponseBody
 @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
 public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-List< ${className?cap_first}> dataList = ${className}SearchService.findByConditions(param, 2);
-${className}Service.setDataList(dataList);
-${className}Service.exportExcel(request, response, docName, titles, colNames);
+List< ${className}> dataList = ${subDirName}SearchService.findByConditions(param, 2);
+${subDirName}Service.setDataList(dataList);
+${subDirName}Service.exportExcel(request, response, docName, titles, colNames);
 }
 
 

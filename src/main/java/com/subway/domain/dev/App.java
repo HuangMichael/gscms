@@ -1,13 +1,12 @@
 package com.subway.domain.dev;
 
-import com.subway.domain.person.Person;
 import com.subway.tableConfig.TableConfig;
 import lombok.Data;
 
 import javax.persistence.*;
 
 /**
- * 栏目信息
+ * 应用信息
  */
 @Entity
 @Table(name = "T_APP")
@@ -20,23 +19,15 @@ public class App {
     private Long id;
 
     @Column(length = 20, nullable = false)
-    private String name; //栏目名称
+    private String name; //应用名称
+
 
     @Column(length = 50, nullable = false)
-    private String packageName; //包名
-
-    @Column(length = 50, nullable = false)
-    private String className; //栏目类别
-
-    @Column(length = 20, nullable = false)
-    private String tableName;//生效时间
+    private String appDesc;//生效时间
 
     @OneToOne
     @JoinColumn(name = "table_config_id")
     private TableConfig tableConfig;
-
-    @Column(length = 50, nullable = false)
-    private String appDesc;//生效时间
 
     @Column(length = 20, nullable = false)
     private String sortNo;//排序

@@ -17,26 +17,26 @@ import org.springframework.stereotype.Service;
 * @Date 2018-3-1
 */
 @Service
-public class ${className?cap_first}Service extends BaseService {
+public class ${className}Service extends BaseService {
 
 
 @Autowired
-${className?cap_first}Repository ${className}Repository;
+${className}Repository ${subDirName}Repository;
 
 public List
-<${className?cap_first}> findAll() {
-return  ${className}Repository.findAll();
+<${className}> findAll() {
+return  ${subDirName}Repository.findAll();
 }
 
 
 
-public Page< ${className?cap_first}> findAll(Pageable pageable) {
-return  ${className}Repository.findAll(pageable);
+public Page< ${className}> findAll(Pageable pageable) {
+return  ${subDirName}Repository.findAll(pageable);
 }
 
 
-public  ${className?cap_first} findById(Long id) {
-return  ${className}Repository.getOne(id);
+public  ${className} findById(Long id) {
+return  ${subDirName}Repository.getOne(id);
 }
 
 }

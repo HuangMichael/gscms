@@ -15,10 +15,10 @@ import java.io.Serializable;
 @Entity
 @Table(name = "${tableName}")
 @Data
-public class ${className?cap_first}  implements Serializable {
+public class ${className}  implements Serializable {
 
-<#list columnMap?keys as key>
-private String ${key};
+<#list columns as c>
+private ${c.dataType} ${c.colName};
 </#list>
 
 }
