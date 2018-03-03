@@ -112,7 +112,7 @@ public class AutoGenerationJavaCode {
     public void genCode(App app,List<TableColumnConfig> tableColumnConfigList) throws IOException, TemplateException, ClassNotFoundException,
             SQLException {
         Configuration cfg = new Configuration(new Version("2.3.27-incubating"));
-        cfg.setDefaultEncoding("GBK");
+        cfg.setDefaultEncoding("UTF-8");
 
         TableConfig tableConfig = app.getTableConfig();
         String className = tableConfig.getShortName();
@@ -142,13 +142,13 @@ public class AutoGenerationJavaCode {
             }
             String filePath = "";
             if (template.getFileName().endsWith(".java")) {
-                filePath = template.getFileUrl() + "/" + subDirName + "/" + className + template.getFileName();
+                filePath = template.getFileUrl()  + subDirName + "/" + className + template.getFileName();
             } else if (template.getFileName().endsWith(".js")) {
-                filePath = template.getFileUrl() + "/" + subDirName + "/" + subDirName + template.getFileName();
+                filePath = template.getFileUrl()  + subDirName + "/" + subDirName + template.getFileName();
             } else if (template.getFileName().equals("list.jsp")) {
-                filePath = template.getFileUrl() + "/" + subDirName + "/" + "list.jsp";
+                filePath = template.getFileUrl()  + subDirName + "/" + "list.jsp";
             } else if (template.getFileName().equals("tableList.jsp")) {
-                filePath = template.getFileUrl() + "/" + subDirName + "/" + "tableList.jsp";
+                filePath = template.getFileUrl()  + subDirName + "/" + "tableList.jsp";
             }
 
 

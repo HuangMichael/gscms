@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>������Ϣ</h4>
+                            <h4><i class="fa fa-table"></i>留言信息</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>������Ϣ</a>
+                                                    <i class="fa fa-home" id="eq"></i>留言信息</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -30,11 +30,10 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="�ؼ���"/>
+                                                           placeholder=""/>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">
-                                                        ��ѯ
+                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">查询
                                                     </button>
                                                 </div>
                                             </div>
