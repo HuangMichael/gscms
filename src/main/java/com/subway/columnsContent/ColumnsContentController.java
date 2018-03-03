@@ -26,7 +26,7 @@ import java.util.Map;
  */
 @Controller
 @EnableAutoConfiguration
-@RequestMapping("/ColumnsContent")
+@RequestMapping("/columnsContent")
 public class ColumnsContentController extends BaseController {
 
     @Autowired
