@@ -1,12 +1,13 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<th data-column-id="id" data-width="5%">id</th>
-<th data-column-id="unit" data-width="5%">unit</th>
-<th data-column-id="member" data-width="5%">member</th>
-<th data-column-id="name" data-width="5%">name</th>
-<th data-column-id="isFocus" data-width="5%">isFocus</th>
-<th data-column-id="memberType" data-width="5%">memberType</th>
-<th data-column-id="uploadTime" data-width="5%">uploadTime</th>
-<th data-column-id="releaseTime" data-width="5%">releaseTime</th>
-<th data-column-id="sortNo" data-width="5%">sortNo</th>
-<th data-column-id="status" data-width="5%">status</th>
+<th data-column-id="id" data-width="5%">序号</th>
+<%--<th data-column-id="unit" data-width="5%"></th>--%>
+<th data-column-id="id" data-type="numeric" data-identifier="true" data-visible="false" data-width="5%">ID</th>
+<th data-column-id="member" data-width="5%">作者</th>
+<th data-column-id="name" data-width="5%">作品名称</th>
+<th data-column-id="isFocus" data-width="5%">是否焦点图片</th>
+<th data-column-id="memberType" data-width="5%">会员类别</th>
+<th data-column-id="uploadTime" data-width="5%">上传时间</th>
+<th data-column-id="releaseTime" data-width="5%">发布时间</th>
+<th data-column-id="sortNo" data-width="5%">排序</th>
+<th data-column-id="status" data-width="5%">状态</th>
 

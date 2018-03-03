@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>��Ա��Ʒ</h4>
+                            <h4><i class="fa fa-table"></i>会员作品</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>��Ա��Ʒ</a>
+                                                    <i class="fa fa-home" id="eq"></i>会员作品</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">

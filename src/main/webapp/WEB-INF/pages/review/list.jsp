@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>�����б�</h4>
+                            <h4><i class="fa fa-table"></i>初审列表</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>�����б�</a>
+                                                    <i class="fa fa-home" id="eq"></i>初审列表</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -30,7 +30,7 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="会员名称"/>
+                                                           placeholder="关键字"/>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <button id="searchBtn" class="btn btn-default" onclick="search()">查询
@@ -45,14 +45,12 @@
                                                     <thead>
                                                     <tr>
                                                         <th data-column-id="id" data-width="5%">序号</th>
-
                                                         <th data-column-id="sortNo" data-width="10%">排序</th>
-                                                        <th data-column-id="status" data-width="5%">状�??</th>
+                                                        <th data-column-id="status" data-width="5%">状态</th>
                                                     </tr>
                                                     </thead>
                                                 </table>
                                             </div>
-
                                         </div>
                                     </div>
                                 </div>

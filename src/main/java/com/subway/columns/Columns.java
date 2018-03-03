@@ -28,6 +28,9 @@ public class Columns implements Serializable {
     private String name; //栏目名称
 
     @Column(length = 20, nullable = false)
+    private String col_desc; //栏目描述
+
+    @Column(length = 20, nullable = false)
     private String type; //栏目类别
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
@@ -35,6 +38,9 @@ public class Columns implements Serializable {
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
     private Date endTime;//失效时间
+
+    @Column(length = 50)
+    private String parentId;//上级id
 
     @Column(length = 20, nullable = false)
     private String sortNo;//排序
