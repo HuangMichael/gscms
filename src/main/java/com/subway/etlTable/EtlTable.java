@@ -1,4 +1,4 @@
-package com.subway.domain.etl;
+package com.subway.etlTable;
 
 import lombok.Data;
 
@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * Created by Administrator on 2017/8/16.
+ * Created by huangbin on 2017/8/16.
  * 数据ETL(抽取转换装载)表，元数据表
  */
 @Entity
@@ -14,15 +14,13 @@ import java.io.Serializable;
 @Data
 public class EtlTable implements Serializable {
     @Id
-
     @GeneratedValue(strategy = GenerationType.AUTO)
-    @Column(name = "id", length = 11, nullable = false)
-    private Long id; //序号
+    private Long id;//序号 主键
 
     @Column(length = 100, nullable = false)
     private String tableDesc; //表的描述
 
-    @Column(length = 100)
+    @Column(length = 100, nullable = false)
     private String domainName; //实体类名称
 
     @Column(length = 50, nullable = false)
@@ -34,7 +32,7 @@ public class EtlTable implements Serializable {
     @Column(length = 1, nullable = false)
     private String status; //状态
 
-    @Column(length = 1, nullable = false)
+    @Column(length = 1, nullable = true)
     private String dropStatus; //导入数据前是否删除表
 
 }
