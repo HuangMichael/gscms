@@ -68,7 +68,7 @@
             var myChart3 = ec.init(document.getElementById('chart3'));
 
             var option = {
-                title : {
+                title: {
                     text: '网站访问量统计',
                     subtext: '纯属虚构'
                 },
@@ -81,7 +81,7 @@
                 xAxis: [
                     {
                         type: 'category',
-                        data: ["2018-02-01", "2018-02-02", "2018-02-03", "2018-02-04", "2018-02-05", "2018-02-06","2018-02-07"]
+                        data: ["2018-02-01", "2018-02-02", "2018-02-03", "2018-02-04", "2018-02-05", "2018-02-06", "2018-02-07"]
                     }
                 ],
                 yAxis: [
@@ -93,13 +93,10 @@
                     {
                         "name": "访问量",
                         "type": "bar",
-                        "data": [5, 20, 40, 10, 10, 20,33]
+                        "data": [5, 20, 40, 10, 10, 20, 33]
                     }
                 ]
             };
-
-
-
 
 
             var weatherIcons = {
@@ -110,11 +107,11 @@
 
             var option1 = {
                 title: {
-                    text: '天气情况统计',
+                    text: '网站访问量统计',
                     subtext: '虚构数据',
                     left: 'center'
                 },
-                tooltip : {
+                tooltip: {
                     trigger: 'item',
                     formatter: "{a} <br/>{b} : {c} ({d}%)"
                 },
@@ -123,18 +120,18 @@
                     // top: 'middle',
                     bottom: 10,
                     left: 'center',
-                    data: ['西凉', '益州','兖州','荆州','幽州']
+                    data: ['甘肃文联网', '作家协会', '书法家协会', '摄影家协会', '舞蹈家协会']
                 },
-                series : [
+                series: [
                     {
                         type: 'pie',
-                        radius : '65%',
+                        radius: '65%',
                         center: ['50%', '50%'],
                         selectedMode: 'single',
-                        data:[
+                        data: [
                             {
-                                value:1548,
-                                name: '幽州',
+                                value: 1548,
+                                name: '舞蹈家协会',
                                 label: {
                                     normal: {
                                         formatter: [
@@ -219,10 +216,10 @@
                                     }
                                 }
                             },
-                            {value:535, name: '荆州'},
-                            {value:510, name: '兖州'},
-                            {value:634, name: '益州'},
-                            {value:735, name: '西凉'}
+                            {value: 535, name: '摄影家协会'},
+                            {value: 510, name: '书法家协会'},
+                            {value: 634, name: '作家协会'},
+                            {value: 735, name: '甘肃文联网'}
                         ],
                         itemStyle: {
                             emphasis: {
@@ -236,12 +233,11 @@
             };
 
 
-
-           var option2 = {
+            var option2 = {
                 title: {
                     text: '网站栏目访问统计'
                 },
-                tooltip : {
+                tooltip: {
                     trigger: 'axis',
                     axisPointer: {
                         type: 'cross',
@@ -251,7 +247,7 @@
                     }
                 },
                 legend: {
-                    data:['邮件营销','联盟广告','视频广告','直接访问','搜索引擎']
+                    data: ['邮件营销', '联盟广告', '视频广告', '直接访问', '搜索引擎']
                 },
                 toolbox: {
                     feature: {
@@ -264,50 +260,50 @@
                     bottom: '3%',
                     containLabel: true
                 },
-                xAxis : [
+                xAxis: [
                     {
-                        type : 'category',
-                        boundaryGap : false,
-                        data : ['周一','周二','周三','周四','周五','周六','周日']
+                        type: 'category',
+                        boundaryGap: false,
+                        data: ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
                     }
                 ],
-                yAxis : [
+                yAxis: [
                     {
-                        type : 'value'
+                        type: 'value'
                     }
                 ],
-                series : [
+                series: [
                     {
-                        name:'邮件营销',
-                        type:'line',
+                        name: '邮件营销',
+                        type: 'line',
                         stack: '总量',
                         areaStyle: {normal: {}},
-                        data:[120, 132, 101, 134, 90, 230, 210]
+                        data: [120, 132, 101, 134, 90, 230, 210]
                     },
                     {
-                        name:'联盟广告',
-                        type:'line',
+                        name: '联盟广告',
+                        type: 'line',
                         stack: '总量',
                         areaStyle: {normal: {}},
-                        data:[220, 182, 191, 234, 290, 330, 310]
+                        data: [220, 182, 191, 234, 290, 330, 310]
                     },
                     {
-                        name:'视频广告',
-                        type:'line',
+                        name: '视频广告',
+                        type: 'line',
                         stack: '总量',
                         areaStyle: {normal: {}},
-                        data:[150, 232, 201, 154, 190, 330, 410]
+                        data: [150, 232, 201, 154, 190, 330, 410]
                     },
                     {
-                        name:'直接访问',
-                        type:'line',
+                        name: '直接访问',
+                        type: 'line',
                         stack: '总量',
                         areaStyle: {normal: {}},
-                        data:[320, 332, 301, 334, 390, 330, 320]
+                        data: [320, 332, 301, 334, 390, 330, 320]
                     },
                     {
-                        name:'搜索引擎',
-                        type:'line',
+                        name: '搜索引擎',
+                        type: 'line',
                         stack: '总量',
                         label: {
                             normal: {
@@ -316,82 +312,80 @@
                             }
                         },
                         areaStyle: {normal: {}},
-                        data:[820, 932, 901, 934, 1290, 1330, 1320]
+                        data: [820, 932, 901, 934, 1290, 1330, 1320]
                     }
                 ]
             };
 
 
             var option3 = {
-                title : {
-                    text: '某地区蒸发量和降水量',
+                title: {
+                    text: '内容发布审核统计',
                     subtext: '纯属虚构'
                 },
-                tooltip : {
+                tooltip: {
                     trigger: 'axis'
                 },
                 legend: {
-                    data:['蒸发量','降水量']
+                    data: ['已申请', '已发布']
                 },
                 toolbox: {
-                    show : false,
-                    feature : {
-                        mark : {show: true},
-                        dataView : {show: true, readOnly: false},
-                        magicType : {show: true, type: ['line', 'bar']},
-                        restore : {show: true},
-                        saveAsImage : {show: true}
+                    show: false,
+                    feature: {
+                        mark: {show: true},
+                        dataView: {show: true, readOnly: false},
+                        magicType: {show: true, type: ['line', 'bar']},
+                        restore: {show: true},
+                        saveAsImage: {show: true}
                     }
                 },
-                calculable : true,
-                xAxis : [
+                calculable: true,
+                xAxis: [
                     {
-                        type : 'category',
-                        data : ['1月','2月','3月','4月','5月','6月','7月','8月','9月','10月','11月','12月']
+                        type: 'category',
+                        data: ['1月', '2月', '3月', '4月', '5月', '6月', '7月', '8月', '9月', '10月', '11月', '12月']
                     }
                 ],
-                yAxis : [
+                yAxis: [
                     {
-                        type : 'value'
+                        type: 'value'
                     }
                 ],
-                series : [
+                series: [
                     {
-                        name:'蒸发量',
-                        type:'bar',
-                        data:[2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
-                        markPoint : {
-                            data : [
-                                {type : 'max', name: '最大值'},
-                                {type : 'min', name: '最小值'}
+                        name: '已申请',
+                        type: 'bar',
+                        data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                        markPoint: {
+                            data: [
+                                {type: 'max', name: '最大值'},
+                                {type: 'min', name: '最小值'}
                             ]
                         },
-                        markLine : {
-                            data : [
-                                {type : 'average', name: '平均值'}
+                        markLine: {
+                            data: [
+                                {type: 'average', name: '平均值'}
                             ]
                         }
                     },
                     {
-                        name:'降水量',
-                        type:'bar',
-                        data:[2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
-                        markPoint : {
-                            data : [
-                                {name : '年最高', value : 182.2, xAxis: 7, yAxis: 183, symbolSize:18},
-                                {name : '年最低', value : 2.3, xAxis: 11, yAxis: 3}
+                        name: '已发布',
+                        type: 'bar',
+                        data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        markPoint: {
+                            data: [
+                                {name: '年最高', value: 182.2, xAxis: 7, yAxis: 183, symbolSize: 18},
+                                {name: '年最低', value: 2.3, xAxis: 11, yAxis: 3}
                             ]
                         },
-                        markLine : {
-                            data : [
-                                {type : 'average', name : '平均值'}
+                        markLine: {
+                            data: [
+                                {type: 'average', name: '平均值'}
                             ]
                         }
                     }
                 ]
             };
-
-
 
 
             // 为echarts对象加载数据
