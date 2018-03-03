@@ -109,7 +109,7 @@ public class AutoGenerationJavaCode {
      * @throws ClassNotFoundException
      * @throws SQLException
      */
-    public void genCode(App app) throws IOException, TemplateException, ClassNotFoundException,
+    public void genCode(App app,List<TableColumnConfig> tableColumnConfigList) throws IOException, TemplateException, ClassNotFoundException,
             SQLException {
         Configuration cfg = new Configuration(new Version("2.3.27-incubating"));
         cfg.setDefaultEncoding("GBK");
@@ -120,7 +120,7 @@ public class AutoGenerationJavaCode {
         String comment = tableConfig.getTableDesc();
 
         String subDirName = StringUtils.lowerCaseCamel(className);
-        List<TableColumnConfig> columnConfigList = getTableColumnConfig(app);
+
         //设置模板文件路径
         cfg.setDirectoryForTemplateLoading(new File(templateDir));
         Map<String, Object> rootMap = new HashMap<>();
@@ -128,7 +128,7 @@ public class AutoGenerationJavaCode {
         rootMap.put("comment", comment);
         rootMap.put("tableName", tableName);
         rootMap.put("className", className);
-        rootMap.put("columns", columnConfigList);
+        rootMap.put("columns", tableColumnConfigList);
 
 
         for (com.subway.template.Template template : templateList) {
@@ -192,11 +192,7 @@ public class AutoGenerationJavaCode {
      */
 
 
-    public List<TableColumnConfig> getTableColumnConfig(App app) {
-        TableConfig tableConfig = app.getTableConfig();
-        return tableColumnConfigService.findByTableConfigAndStatus(tableConfig);
 
-    }
 
     /**
      * @param rsmd
