@@ -1,4 +1,4 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<th data-column-id="–Ú∫≈" data-width="5%">id</th>
-<th data-column-id="¡Ù—‘" data-width="5%">content</th>
+<th data-column-id="id" data-width="5%">–Ú∫≈</th>
+<th data-column-id="content" data-width="5%">¡Ù—‘</th>
 

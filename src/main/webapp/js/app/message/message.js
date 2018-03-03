@@ -1,31 +1,28 @@
 /**
-* Created by huangbin on 2018-3-1 09:46:42.
+ * Created by huangbin on 2018-3-1 09:46:42.
 
-*/
+ */
 
 
 $(function () {
 
 
 //导出必须配置的两个量
-dataTableName = "#messageListTable";
-docName = "留言管理";
-mainObject = "message";
+    dataTableName = "#messageListTable";
+    docName = "留言管理";
+    mainObject = "message";
 
+    var searchVue = new Vue({
+        el: "#searchBox"
+    });
 
-initSelect();
+    searchModel = [
+        {"param": "name", "paramDesc": "关键字"}
+    ];
 
-var searchVue = new Vue({
-el: "#searchBox"
-});
+    initBootGrid(dataTableName);
 
-searchModel = [
-{"param": "name", "paramDesc": "关键字"}
-];
-
-initBootGrid(dataTableName);
-
-$("#searchBtn").trigger("click");
+    $("#searchBtn").trigger("click");
 
 
 });

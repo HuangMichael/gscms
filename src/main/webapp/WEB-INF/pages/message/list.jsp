@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="container">
@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>ÁôÑÔÐÅÏ¢</h4>
+                            <h4><i class="fa fa-table"></i>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>ÁôÑÔÐÅÏ¢</a>
+                                                    <i class="fa fa-home" id="eq"></i>ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -30,18 +30,19 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="¹Ø¼ü×Ö"/>
+                                                           placeholder="ï¿½Ø¼ï¿½ï¿½ï¿½"/>
                                                 </div>
                                                 <div class="col-md-2">
-                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">²éÑ¯
+                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">
+                                                        ï¿½ï¿½Ñ¯
                                                     </button>
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade in active" id="tab_1_0">
-                                                <table id="MessageListTable"
+                                                <table id="messageListTable"
                                                        class="table table-bordered table-hover table-striped"
                                                        data-toggle="bootgrid" data-ajax="true"
-                                                       data-url="/Message/data">
+                                                       data-url="/message/data">
                                                     <thead>
                                                     <tr>
                                                         <%@include file="tableList.jsp" %>
@@ -64,4 +65,4 @@
         <!-- /CONTENT-->
     </div>
 </div>
-<script type="text/javascript" src="/js/app/Message/Message.js"></script>
+<script type="text/javascript" src="/js/app/message/message.js"></script>

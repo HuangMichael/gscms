@@ -8,12 +8,10 @@ $(function () {
 
 
 //导出必须配置的两个量
-dataTableName = "#${className}ListTable";
+dataTableName = "#${subDirName}ListTable";
 docName = "${comment}";
-mainObject = "${className}";
+mainObject = "${subDirName}";
 
-
-initSelect();
 
 var searchVue = new Vue({
 el: "#searchBox"

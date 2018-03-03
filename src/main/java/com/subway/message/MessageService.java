@@ -23,8 +23,7 @@ public class MessageService extends BaseService {
     @Autowired
     MessageRepository messageRepository;
 
-    public List
-            <Message> findAll() {
+    public List<Message> findAll() {
         return messageRepository.findAll();
     }
 

@@ -38,10 +38,10 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade in active" id="tab_1_0">
-                                                <table id="${className}ListTable"
+                                                <table id="${subDirName}ListTable"
                                                        class="table table-bordered table-hover table-striped"
                                                        data-toggle="bootgrid" data-ajax="true"
-                                                       data-url="/${className}/data">
+                                                       data-url="/${subDirName}/data">
                                                     <thead>
                                                     <tr>
                                                         <%@include file="tableList.jsp" %>
@@ -64,4 +64,4 @@
         <!-- /CONTENT-->
     </div>
 </div>
-<script type="text/javascript" src="/js/app/${className}/${className}.js"></script>
+<script type="text/javascript" src="/js/app/${subDirName}/${subDirName}.js"></script>
