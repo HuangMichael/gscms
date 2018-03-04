@@ -1,5 +1,5 @@
 /**
- * Created by huangbin on 2018-3-1 09:46:42.
+ * Created by huangbin on 2016/11/2.
 
  */
 
@@ -7,21 +7,25 @@
 $(function () {
 
 
-//导出必须配置的两个量
+    //导出必须配置的两个量
     dataTableName = "#siteListTable";
     docName = "站点信息";
     mainObject = "site";
+
+
+    initSelect();
 
     var searchVue = new Vue({
         el: "#searchBox"
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "关键字"}
+        {"param": "name", "paramDesc": "站点名称"}
     ];
 
     var grid = $(dataTableName).bootgrid({
         ajax: true,
+        selection: true,
         post: function () {
             return {
                 id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
@@ -30,11 +34,23 @@ $(function () {
         url: "/" + mainObject + "/data",
         formatters: {
             "upload": function (column, row) {
-                return "<button data-event='upload'  type='button' class='btn btn-xs btn-default command-upload' data-row-id=\"" + row.id + "'><span class='fa fa-upload'></span></button> "
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-upload\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-upload\"></span></button> "
             },
             "commands": function (column, row) {
-                return "<button type='button' class='btn btn-xs btn-default command-edit' data-row-id=\"" + row.id + "'><span class='fa fa-pencil'></span></button> " +
-                    "<button type='button' class='btn btn-xs btn-default command-delete' data-row-id=\"" + row.id + "'><span class='fa fa-trash-o'></span></button>";
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
+                    "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
+            }
+        },
+        converters: {
+            datetime: {
+                to: function (value) {
+                    return transformYMD(value);
+                }
+            },
+            showStatus: {
+                to: function (value) {
+                    return value == '1' ? "启用" : "禁用";
+                }
             }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
