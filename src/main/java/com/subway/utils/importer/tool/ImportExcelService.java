@@ -1,8 +1,8 @@
 package com.subway.utils.importer.tool;
 
 
-import com.subway.domain.etl.EtlTable;
-import com.subway.domain.etl.EtlTableConfig;
+import com.subway.etlTable.EtlTable;
+import com.subway.etlTableConfig.EtlTableConfig;
 import jxl.Sheet;
 import jxl.Workbook;
 import org.apache.commons.logging.Log;
