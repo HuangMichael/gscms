@@ -30,7 +30,7 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="关键�?"/>
+                                                           placeholder="关键字"/>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <button id="searchBtn" class="btn btn-default" onclick="search()">查询
