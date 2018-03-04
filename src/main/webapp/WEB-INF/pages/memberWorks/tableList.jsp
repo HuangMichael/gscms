@@ -10,4 +10,8 @@
 <th data-column-id="releaseTime" data-width="5%">发布时间</th>
 <th data-column-id="sortNo" data-width="5%">排序</th>
 <th data-column-id="status" data-width="5%">状态</th>
+<th data-column-id="upload" data-formatter="upload" data-sortable="false" data-width="8%">上传</th>
+<th data-column-id="commands" data-formatter="commands"
+    data-sortable="false" data-width="10%">编辑|删除
+</th>
 
