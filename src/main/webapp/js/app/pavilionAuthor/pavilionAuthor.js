@@ -43,6 +43,11 @@ $(function () {
                 to: function (value) {
                     return transformYMD(value);
                 }
+            },
+            showYes: {
+                to: function (value) {
+                    return value == '1' ? ("是") : " 否";
+                }
             }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
