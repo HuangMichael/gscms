@@ -38,10 +38,7 @@
                                                 </div>
                                             </div>
                                             <div class="tab-pane fade in active" id="tab_1_0">
-                                                <table id="pavilionAuthorListTable"
-                                                       class="table table-bordered table-hover table-striped"
-                                                       data-toggle="bootgrid" data-ajax="true"
-                                                       data-url="/pavilionAuthor/data">
+                                                <table id="pavilionAuthorListTable" class="table table-bordered table-hover table-striped">
                                                     <thead>
                                                     <tr>
                                                         <%@include file="tableList.jsp" %>

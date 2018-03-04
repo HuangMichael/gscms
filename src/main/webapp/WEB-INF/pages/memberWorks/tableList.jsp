@@ -1,6 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <th data-column-id="id" data-width="10%">序号</th>
-<%--<th data-column-id="unit" data-width="10%"></th>--%>
 <th data-column-id="id" data-type="numeric" data-identifier="true" data-visible="false" data-width="10%">ID</th>
 <th data-column-id="member" data-width="10%">作者</th>
 <th data-column-id="name" data-width="10%">作品名称</th>
