@@ -13,7 +13,6 @@ $(function () {
     mainObject = "site";
 
 
-    initSelect();
 
     var searchVue = new Vue({
         el: "#searchBox"

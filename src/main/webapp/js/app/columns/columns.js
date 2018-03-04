@@ -9,7 +9,7 @@ $(function () {
 
 //导出必须配置的两个量
     dataTableName = "#columnsListTable";
-    docName = "��Ŀ��Ϣ";
+    docName = "栏目信息";
     mainObject = "columns";
 
 
@@ -18,11 +18,12 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "��Ŀ����"}
+        {"param": "name", "paramDesc": "关键字"}
     ];
 
     var grid = $(dataTableName).bootgrid({
         ajax: true,
+        selection: true,
         post: function () {
             return {
                 id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
@@ -36,6 +37,18 @@ $(function () {
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
                     "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
+            }
+        },
+        converters: {
+            datetime: {
+                to: function (value) {
+                    return transformYMD(value);
+                }
+            },
+            showStatus: {
+                to: function (value) {
+                    return value == '1' ? "启用" : "禁用";
+                }
             }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {

@@ -9,9 +9,8 @@ $(function () {
 
     //导出必须配置的两个量
     dataTableName = "#pavilionAuthorListTable";
-    docName = "会员信息";
+    docName = "作者姓名";
     mainObject = "pavilionAuthor";
-
 
 
     var searchVue = new Vue({
@@ -19,7 +18,7 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "会员名称"}
+        {"param": "name", "paramDesc": "作者姓名"}
     ];
 
     var grid = $(dataTableName).bootgrid({
@@ -38,6 +37,13 @@ $(function () {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
                     "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
             }
+        },
+        converters: {
+            datetime: {
+                to: function (value) {
+                    return transformYMD(value);
+                }
+            }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
         /* Executes after data is loaded and rendered */
@@ -49,7 +55,6 @@ $(function () {
             alert("You pressed upload on row: " + $(this).data("row-id"));
         });
     });
-
 
 
     $("#searchBtn").trigger("click");
