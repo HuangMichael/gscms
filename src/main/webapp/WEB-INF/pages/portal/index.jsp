@@ -355,7 +355,7 @@
                     {
                         name: '已申请',
                         type: 'bar',
-                        data: [2.0, 4.9, 7.0, 23.2, 25.6, 76.7, 135.6, 162.2, 32.6, 20.0, 6.4, 3.3],
+                        data: [20, 49, 70, 232, 256, 767, 1356, 1622, 326, 200, 64, 33],
                         markPoint: {
                             data: [
                                 {type: 'max', name: '最大值'},
@@ -371,11 +371,11 @@
                     {
                         name: '已发布',
                         type: 'bar',
-                        data: [2.6, 5.9, 9.0, 26.4, 28.7, 70.7, 175.6, 182.2, 48.7, 18.8, 6.0, 2.3],
+                        data: [26, 59, 90, 264, 287, 707, 1756, 1822, 487, 188, 60, 23],
                         markPoint: {
                             data: [
-                                {name: '年最高', value: 182.2, xAxis: 7, yAxis: 183, symbolSize: 18},
-                                {name: '年最低', value: 2.3, xAxis: 11, yAxis: 3}
+                                {name: '年最高', value: 1822, xAxis: 7, yAxis: 183, symbolSize: 18},
+                                {name: '年最低', value: 23, xAxis: 11, yAxis: 3}
                             ]
                         },
                         markLine: {
