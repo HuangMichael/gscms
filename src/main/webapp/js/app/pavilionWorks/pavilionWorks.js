@@ -36,6 +36,23 @@ $(function () {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
                     "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
             }
+        },
+        converters: {
+            datetime: {
+                to: function (value) {
+                    return transformYMD(value);
+                }
+            },
+            showYes: {
+                to: function (value) {
+                    return value == '1' ? ("是") : "否";
+                }
+            },
+            showStatus: {
+                to: function (value) {
+                    return value == '1' ? ("启用") : "禁用";
+                }
+            }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
         /* Executes after data is loaded and rendered */
