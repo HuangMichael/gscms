@@ -11,7 +11,7 @@
                     <!-- BOX -->
                     <div class="box border blue">
                         <div class="box-title">
-                            <h4><i class="fa fa-table"></i>’æµ„π‹¿Ì</h4>
+                            <h4><i class="fa fa-table"></i>Ê†èÁõÆ‰ø°ÊÅØ</h4>
                         </div>
                         <%@include file="../common/common-menubar.jsp" %>
                         <div class="box-body">
@@ -21,7 +21,7 @@
                                         <ul class="nav nav-tabs" id="myTab">
                                             <li class="active">
                                                 <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>’æµ„π‹¿Ì</a>
+                                                    <i class="fa fa-home" id="eq"></i>Ê†èÁõÆ‰ø°ÊÅØ</a>
                                             </li>
                                         </ul>
                                         <div class="tab-content">
@@ -30,7 +30,7 @@
                                                 <div class="col-md-2">
                                                     <input class="form-control" id="name"
                                                            name="name"
-                                                           placeholder="ÂÖ≥ÈîÆÂ≠?"/>
+                                                           placeholder="ÂÖ≥ÈîÆÔøΩ?"/>
                                                 </div>
                                                 <div class="col-md-2">
                                                     <button id="searchBtn" class="btn btn-default" onclick="search()">Êü•ËØ¢
