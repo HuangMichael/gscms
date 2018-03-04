@@ -21,7 +21,7 @@ public class PavilionAuthor implements Serializable {
     @GeneratedValue(strategy = GenerationType.AUTO)
     private Long id;
     private String name;
-    private boolean hasPhoto;
+    private String hasPhoto;
     private Date createTime;
     private Long sortNo;
     private String status;
