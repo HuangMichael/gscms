@@ -46,7 +46,12 @@ $(function () {
             },
             showYes: {
                 to: function (value) {
-                    return value == '1' ? ("是") : " 否";
+                    return value == '1' ? ("是") : "否";
+                }
+            },
+            showStatus: {
+                to: function (value) {
+                    return value == '1' ? ("启用") : "禁用";
                 }
             }
         }
