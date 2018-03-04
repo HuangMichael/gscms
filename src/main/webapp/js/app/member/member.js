@@ -27,6 +27,7 @@ $(function () {
 
 
     var grid = $(dataTableName).bootgrid({
+        selection:true,
         ajax: true,
         post: function () {
             return {

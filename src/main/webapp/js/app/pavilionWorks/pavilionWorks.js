@@ -22,6 +22,7 @@ $(function () {
 
     var grid = $(dataTableName).bootgrid({
         ajax: true,
+        selection:true,
         post: function () {
             return {
                 id: "b0df282a-0d67-40e5-8558-c9e93b7befed"
