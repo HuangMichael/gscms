@@ -485,9 +485,16 @@ function initBootGridMenu(dataTableName, config) {
 
 
 /**
- * 查询信息
+ * 重置查询
  */
 function resetSearch() {
+
+    var params = $("#searchBox :input");
+    $.each(params, function (i, p) {
+        if (!$(p).is(":button")) {
+            $(p).val("");
+        }
+    });
     $(dataTableName).bootgrid("setSearchPhrase", "").bootgrid("reload");
 }
 

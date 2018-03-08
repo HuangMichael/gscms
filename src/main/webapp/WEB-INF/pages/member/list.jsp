@@ -33,6 +33,9 @@
                                                            placeholder="会员名称"/>
                                                 </div>
                                                 <div class="col-md-2">
+                                                    <button id="clearBtn" class="btn btn-default"
+                                                            onclick="resetSearch()">清空
+                                                    </button>
                                                     <button id="searchBtn" class="btn btn-default" onclick="search()">查询
                                                     </button>
                                                 </div>
@@ -53,7 +56,9 @@
                                                         <th data-column-id="createTime" data-converter="datetime"
                                                             data-width="20%">创建时间
                                                         </th>
-                                                        <th data-column-id="hasPhoto" data-width="10%">是否有照片</th>
+                                                        <th data-column-id="hasPhoto" data-width="10%"
+                                                            data-converter="showYes">是否有照片
+                                                        </th>
                                                         <th data-column-id="memberType" data-width="10%">会员类型</th>
                                                         <th data-column-id="status" data-width="10%"
                                                             data-converter="showStatus">状态
