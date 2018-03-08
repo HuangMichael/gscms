@@ -57,11 +57,9 @@ $(function () {
         }).end().find(".command-delete").on("click", function (e) {
             alert("You pressed delete on row: " + $(this).data("row-id"));
         }).end().find(".command-upload").on("click", function (e) {
-            alert("You pressed upload on row: " + $(this).data("row-id"));
+            $("#myModal").modal("show");
         });
     });
-
-
     $("#searchBtn").trigger("click");
 
 
