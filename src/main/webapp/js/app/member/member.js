@@ -65,7 +65,7 @@ $(function () {
         }).end().find(".command-delete").on("click", function (e) {
             del($(this).data("row-id"));
         }).end().find(".command-upload").on("click", function (e) {
-            $("#myModal").modal("show");
+            showUpload();
         });
     });
 
@@ -73,6 +73,12 @@ $(function () {
     $("#searchBtn").trigger("click");
 
 
+    vdm = new Vue({
+        el: formName,
+        data: {
+            member: null,
+        }
+    });
 });
 
 
@@ -114,4 +120,22 @@ function del(id) {
             }
         });
     }
+}
+
+
+/**
+ * 删除记录
+ */
+function edit(id) {
+    var object = findByIdAndObjectName(id, mainObject);
+    vdm.$set("member", object);
+    $("#editModal").modal("show");
+}
+
+
+/**
+ * 显示上传下载
+ */
+function showUpload() {
+    $("#myModal").modal("show");
 }
