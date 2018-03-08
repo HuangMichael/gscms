@@ -13,7 +13,6 @@ $(function () {
     mainObject = "site";
 
 
-
     var searchVue = new Vue({
         el: "#searchBox"
     });
@@ -55,9 +54,9 @@ $(function () {
     }).on("loaded.rs.jquery.bootgrid", function () {
         /* Executes after data is loaded and rendered */
         grid.find(".command-edit").on("click", function (e) {
-            alert("You pressed edit on row: " + $(this).data("row-id"));
+            edit($(this).data("row-id"));
         }).end().find(".command-delete").on("click", function (e) {
-            alert("You pressed delete on row: " + $(this).data("row-id"));
+            del($(this).data("row-id"));
         }).end().find(".command-upload").on("click", function (e) {
             alert("You pressed upload on row: " + $(this).data("row-id"));
         });
@@ -67,3 +66,55 @@ $(function () {
 
 
 });
+
+
+/**
+ * 删除记录
+ */
+function del(id) {
+
+    var url = getMainObject() + "/delete/" + id;
+    if (id) {
+        bootbox.confirm({
+            message: "确定要删除该记录么？",
+            buttons: {
+                confirm: {
+                    label: '确定',
+                    className: 'btn-success'
+                },
+                cancel: {
+                    label: '取消',
+                    className: 'btn-danger'
+                }
+            },
+            callback: function (result) {
+                if (result) {
+                    $.ajax({
+                        type: "GET",
+                        url: url,
+                        success: function (msg) {
+                            if (msg) {
+                                showMessageBox("info", "记录删除成功！");
+                                $(dataTableName).bootgrid("reload");
+                            }
+                        },
+                        error: function (msg) {
+                            showMessageBox("danger", "对不起，数据有关联，不能删除！ ");
+                        }
+                    });
+                }
+            }
+        });
+    }
+}
+
+
+/**
+ * 删除记录
+ */
+function edit(id) {
+    var object = findByIdAndObjectName(id, mainObject);
+    vdm.$set("member", object);
+    $("#editModal").modal("show");
+}
+

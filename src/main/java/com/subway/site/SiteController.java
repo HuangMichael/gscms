@@ -2,6 +2,7 @@ package com.subway.site;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
+import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.utils.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -79,6 +80,17 @@ public class SiteController extends BaseController {
         List<Site> dataList = siteSearchService.findByConditions(param, 1);
         siteService.setDataList(dataList);
         siteService.exportExcel(request, response, docName, titles, colNames);
+    }
+
+
+    /**
+     * @param id
+     * @return 删除信息
+     */
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ReturnObject delete(@PathVariable("id") Long id) {
+        return siteService.delete(id);
     }
 
 
