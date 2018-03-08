@@ -9,7 +9,7 @@ $(function () {
 
 //导出必须配置的两个量
     dataTableName = "#memberListTable";
-    docName = "��Ա����";
+    docName = "会员信息";
     mainObject = "member";
 
 
@@ -20,7 +20,7 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "�ؼ���?"}
+        {"param": "name", "paramDesc": "会员名称"}
     ];
 
     // initBootGrid(dataTableName);
