@@ -27,5 +27,6 @@ public class Member implements Serializable {
     private String memberType;
     private String cardNo;
     private String status;
+    private String authKey;
 
 }

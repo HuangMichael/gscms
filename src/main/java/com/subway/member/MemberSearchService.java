@@ -30,7 +30,7 @@ public class MemberSearchService extends BaseService implements SortedSearchable
      */
     public List<Member> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberRepository.findByNameAndAuthKey(array[0], array[1]);
+        return memberRepository.findByNameContains(array[0]);
     }
 
 
@@ -42,7 +42,7 @@ public class MemberSearchService extends BaseService implements SortedSearchable
      */
     public Page<Member> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberRepository.findByNameAndAuthKey(array[0], array[1], pageable);
+        return memberRepository.findByNameContains(array[0], pageable);
     }
 
 }

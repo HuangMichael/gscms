@@ -21,10 +21,9 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
     /**
      * @param name
-     * @param authKey
      * @return
      */
-    List<Member> findByNameAndAuthKey(String name,String authKey);
+    List<Member> findByNameContains(String name);
 
 
 
@@ -32,11 +31,10 @@ public interface MemberRepository extends JpaRepository<Member, Long> {
 
     /**
      * @param name
-     * @param authKey
      * @param pageable
      * @return
      */
-    Page<Member> findByNameAndAuthKey(String name, String authKey, Pageable pageable);
+    Page<Member>  findByNameContains(String name, Pageable pageable);
 
 
 }

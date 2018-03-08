@@ -5,6 +5,7 @@ import com.subway.domain.app.MyPage;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.utils.PageUtils;
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.data.domain.PageRequest;
@@ -28,6 +29,7 @@ import java.util.Map;
 @Controller
 @EnableAutoConfiguration
 @RequestMapping("/member")
+@Slf4j
 public class MemberController extends BaseController {
 
     @Autowired
@@ -51,6 +53,7 @@ public class MemberController extends BaseController {
     public MyPage data(HttpSession session, HttpServletRequest request, @RequestParam(value = "current", defaultValue = "0") int current, @RequestParam(value = "rowCount", defaultValue = "10") Long rowCount, @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
         Map<String, String[]> parameterMap = request.getParameterMap();
         Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
+        log.info("searchPhrase------------"+searchPhrase);
         return new PageUtils().searchBySortService(memberSearchService, searchPhrase, 1, current, rowCount, pageable);
     }
 
@@ -88,7 +91,7 @@ public class MemberController extends BaseController {
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-        List<Member> dataList = memberSearchService.findByConditions(param, 2);
+        List<Member> dataList = memberSearchService.findByConditions(param, 1);
         memberService.setDataList(dataList);
         memberService.exportExcel(request, response, docName, titles, colNames);
     }

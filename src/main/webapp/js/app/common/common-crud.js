@@ -395,12 +395,12 @@ function exportExcelByName(dataTableName, nodeState, docName) {
 function initSelect() {
 
 
-  /*  $("select").select2({
-        theme: "bootstrap",
-        tags: "true",
-        placeholder: "请选择...",
-        allowClear: true
-    });*/
+    /*  $("select").select2({
+          theme: "bootstrap",
+          tags: "true",
+          placeholder: "请选择...",
+          allowClear: true
+      });*/
 }
 
 
@@ -481,6 +481,14 @@ function initBootGridMenu(dataTableName, config) {
     });
 
 
+}
+
+
+/**
+ * 查询信息
+ */
+function resetSearch() {
+    $(dataTableName).bootgrid("setSearchPhrase", "").bootgrid("reload");
 }
 
 

@@ -49,6 +49,13 @@ $(function () {
                 to: function (value) {
                     return value.substring(0, 7);
                 }
+            },
+
+
+            showYes: {
+                to: function (value) {
+                    return (value) ? "是" : "否";
+                }
             }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
