@@ -74,7 +74,7 @@ $(function () {
  */
 function del(id) {
 
-    var url = getMainObject() + "/delete/" + id;
+    var url = getMainObject() + "/delete";
     if (id) {
         bootbox.confirm({
             message: "确定要删除该记录么？",
