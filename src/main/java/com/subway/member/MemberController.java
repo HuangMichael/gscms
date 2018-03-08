@@ -70,9 +70,9 @@ public class MemberController extends BaseController {
      * @param id
      * @return 删除信息
      */
-    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ReturnObject delete(@RequestParam("id") Long id) {
+    public ReturnObject delete(@PathVariable("id") Long id) {
         return memberService.delete(id);
     }
 

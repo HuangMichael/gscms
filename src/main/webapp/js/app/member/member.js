@@ -74,7 +74,7 @@ $(function () {
  */
 function del(id) {
 
-    var url = getMainObject() + "/delete";
+    var url = getMainObject() + "/delete/" + id;
     if (id) {
         bootbox.confirm({
             message: "确定要删除该记录么？",
@@ -91,10 +91,7 @@ function del(id) {
             callback: function (result) {
                 if (result) {
                     $.ajax({
-                        type: "DELETE",
-                        data: {
-                            id: id
-                        },
+                        type: "GET",
                         url: url,
                         success: function (msg) {
                             if (msg) {

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * ��Ա����业务查询�?
+ * 会员查询类
  *
  * @author huangbin
  * @generate by autoCode
@@ -23,15 +23,26 @@ public class MemberSearchService extends BaseService implements SortedSearchable
     MemberRepository memberRepository;
 
 
+    /**
+     * @param searchPhrase 搜索关键字
+     * @param paramsSize
+     * @return
+     */
     public List<Member> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberRepository.findAll();
+        return memberRepository.findByNameAndAuthKey(array[0], array[1]);
     }
 
 
+    /**
+     * @param searchPhrase 搜索关键字
+     * @param paramsSize
+     * @param pageable
+     * @return
+     */
     public Page<Member> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return memberRepository.findAll(pageable);
+        return memberRepository.findByNameAndAuthKey(array[0], array[1], pageable);
     }
 
 }
