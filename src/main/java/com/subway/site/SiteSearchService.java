@@ -25,13 +25,13 @@ public class SiteSearchService extends BaseService implements SortedSearchable {
 
     public List<Site> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return siteRepository.findAll();
+        return siteRepository.findByNameContaining(array[0]);
     }
 
 
     public Page<Site> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return siteRepository.findAll(pageable);
+        return siteRepository.findByNameContaining(array[0], pageable);
     }
 
 }
