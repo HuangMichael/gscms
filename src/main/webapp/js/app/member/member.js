@@ -47,14 +47,17 @@ $(function () {
         converters: {
             datetime: {
                 to: function (value) {
-                    return value.substring(0, 7);
+                    return transformYMD(value);
                 }
             },
-
-
             showYes: {
                 to: function (value) {
                     return (value) ? "是" : "否";
+                }
+            },
+            showStatus: {
+                to: function (value) {
+                    return (value) ? "有效" : "无效";
                 }
             }
         }
