@@ -55,28 +55,19 @@
 
 
 <!-- 模态框（Modal） -->
-<div class="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" >
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-header">
-                <button type="button" class="close" data-dismiss="modal" >
+                <button type="button" class="close" data-dismiss="modal">
                     &times;
                 </button>
-                <h4 class="modal-title" id="myModalLabel">
-                    上传
+                <h4 class="modal-title" id="myModalLabel1">
+                    编辑记录
                 </h4>
             </div>
             <div class="modal-body">
-                <form class="form-control">
-                    <input type="file" name="file"/>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">关闭
-                </button>
-                <button type="button" class="btn btn-primary">
-                    上传
-                </button>
+                <%@include file="form.jsp" %>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->

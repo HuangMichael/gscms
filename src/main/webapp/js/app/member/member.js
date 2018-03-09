@@ -23,9 +23,6 @@ $(function () {
         {"param": "name", "paramDesc": "会员名称"}
     ];
 
-    // initBootGrid(dataTableName);
-
-
     var grid = $(dataTableName).bootgrid({
         selection: true,
         ajax: true,
