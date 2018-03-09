@@ -1,7 +1,6 @@
 package com.subway.workflow;
 
 
-import com.subway.domain.person.Person;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,23 +11,17 @@ import java.io.Serializable;
  * 工作流节点定义
  */
 @Entity
-@Table(name = "T_WORK_FLOW_NODE")
+@Table(name = "T_WORK_FLOW_NODE_COMMENT")
 @Data
-public class WorkFlowNode implements Serializable {
+public class WorkFlowNodeComment implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
     @Column(name = "id", length = 11, nullable = false)
     private Long id; //序号
 
-    @Column(name = "name", length = 20, nullable = false)
-    private String name; //工作流程名称
-
-    @Column(length = 50)
-    private Long nodeIndex; //节点索引
-
-    @Column(length = 50)
-    private String nodeDesc; //节点描述
+    @Column(name = "comment", length = 200, nullable = false)
+    private String comment; //工作流程名称
 
     @OneToOne
     @JoinColumn(name = "work_flow_id")
