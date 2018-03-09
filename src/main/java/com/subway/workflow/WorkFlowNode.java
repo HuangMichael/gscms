@@ -1,7 +1,6 @@
 package com.subway.workflow;
 
 
-import com.subway.domain.person.Person;
 import lombok.Data;
 
 import javax.persistence.*;
