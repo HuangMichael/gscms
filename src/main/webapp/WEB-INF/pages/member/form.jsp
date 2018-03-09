@@ -5,60 +5,41 @@
     <div class="form-group">
         <div class="col-md-12">
             <div class="form-group">
-                <label for="orderDesc" class="col-md-2 control-label">会员名称</label>
+                <label for="name" class="col-md-2 control-label">会员名称</label>
 
                 <div class="col-md-4">
                     <input class="form-control" id="name" name="name" v-model="member.name"/>
                 </div>
 
-                <label for="reporter" class="col-md-2 control-label">会员证号</label>
-
+                <label for="cardNo" class="col-md-2 control-label">会员证号</label>
                 <div class="col-md-4">
                     <input class="form-control" id="cardNo" name="cardNo" v-model="member.cardNo"/>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="reportTelephone" class="col-md-2 control-label">报告电话</label>
 
+            <div class="form-group">
+                <label for="memberType" class="col-md-2 control-label">会员类型</label>
                 <div class="col-md-4">
-                    <input class="form-control" id="reportTelephone"
-                           name="reporter"/>
+                    <input class="form-control" id="memberType" name="memberType" v-model="member.memberType"/>
                 </div>
 
-                <label for="reportTime" class="col-md-2 control-label">报告时间</label>
-
+                <label for="status" class="col-md-2 control-label">会员状态</label>
                 <div class="col-md-4">
-                    <input class="form-control" id="reportTime" type="date" name="reportTime"/>
+                    <input class="form-control" id="status" name="status" v-model="member.status"/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="orderDesc" class="col-md-2 control-label">故障描述</label>
-
+                <label for="enterDate" class="col-md-2 control-label">加入时间</label>
                 <div class="col-md-4">
-                    <input class="form-control" id="orderDesc" name="orderDesc"/>
+                    <input class="form-control" id="enterDate" type="date" name="enterDate" v-model="member.enterDate"/>
                 </div>
-
-                <label for="reporter" class="col-md-2 control-label">报告人员</label>
-
+                <label for="createTime" class="col-md-2 control-label">创建时间</label>
                 <div class="col-md-4">
-                    <input class="form-control" id="reporter"
-                           name="reporter"/>
+                    <input class="form-control" id="createTime" type="date" name="createTime"
+                           v-model="member.enterDate"/>
                 </div>
             </div>
-            <div class="form-group">
-                <label for="reportTelephone" class="col-md-2 control-label">报告电话</label>
 
-                <div class="col-md-4">
-                    <input class="form-control" id="reportTelephone"
-                           name="reporter"/>
-                </div>
-
-                <label for="reportTime" class="col-md-2 control-label">报告时间</label>
-
-                <div class="col-md-4">
-                    <input class="form-control" id="reportTime" type="date" name="reportTime"/>
-                </div>
-            </div>
         </div>
     </div>
     <div class="modal-footer">
