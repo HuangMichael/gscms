@@ -1,4 +1,4 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 <div class="container">
@@ -29,16 +29,14 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade in active" id="tab_1_0">
-                                        <table id="pavilionAuthorListTable"
-                                               class="table table-bordered table-hover table-striped">
-                                            <thead>
-                                            <tr>
-                                                <%@include file="tableList.jsp" %>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
+                                    <table id="pavilionAuthorListTable"
+                                           class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <%@include file="tableList.jsp" %>
+                                        </tr>
+                                        </thead>
+                                    </table>
                                 </div>
                             </div>
                         </div>
