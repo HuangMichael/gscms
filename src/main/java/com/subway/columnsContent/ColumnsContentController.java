@@ -2,6 +2,7 @@ package com.subway.columnsContent;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
+import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.utils.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -18,7 +19,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * À¸Ä¿ÄÚÈÝÐÅÏ¢
+ * ï¿½ï¿½Ä¿ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢
  *
  * @author huangbin
  * @generate by autoCode
@@ -32,19 +33,11 @@ public class ColumnsContentController extends BaseController {
     @Autowired
     ResourceService resourceService;
     @Autowired
-    ColumnsContentService ColumnsContentService;
+    ColumnsContentService columnsContentService;
     @Autowired
     ColumnsContentSearchService columnsContentSearchService;
 
 
-    /**
-     * @param session
-     * @param request
-     * @param current
-     * @param rowCount
-     * @param searchPhrase
-     * @return
-     */
     @RequestMapping(value = "/data", method = RequestMethod.POST)
     @ResponseBody
     public MyPage data(HttpSession session, HttpServletRequest request, @RequestParam(value = "current", defaultValue = "0") int current, @RequestParam(value = "rowCount", defaultValue = "10") Long rowCount, @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
@@ -55,14 +48,21 @@ public class ColumnsContentController extends BaseController {
     }
 
 
+    @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ColumnsContent findById(@PathVariable("id") Long id) {
+        return columnsContentService.findById(id);
+    }
+
+
     /**
      * @param id
      * @return
      */
-    @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
     @ResponseBody
-    public ColumnsContent findById(@PathVariable("id") Long id) {
-        return ColumnsContentService.findById(id);
+    public ReturnObject delete(@PathVariable("id") Long id) {
+        return columnsContentService.delete(id);
     }
 
 
@@ -78,8 +78,8 @@ public class ColumnsContentController extends BaseController {
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
         List<ColumnsContent> dataList = columnsContentSearchService.findByConditions(param, 2);
-        ColumnsContentService.setDataList(dataList);
-        ColumnsContentService.exportExcel(request, response, docName, titles, colNames);
+        columnsContentService.setDataList(dataList);
+        columnsContentService.exportExcel(request, response, docName, titles, colNames);
     }
 
 
