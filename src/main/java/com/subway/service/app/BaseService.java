@@ -22,18 +22,17 @@ import java.util.List;
  */
 @Service
 @Data
-
 public class BaseService {
     protected Log log = LogFactory.getLog(this.getClass());
 
     protected List dataList;
 
     /**
-     * @param request
-     * @param response
-     * @param docName
-     * @param titles
-     * @param colNames
+     * @param request  请求
+     * @param response 响应
+     * @param docName  文件名称
+     * @param titles   标题
+     * @param colNames 字段
      */
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, String docName, String[] titles, String[] colNames) {
         DataExport dataExport = new ExcelDataExporter();
@@ -46,8 +45,8 @@ public class BaseService {
 
 
     /**
-     * @param searchPhrase
-     * @param paramSize
+     * @param searchPhrase 查询字符串
+     * @param paramSize    参数个数
      * @return 组装查询参数数组
      */
     public String[] assembleSearchArray(String searchPhrase, int paramSize) {
@@ -67,9 +66,9 @@ public class BaseService {
 
 
     /**
-     * @param searchPhrase
-     * @param paramSize
-     * @param separatable
+     * @param searchPhrase 查询字符串
+     * @param paramSize    参数个数
+     * @param separatable  是否数据隔离
      * @return 组装查询参数数组
      */
     public String[] assembleSearchArray(String searchPhrase, int paramSize, Boolean separatable, String location) {
@@ -118,8 +117,6 @@ public class BaseService {
         log.info("------------------------------------调用父类的保存方法");
         return object;
     }
-
-
 
 
 }
