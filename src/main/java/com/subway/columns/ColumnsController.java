@@ -37,6 +37,14 @@ public class ColumnsController extends BaseController {
     ColumnsSearchService columnsSearchService;
 
 
+    /**
+     * @param session
+     * @param request
+     * @param current
+     * @param rowCount
+     * @param searchPhrase
+     * @return
+     */
     @RequestMapping(value = "/data", method = RequestMethod.POST)
     @ResponseBody
     public MyPage data(HttpSession session, HttpServletRequest request, @RequestParam(value = "current", defaultValue = "0") int current, @RequestParam(value = "rowCount", defaultValue = "10") Long rowCount, @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
@@ -46,6 +54,10 @@ public class ColumnsController extends BaseController {
     }
 
 
+    /**
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
     public Columns findById(@PathVariable("id") Long id) {
@@ -53,6 +65,14 @@ public class ColumnsController extends BaseController {
     }
 
 
+    /**
+     * @param request
+     * @param response
+     * @param param
+     * @param docName
+     * @param titles
+     * @param colNames
+     */
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {

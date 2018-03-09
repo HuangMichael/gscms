@@ -27,6 +27,9 @@
                                                        placeholder="关键字"/>
                                             </div>
                                             <div class="col-md-2">
+                                                <button id="clearBtn" class="btn btn-default"
+                                                        onclick="resetSearch()">清空
+                                                </button>
                                                 <button id="searchBtn" class="btn btn-default" onclick="search()">查询
                                                 </button>
                                             </div>

@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * Õ¾µã¹ÜÀíä¸šåŠ¡æŸ¥è¯¢ç±?
+ * Õ¾ï¿½ï¿½ï¿½ï¿½ï¿½ä¸šåŠ¡æŸ¥è¯¢ï¿½?
  *
  * @author huangbin
  * @generate by autoCode
@@ -25,13 +25,13 @@ public class ColumnsSearchService extends BaseService implements SortedSearchabl
 
     public List<Columns> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return columnsRepository.findAll();
+        return columnsRepository.findByNameContaining(array[0]);
     }
 
 
     public Page<Columns> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return columnsRepository.findAll(pageable);
+        return columnsRepository.findByNameContaining(array[0], pageable);
     }
 
 }
