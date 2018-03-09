@@ -18,45 +18,27 @@
                             <div id="contentDiv">
                                 <div class="box-body">
                                     <div class="tabbable">
-                                        <ul class="nav nav-tabs" id="myTab">
-                                            <li class="active">
-                                                <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>应用信息</a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div class="form-group" style="margin-bottom:10px;position:inherit"
-                                                 id="searchBox">
-                                                <div class="col-md-2">
-                                                    <input class="form-control" id="name"
-                                                           name="name"
-                                                           placeholder="应用名称"/>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">查询
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane fade in active" id="tab_1_0">
-                                                <table id="appListTable"
-                                                       class="table table-bordered table-hover table-striped"
-                                                       data-toggle="bootgrid" data-ajax="true"
-                                                       data-url="/app/data">
-                                                    <thead>
-                                                    <tr>
-                                                        <th data-column-id="id" data-width="5%">序号</th>
-                                                        <th data-column-id="id" data-type="numeric" data-identifier="true" data-visible="false" data-width="5%">ID</th>
-                                                        <th data-column-id="name" data-width="10%">应用名称</th>
-                                                        <th data-column-id="className" data-width="10%">实体类名</th>
-                                                        <th data-column-id="tableName" data-width="10%">数据库表名</th>
-                                                        <th data-column-id="sortNo" data-width="10%">排序</th>
-                                                        <th data-column-id="status" data-width="5%">状态</th>
-                                                    </tr>
-                                                    </thead>
-                                                </table>
-                                            </div>
 
+                                        <div class="form-group" style="margin-bottom:10px;position:inherit"
+                                             id="searchBox">
+                                            <div class="col-md-2">
+                                                <input class="form-control" id="name"
+                                                       name="name"
+                                                       placeholder="应用名称"/>
+                                            </div>
+                                            <div class="col-md-2">
+                                                <button id="searchBtn" class="btn btn-default" onclick="search()">查询
+                                                </button>
+                                            </div>
                                         </div>
+                                        <table id="appListTable"
+                                               class="table table-bordered table-hover table-striped">
+                                            <thead>
+                                            <tr>
+                                                <%@include file="tableList.jsp" %>
+                                            </tr>
+                                            </thead>
+                                        </table>
                                     </div>
                                 </div>
                             </div>
