@@ -31,7 +31,7 @@ public class ColumnsContent implements Serializable {
 
 
     @Column(length = 100, nullable = false)
-    private String focusPicUrl; //����ͼƬ��ַ
+    private String focusPicUrl;
 
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)

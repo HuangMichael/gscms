@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * ������Ϣҵ���ѯ��
+ * 留言信息业务查询类
  *
  * @author huangbin
  * @generate by autoCode
@@ -23,15 +23,26 @@ public class MessageSearchService extends BaseService implements SortedSearchabl
     MessageRepository messageRepository;
 
 
+    /**
+     * @param searchPhrase 搜索关键字组合
+     * @param paramsSize
+     * @return
+     */
     public List<Message> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return messageRepository.findAll();
+        return messageRepository.findByContentContaining(array[0]);
     }
 
 
+    /**
+     * @param searchPhrase 搜索关键字组合
+     * @param paramsSize
+     * @param pageable
+     * @return
+     */
     public Page<Message> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return messageRepository.findAll(pageable);
+        return messageRepository.findByContentContaining(array[0], pageable);
     }
 
 }

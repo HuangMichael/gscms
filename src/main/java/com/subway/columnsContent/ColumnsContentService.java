@@ -12,7 +12,6 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
 
 /**
- *
  * @author huangbin
  * @generate by autoCode
  * @Date 2018-3-1
@@ -52,7 +51,7 @@ public class ColumnsContentService extends BaseService {
     public ReturnObject delete(Long id) {
         columnsContentRepository.delete(id);
         ColumnsContent columnsContent = columnsContentRepository.getOne(id);
-        return commonDataService.getReturnType(columnsContent == null, "��¼ɾ���ɹ�", "��¼ɾ��ʧ��");
+        return commonDataService.getReturnType(columnsContent == null, "记录删除成功", "记录删除失败");
     }
 
 

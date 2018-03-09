@@ -7,9 +7,9 @@
 $(function () {
 
 
-//µ¼³ö±ØĞëÅäÖÃµÄÁ½¸öÁ¿
+//å¯¼å‡ºå¿…é¡»é…ç½®çš„ä¸¤ä¸ªé‡
     dataTableName = "#messageListTable";
-    docName = "ÁôÑÔ¹ÜÀí";
+    docName = "ç•™è¨€ç®¡ç†";
     mainObject = "message";
 
     var searchVue = new Vue({
@@ -17,7 +17,7 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "¹Ø¼ü×Ö"}
+        {"param": "name", "paramDesc": "å…³é”®å­—"}
     ];
 
     var grid = $(dataTableName).bootgrid({
@@ -46,12 +46,12 @@ $(function () {
             },
             showStatus: {
                 to: function (value) {
-                    return value == '1' ? "ÆôÓÃ" : "½ûÓÃ";
+                    return value == '1' ? "å¯ç”¨" : "ç¦ç”¨";
                 }
             },
             showYes: {
                 to: function (value) {
-                    return value == '1' ? "ÊÇ" : "·ñ";
+                    return value == '1' ? "æ˜¯" : "å¦";
                 }
             }
         }

@@ -5,12 +5,14 @@ import java.util.Map;
 
 import com.subway.service.app.BaseService;
 import org.springframework.beans.factory.annotation.Autowired;
+import com.subway.service.commonData.CommonDataService;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+import com.subway.object.ReturnObject;
 
 /**
- * ÁôÑÔĞÅÏ¢ÒµÎñÀà
+ * ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ï¢Òµï¿½ï¿½ï¿½ï¿½
  *
  * @author huangbin
  * @generate by autoCode
@@ -23,16 +25,42 @@ public class MessageService extends BaseService {
     @Autowired
     MessageRepository messageRepository;
 
-    public List<Message> findAll() {
-        return messageRepository.findAll();
+
+    @Autowired
+    CommonDataService commonDataService;
+
+//    /**
+//     * @return
+//     */
+//    public List<Message> findAll() {
+//        return messageRepository.findAll();
+//    }
+//
+//
+//    /**
+//     * @param pageable
+//     * @return
+//     */
+//    public Page<Message> findAll(Pageable pageable) {
+//        return messageRepository.findAll(pageable);
+//    }
+
+
+    /**
+     * @param id
+     * @return
+     */
+    public ReturnObject delete(Long id) {
+        messageRepository.delete(id);
+        Message message = messageRepository.getOne(id);
+        return commonDataService.getReturnType(message == null, "è®°å½•åˆ é™¤æˆåŠŸ", "è®°å½•åˆ é™¤å¤±è´¥");
     }
 
 
-    public Page<Message> findAll(Pageable pageable) {
-        return messageRepository.findAll(pageable);
-    }
-
-
+    /**
+     * @param id
+     * @return
+     */
     public Message findById(Long id) {
         return messageRepository.getOne(id);
     }
