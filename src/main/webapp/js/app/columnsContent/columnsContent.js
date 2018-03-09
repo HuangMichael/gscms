@@ -7,9 +7,9 @@
 $(function () {
 
 
-//µ¼³ö±ØĞëÅäÖÃµÄÁ½¸öÁ¿
+//å¯¼å‡ºå¿…é¡»é…ç½®çš„ä¸¤ä¸ªé‡
     dataTableName = "#columnsContentListTable";
-    docName = "À¸Ä¿ÄÚÈİĞÅÏ¢";
+    docName = "æ ç›®å†…å®¹ä¿¡æ¯";
     mainObject = "columnsContent";
 
 
@@ -18,7 +18,7 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "title", "paramDesc": "±êÌâ"}
+        {"param": "title", "paramDesc": "æ ‡é¢˜"}
     ];
 
 
@@ -48,12 +48,12 @@ $(function () {
             },
             showYes: {
                 to: function (value) {
-                    return (value) ? "ÊÇ" : "·ñ";
+                    return (value) ? "æ˜¯" : "å¦";
                 }
             },
             showStatus: {
                 to: function (value) {
-                    return (value) ? "ÓĞĞ§" : "ÎŞĞ§";
+                    return (value) ? "æœ‰æ•ˆ" : "æ— æ•ˆ";
                 }
             }
         }
@@ -82,21 +82,21 @@ $(function () {
 
 
 /**
- * É¾³ı¼ÇÂ¼
+ * åˆ é™¤è®°å½•
  */
 function del(id) {
 
     var url = getMainObject() + "/delete/" + id;
     if (id) {
         bootbox.confirm({
-            message: "È·¶¨ÒªÉ¾³ı¸Ã¼ÇÂ¼Ã´£¿",
+            message: "ç¡®å®šè¦åˆ é™¤è¯¥è®°å½•ä¹ˆï¼Ÿ",
             buttons: {
                 confirm: {
-                    label: 'È·¶¨',
+                    label: 'ç¡®å®š',
                     className: 'btn-success'
                 },
                 cancel: {
-                    label: 'È¡Ïû',
+                    label: 'å–æ¶ˆ',
                     className: 'btn-danger'
                 }
             },
@@ -107,12 +107,12 @@ function del(id) {
                         url: url,
                         success: function (msg) {
                             if (msg) {
-                                showMessageBox("info", "¼ÇÂ¼É¾³ı³É¹¦£¡");
+                                showMessageBox("info", "è®°å½•åˆ é™¤æˆåŠŸï¼");
                                 $(dataTableName).bootgrid("reload");
                             }
                         },
                         error: function (msg) {
-                            showMessageBox("danger", "¶Ô²»Æğ£¬Êı¾İÓĞ¹ØÁª£¬²»ÄÜÉ¾³ı£¡ ");
+                            showMessageBox("danger", "å¯¹ä¸èµ·ï¼Œæ•°æ®æœ‰å…³è”ï¼Œä¸èƒ½åˆ é™¤ï¼ ");
                         }
                     });
                 }
@@ -123,7 +123,7 @@ function del(id) {
 
 
 /**
- * É¾³ı¼ÇÂ¼
+ * åˆ é™¤è®°å½•
  */
 function edit(id) {
     var object = findByIdAndObjectName(id, mainObject);
@@ -133,7 +133,7 @@ function edit(id) {
 
 
 /**
- * ÏÔÊ¾ÉÏ´«ÏÂÔØ
+ * æ˜¾ç¤ºä¸Šä¼ ä¸‹è½½
  */
 function showUpload() {
     $("#myModal").modal("show");

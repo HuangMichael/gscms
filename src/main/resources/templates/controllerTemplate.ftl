@@ -54,6 +54,19 @@ return ${subDirName}Service.findById(id);
 }
 
 
+/**
+* @param id
+* @return 删除信息
+*/
+@RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+@ResponseBody
+public ReturnObject delete(@PathVariable("id") Long id) {
+return ${subDirName}Service.delete(id);
+}
+
+
+
+
 @ResponseBody
 @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
 public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
