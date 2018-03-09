@@ -64,7 +64,7 @@ $(function () {
     }).on("loaded.rs.jquery.bootgrid", function () {
         /* Executes after data is loaded and rendered */
         grid.find(".command-edit").on("click", function (e) {
-            alert("You pressed edit on row: " + $(this).data("row-id"));
+            edit($(this).data("row-id"));
         }).end().find(".command-delete").on("click", function (e) {
             del($(this).data("row-id"));
         }).end().find(".command-upload").on("click", function (e) {
@@ -131,6 +131,8 @@ function del(id) {
  */
 function edit(id) {
     var object = findByIdAndObjectName(id, mainObject);
+
+    console.log("member-----------------------" + JSON.stringify(object));
     vdm.$set("member", object);
     $("#editModal").modal("show");
 }

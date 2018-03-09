@@ -97,16 +97,7 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <form class="form-control">
-                    <input type="file" name="file"/>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                </button>
-                <button type="button" class="btn btn-primary">
-                    保存
-                </button>
+                <%@include file="form.jsp" %>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
