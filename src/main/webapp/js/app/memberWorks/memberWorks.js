@@ -39,14 +39,19 @@ $(function () {
             }
         },
         converters: {
-            showYes: {
-                to: function (value) {
-                    return value == '1' ? ("是") : "否";
-                }
-            },
             datetime: {
                 to: function (value) {
                     return transformYMD(value);
+                }
+            },
+            showYes: {
+                to: function (value) {
+                    return (value) ? "是" : "否";
+                }
+            },
+            showStatus: {
+                to: function (value) {
+                    return (value) ? "有效" : "无效";
                 }
             }
         }
