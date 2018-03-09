@@ -32,16 +32,14 @@
                                             </button>
                                         </div>
                                     </div>
-                                    <div class="tab-pane fade in active" id="tab_1_0">
-                                        <table id="siteListTable"
-                                               class="table table-bordered table-hover table-striped">
-                                            <thead>
-                                            <tr>
-                                                <%@include file="tableList.jsp" %>
-                                            </tr>
-                                            </thead>
-                                        </table>
-                                    </div>
+                                    <table id="siteListTable"
+                                           class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <%@include file="tableList.jsp" %>
+                                        </tr>
+                                        </thead>
+                                    </table>
                                 </div>
                             </div>
                         </div>
