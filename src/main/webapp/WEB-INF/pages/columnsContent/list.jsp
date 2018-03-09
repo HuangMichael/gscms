@@ -17,41 +17,30 @@
                         <div class="box-body">
                             <div id="contentDiv">
                                 <div class="box-body">
-                                    <div class="tabbable">
-                                        <ul class="nav nav-tabs" id="myTab">
-                                            <li class="active">
-                                                <a href="#tab_1_0" data-toggle="tab">
-                                                    <i class="fa fa-home" id="eq"></i>栏目内容</a>
-                                            </li>
-                                        </ul>
-                                        <div class="tab-content">
-                                            <div class="form-group" style="margin-bottom:10px;position:inherit"
-                                                 id="searchBox">
-                                                <div class="col-md-2">
-                                                    <input class="form-control" id="name"
-                                                           name="name"
-                                                           placeholder="关键字"/>
-                                                </div>
-                                                <div class="col-md-2">
-                                                    <button id="searchBtn" class="btn btn-default" onclick="search()">查询
-                                                    </button>
-                                                </div>
-                                            </div>
-                                            <div class="tab-pane fade in active" id="tab_1_0">
-                                                <table id="columnsContentListTable"
-                                                       class="table table-bordered table-hover table-striped"
-                                                       data-toggle="bootgrid" data-ajax="true"
-                                                       data-url="/columnsContent/data">
-                                                    <thead>
-                                                    <tr>
-                                                        <%@include file="tableList.jsp" %>
-                                                    </tr>
-                                                    </thead>
-                                                </table>
-                                            </div>
 
+                                    <div class="form-group" style="margin-bottom:10px;position:inherit"
+                                         id="searchBox">
+                                        <div class="col-md-2">
+                                            <input class="form-control" id="title"
+                                                   name="title"
+                                                   placeholder="标题"/>
+                                        </div>
+                                        <div class="col-md-2">
+                                            <button id="clearBtn" class="btn btn-default"
+                                                    onclick="resetSearch()">清空
+                                            </button>
+                                            <button id="searchBtn" class="btn btn-default" onclick="search()">查询
+                                            </button>
                                         </div>
                                     </div>
+                                    <table id="columnsContentListTable"
+                                           class="table table-bordered table-hover table-striped">
+                                        <thead>
+                                        <tr>
+                                            <%@include file="tableList.jsp" %>
+                                        </tr>
+                                        </thead>
+                                    </table>
                                 </div>
                             </div>
                         </div>

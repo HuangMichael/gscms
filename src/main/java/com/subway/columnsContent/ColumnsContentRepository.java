@@ -1,18 +1,36 @@
 package com.subway.columnsContent;
+
 import java.util.List;
 import java.util.Map;
+
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
 
 
 /**
-* À¸Ä¿ÄÚÈİĞÅÏ¢Êı¾İ¿â·ÃÎÊ½Ó¿Ú
-*
-* @author huangbin
-* @generate by autoCode
-* @Date 2018-3-1
-*/
+ * æ ç›®å†…å®¹ä¿¡æ¯æ•°æ®åº“è®¿é—®æ¥å£
+ *
+ * @author huangbin
+ * @generate by autoCode
+ * @Date 2018-3-1
+ */
 
 public interface ColumnsContentRepository extends JpaRepository<ColumnsContent, Long> {
 
 
+    /**
+     * @param title  æ ‡é¢˜
+     * @param status çŠ¶æ€
+     * @return
+     */
+    List<ColumnsContent> findByTitleContainingAndStatus(String title, String status);
+
+
+    /**
+     * @param title  æ ‡é¢˜
+     * @param status çŠ¶æ€
+     * @return
+     */
+    Page<ColumnsContent> findByTitleContainingAndStatus(String title, String status, Pageable pageable);
 }
