@@ -72,12 +72,7 @@ public class MemberService extends BaseService {
      */
     @Transactional
     public Boolean upload(MultipartFile file, HttpServletRequest request) {
-        String contextPath = SessionUtil.getContextPath(request);
-        SimpleDateFormat sdf = new SimpleDateFormat("yyyyMMddHHmmss");//精确到时分秒
-        Date current = new Date();//获取当前时间
-        String timeStr = sdf.format(current);
-        String dirStr = "mediaDocs/user/" + timeStr;//项目多媒体存放的文件夹，加上时间戳来唯一标识该时间上传的所有的文件
-        String realDir = contextPath + dirStr;//绝对目录路径
+        String realDir = "E:/dev/gscms/src/main/webapp/upload/member/";//项目多媒体存放的文件夹，加上时间戳来唯一标识该时间上传的所有的文件
         if (!UploadUtil.createDirectory(realDir)) {//目录创建失败则返回null，目录存在或者创建成功就继续执行
             return null;
         }

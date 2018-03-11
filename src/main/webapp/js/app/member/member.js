@@ -83,36 +83,28 @@ $(function () {
     });
 
 
-    Dropzone.options.myDropZone = {
-        url: "/" + mainObject + "/upload",
-        paramName: "file",
-        maxFilesize: 10.0,// MB
-        maxFiles: 10000,
-        acceptedFiles: null,
-        autoProcessQueue: false,//是否立马上传
-        addRemoveLinks: true,//是否添加删除功能
-        parallelUploads: 10000, //最大并行处理量
+    $("#dropZone").dropzone({
+        url: "/member/upload",
+        addRemoveLinks: true,
+        dictRemoveLinks: "移除文件",
+        dictCancelUpload: "取消上传",
+        maxFiles: 1,
+        maxFilesize: 5,
+        autoProcessQueue: true,
+        acceptedFiles: ".jpg,.png",
         init: function () {
-            myDropZone = this;
-            this.on("addedfile", function (file) {
-                //上传文件时触发的事件
-                $(".dz-message").css("display", "none");
-            });
-            this.on('sending', function (file, xhr, formData) {
-                //传递参数时在sending事件中formData，需要在前端代码加enctype="multipart/form-data"属性
-                // formData.append("treeNodeId", treeNodeId);
-
-            });
-            $("#uploadBtn").on("click", function () {
-                myDropZone.processQueue();
-            });
             this.on("success", function (file, data) {
                 //上传完成后触发的方法
-                console.log(data);
-                $("#uploadModal").modal("hide");
+                console.log("file------------" + JSON.stringify(data));
+                $("#dropZone").modal("hide");
+            });
+            this.on("removedfile", function (file) {
+                console.log("File " + file.name + "removed");
             });
         }
-    };
+    });
+
+
 });
 
 

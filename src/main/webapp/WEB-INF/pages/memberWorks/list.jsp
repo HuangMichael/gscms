@@ -2,7 +2,7 @@
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
 
-<link rel="stylesheet" href="/js/dropzone/dropzone.min.css">
+<link rel="stylesheet" href="/js/dropzone/dropzone.css">
 <div class="container">
     <div class="row">
         <div id="content" class="col-lg-12">
@@ -91,7 +91,7 @@
                         <input name="file" type="file"/>
                     </div>
                 </form>
-                <button id="uploadBtn" action="">上传</button>
+                <button id="uploadBtn"onclick="alert(123)">上传</button>
             </div>
         </div>
     </div>

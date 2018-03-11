@@ -32,7 +32,7 @@
     <link rel="stylesheet" type="text/css" href="/js/select2-bootstrap-theme-master/dist/select2-bootstrap.min.css"/>
     <link rel="stylesheet" type="text/css" href="/js/bootstrapvalidator/dist/css/bootstrapValidator.css"/>
     <link rel="stylesheet" type="text/css" href="/css/formStyle.css"/>
-    <link rel="stylesheet" type="text/css" href="/js/dropzone/dropzone.min.css"/>
+    <link rel="stylesheet" type="text/css" href="/js/dropzone/dropzone.css"/>
 
 
 </head>
