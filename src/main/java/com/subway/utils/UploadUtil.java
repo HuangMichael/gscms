@@ -1,46 +1,28 @@
 package com.subway.utils;
 
+import lombok.extern.slf4j.Slf4j;
 import org.springframework.web.multipart.MultipartFile;
 
 import java.io.*;
-import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
 
 /**
- * Created by huangbin on 2016/2/22 0022.
+ * Created by huangbin on 2017/6/16 0022.
  * 上传附件工具类
  */
+@Slf4j
 public class UploadUtil {
     /**
      * @param file     二进制文件
      * @param filePath 目标文件路径
      */
-    public static void uploadFile(MultipartFile file, String filePath) {
-        if (!file.isEmpty()) {
-            try {
-                byte[] bytes = file.getBytes();
-                FileOutputStream fileOutputStream = new FileOutputStream(new File(filePath));
-                BufferedOutputStream stream = new BufferedOutputStream(fileOutputStream);
-                stream.write(bytes);
-                stream.close();
-            } catch (Exception e) {
-                e.printStackTrace();
-            }
-
-        }
-    }
-
-
-    /**
-     * @param file     二进制文件
-     * @param filePath 目标文件路径
-     */
-    public static boolean uploadFiles(MultipartFile file, String filePath) {
+    public static boolean uploadFile(MultipartFile file, String filePath) {
         boolean res = false;
         if (!file.isEmpty()) {
             try {
                 byte[] bytes = file.getBytes();
+                filePath = filePath.replace(" ", "");
                 FileOutputStream fileOutputStream = new FileOutputStream(new File(filePath));
                 BufferedOutputStream stream = new BufferedOutputStream(fileOutputStream);
                 stream.write(bytes);
@@ -86,6 +68,7 @@ public class UploadUtil {
      */
     public static boolean createDirectory(String dirString) {
         boolean res = false;//返回结果，默认false
+        dirString = dirString.replace(" ", "");
         File dir = new File(dirString);
         if (dir.exists()) {
             System.out.println(dirString + "目标目录已经存在");
@@ -102,5 +85,6 @@ public class UploadUtil {
         }
         return res;
     }
+
 }
 
