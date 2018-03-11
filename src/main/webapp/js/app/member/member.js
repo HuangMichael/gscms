@@ -4,6 +4,7 @@
  */
 
 
+
 $(function () {
 
 
@@ -12,8 +13,8 @@ $(function () {
     docName = "会员信息";
     mainObject = "member";
 
+    var recordId = null;
 
-    // initSelect();
 
     var searchVue = new Vue({
         el: "#searchBox"
@@ -49,7 +50,7 @@ $(function () {
             },
             showYes: {
                 to: function (value) {
-                    return (value) ? "是" : "否";
+                    return (value==("1")) ? "是" : "否";
                 }
             },
             showStatus: {
@@ -65,6 +66,7 @@ $(function () {
         }).end().find(".command-delete").on("click", function (e) {
             del($(this).data("row-id"));
         }).end().find(".command-upload").on("click", function (e) {
+            recordId = $(this).data("row-id");
             showUpload();
         });
     });
@@ -88,7 +90,7 @@ $(function () {
         addRemoveLinks: true,
         dictRemoveLinks: "移除文件",
         dictCancelUpload: "取消上传",
-        maxFiles: 1,
+        maxFiles: 3,
         maxFilesize: 5,
         autoProcessQueue: true,
         acceptedFiles: ".jpg,.png",
@@ -96,12 +98,16 @@ $(function () {
             this.on("success", function (file, data) {
                 //上传完成后触发的方法
                 if (data.result) {
+                    $("#uploadModal").modal("hide");
                     showMessageBox("info", data["resultDesc"]);
-                    $("#dropZone").modal("hide");
                 } else {
                     showMessageBox("danger", data["resultDesc"]);
                 }
-
+            });
+            this.on('sending', function (file, xhr, formData) {
+                //传递参数时在sending事件中formData，需要在前端代码加enctype="multipart/form-data"属性
+                formData.append("mainObject", mainObject);
+                formData.append("recordId", recordId);
             });
             this.on("removedfile", function (file) {
                 console.log("File " + file.name + "removed");

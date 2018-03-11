@@ -22,6 +22,7 @@ public class Member implements Serializable {
     private String sortNo;
     private String enterDate;
     private String hasPhoto;
+    private String photoUrl;
     private String createTime;
     private String name;
     private String memberType;

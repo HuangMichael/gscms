@@ -106,8 +106,8 @@ public class MemberController extends BaseController {
      */
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
-    public ReturnObject upload(@RequestParam("file") MultipartFile file, HttpServletRequest request) throws Exception {
-        Boolean result = memberService.upload(file, request);
+    public ReturnObject upload(@RequestParam("file") MultipartFile file, @RequestParam("mainObject") String mainObject,@RequestParam("recordId") Long recordId) throws Exception {
+        Boolean result = memberService.upload(file, mainObject,recordId);
         return getCommonDataService().getReturnType(result, "文件上传成功", "文件上传失败");
     }
 

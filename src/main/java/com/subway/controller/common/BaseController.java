@@ -3,6 +3,7 @@ package com.subway.controller.common;
 
 import com.subway.domain.app.resoure.VRoleAuthView;
 import com.subway.object.ReturnObject;
+import com.subway.service.app.BaseService;
 import com.subway.service.app.ResourceService;
 import com.subway.service.commonData.CommonDataService;
 import com.subway.utils.SessionUtil;
@@ -17,6 +18,10 @@ import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.ModelMap;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpSession;
@@ -31,12 +36,19 @@ import java.util.Map;
 @EnableAutoConfiguration
 @Slf4j
 public class BaseController {
+
+
     @Autowired
     protected ResourceService resourceService;
 
+
     @Autowired
-    CommonDataService commonDataService;
-    String userLocation;
+    protected CommonDataService commonDataService;
+
+
+    protected BaseService baseService;
+
+
 
 
     @RequestMapping(value = "/list")
@@ -48,15 +60,6 @@ public class BaseController {
         String url = "/" + StringUtils.lowerCaseCamel(controllerName) + "/list";
         log.info("url------------" + url);
         return url;
-    }
-
-    /**
-     * @param httpSession session回话
-     * @return 获取当前用户所在位置
-     */
-    public String getUserLocation(HttpSession httpSession) {
-        userLocation = SessionUtil.getCurrentUserLocationBySession(httpSession);
-        return userLocation;
     }
 
 
@@ -102,5 +105,7 @@ public class BaseController {
         HttpSession session = request.getSession();
         return SessionUtil.getCurrentUserLocationBySession(session);
     }
+
+
 }
 
