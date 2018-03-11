@@ -34,21 +34,30 @@ public class MemberService extends BaseService {
 
     @Autowired
     MemberRepository memberRepository;
-
-
     @Autowired
     CommonDataService commonDataService;
 
+    /**
+     * @return
+     */
     public List<Member> findAll() {
         return memberRepository.findAll();
     }
 
 
+    /**
+     * @param pageable
+     * @return
+     */
     public Page<Member> findAll(Pageable pageable) {
         return memberRepository.findAll(pageable);
     }
 
 
+    /**
+     * @param id
+     * @return
+     */
     public Member findById(Long id) {
         return memberRepository.getOne(id);
     }

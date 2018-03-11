@@ -95,8 +95,13 @@ $(function () {
         init: function () {
             this.on("success", function (file, data) {
                 //上传完成后触发的方法
-                console.log("file------------" + JSON.stringify(data));
-                $("#dropZone").modal("hide");
+                if (data.result) {
+                    showMessageBox("info", data["resultDesc"]);
+                    $("#dropZone").modal("hide");
+                } else {
+                    showMessageBox("danger", data["resultDesc"]);
+                }
+
             });
             this.on("removedfile", function (file) {
                 console.log("File " + file.name + "removed");
