@@ -128,7 +128,6 @@ public class BaseService {
      * @param file 多媒体文件
      * @return 上传文件
      */
-    @Transactional
     public Boolean upload(MultipartFile file, String tempDir, Long recordId) {
         String realDir = ConstantUtils.CONTEXT_PATH+"/upload/" + tempDir + "/";
         //项目多媒体存放的文件夹，加上时间戳来唯一标识该时间上传的所有的文件
