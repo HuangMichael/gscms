@@ -24,7 +24,8 @@
                                             <input class="form-control" id="name"
                                                    name="name"
                                                    placeholder="关键字"/>
-
+                                        </div>
+                                        <div class="col-md-2">
                                             <select class="form-control" id="auditStatus">
                                                 <option value="0">未审核</option>
                                                 <option value="1">初审通过</option>

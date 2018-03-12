@@ -33,7 +33,7 @@ public class ReviewSearchService extends BaseService implements SortedSearchable
      */
     public List<ColumnsContent> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return columnsContentRepository.findByTitleContainingAndStatusAndAuditStatus(array[0], array[1], ConstantUtils.AUDIT_STATUS_0);
+        return columnsContentRepository.findByTitleContainingAndStatusAndAuditStatus(array[0], ConstantUtils.STATUS_YES, array[1]);
     }
 
 
@@ -45,7 +45,7 @@ public class ReviewSearchService extends BaseService implements SortedSearchable
      */
     public Page<ColumnsContent> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return columnsContentRepository.findByTitleContainingAndStatusAndAuditStatus(array[0], array[1], ConstantUtils.AUDIT_STATUS_0, pageable);
+        return columnsContentRepository.findByTitleContainingAndStatusAndAuditStatus(array[0], ConstantUtils.STATUS_YES, array[1], pageable);
     }
 
 }
