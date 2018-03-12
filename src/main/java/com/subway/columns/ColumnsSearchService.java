@@ -1,6 +1,7 @@
 package com.subway.columns;
 
 import com.subway.service.app.BaseService;
+import com.subway.utils.ConstantUtils;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -30,7 +31,7 @@ public class ColumnsSearchService extends BaseService implements SortedSearchabl
      */
     public List<Columns> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return columnsRepository.findByNameContaining(array[0]);
+        return columnsRepository.findByNameContainingAndStatus(array[0], ConstantUtils.STATUS_YES);
     }
 
 
@@ -42,7 +43,7 @@ public class ColumnsSearchService extends BaseService implements SortedSearchabl
      */
     public Page<Columns> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return columnsRepository.findByNameContaining(array[0], pageable);
+        return columnsRepository.findByNameContainingAndStatus(array[0], ConstantUtils.STATUS_YES, pageable);
     }
 
 }

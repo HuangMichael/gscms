@@ -9,7 +9,7 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 
 /**
- * վ�����数据库访问接�?
+ * 站点管理数据查询接口
  *
  * @author huangbin
  * @generate by autoCode
@@ -21,18 +21,19 @@ public interface ColumnsRepository extends JpaRepository<Columns, Long> {
 
     /**
      * @param name
+     * @param status
      * @return
      */
-    List<Columns> findByNameContaining(String name);
-
+    List<Columns> findByNameContainingAndStatus(String name, String status);
 
 
     /**
      * @param name
+     * @param status
      * @param pageable
      * @return
      */
-    Page<Columns> findByNameContaining(String name, Pageable pageable);
+    Page<Columns> findByNameContainingAndStatus(String name, String status, Pageable pageable);
 
 
 }

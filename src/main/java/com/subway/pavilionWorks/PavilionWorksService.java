@@ -17,7 +17,7 @@ import org.springframework.transaction.annotation.Transactional;
 import org.springframework.web.multipart.MultipartFile;
 
 /**
- * Õ¹¹İ×÷Æ·ĞÅÏ¢ÒµÎñÀà
+ * å±•é¦†ä½œå“ä¿¡æ¯ä¸šåŠ¡ç±»
  *
  * @author huangbin
  * @generate by autoCode
@@ -52,7 +52,7 @@ public class PavilionWorksService extends BaseService {
 
     /**
      * @param id
-     * @return
+     * @returnl
      */
     public PavilionWorks findById(Long id) {
         return pavilionWorksRepository.getOne(id);
@@ -60,31 +60,31 @@ public class PavilionWorksService extends BaseService {
 
 
     /**
-     * @param id ¼ÇÂ¼id
-     * @return ¸ù¾İidÉ¾³ı¼ÇÂ¼
+     * @param id è®°å½•id
+     * @return æ ¹æ®idåˆ é™¤è®°å½•
      */
     public ReturnObject delete(Long id) {
         pavilionWorksRepository.delete(id);
         PavilionWorks pavilionWorks = pavilionWorksRepository.getOne(id);
-        return commonDataService.getReturnType(pavilionWorks == null, "¼ÇÂ¼É¾³ı³É¹¦", "¼ÇÂ¼É¾³ıÊ§°Ü");
+        return commonDataService.getReturnType(pavilionWorks == null, "è®°å½•åˆ é™¤æˆåŠŸ", "è®°å½•åˆ é™¤å¤±è´¥");
     }
 
 
     /**
-     * @param file ¶àÃ½ÌåÎÄ¼ş
-     * @return ÉÏ´«ÎÄ¼ş
+     * @param file å¤šåª’ä½“æ–‡ä»¶
+     * @return ä¸Šä¼ æ–‡ä»¶
      */
     @Transactional
     public Boolean upload(MultipartFile file, String tempDir, Long recordId) {
         String realDir = ConstantUtils.CONTEXT_PATH+"/upload/" + tempDir + "/";
-        //ÏîÄ¿¶àÃ½Ìå´æ·ÅµÄÎÄ¼ş¼Ğ£¬¼ÓÉÏÊ±¼ä´ÁÀ´Î¨Ò»±êÊ¶¸ÃÊ±¼äÉÏ´«µÄËùÓĞµÄÎÄ¼ş
+        //é¡¹ç›®å¤šåª’ä½“å­˜æ”¾çš„æ–‡ä»¶å¤¹ï¼ŒåŠ ä¸Šæ—¶é—´æˆ³æ¥å”¯ä¸€æ ‡è¯†è¯¥æ—¶é—´ä¸Šä¼ çš„æ‰€æœ‰çš„æ–‡ä»¶
         if (!UploadUtil.createDirectory(realDir)) {
-            //Ä¿Â¼´´½¨Ê§°ÜÔò·µ»Ønull£¬Ä¿Â¼´æÔÚ»òÕß´´½¨³É¹¦¾Í¼ÌĞøÖ´ĞĞ
+            //ç›®å½•åˆ›å»ºå¤±è´¥åˆ™è¿”å›nullï¼Œç›®å½•å­˜åœ¨æˆ–è€…åˆ›å»ºæˆåŠŸå°±ç»§ç»­æ‰§è¡Œ
             return null;
         }
-        String fileName = file.getOriginalFilename().replace(" ", "");//ÎÄ¼şÃû£¬È¥µôÎÄ¼şÃûÖĞµÄ¿Õ¸ñ
-        String filePath = realDir + "\\" + fileName;//¾ø¶ÔÎÄ¼şÂ·¾¶
-        boolean result = UploadUtil.uploadFile(file, filePath);//ÉÏ´«ÎÄ¼şµ½Tomcat£¬×÷ÎªÁÙÊ±ÎÄ¼ş;
+        String fileName = file.getOriginalFilename().replace(" ", "");//æ–‡ä»¶åï¼Œå»æ‰æ–‡ä»¶åä¸­çš„ç©ºæ ¼
+        String filePath = realDir + "\\" + fileName;//ç»å¯¹æ–‡ä»¶è·¯å¾„
+        boolean result = UploadUtil.uploadFile(file, filePath);//ä¸Šä¼ æ–‡ä»¶åˆ°Tomcatï¼Œä½œä¸ºä¸´æ—¶æ–‡ä»¶;
         String relativePath = "/upload/" + tempDir + "/" + fileName;
         writeUploadLog(recordId, relativePath);
         return result;
@@ -93,8 +93,8 @@ public class PavilionWorksService extends BaseService {
 
 
     /**
-     * @param recordId ¼ÇÂ¼id
-     * @param filePath ÎÄ¼şµÄÂ·¾¶
+     * @param recordId è®°å½•id
+     * @param filePath æ–‡ä»¶çš„è·¯å¾„
      */
     public void writeUploadLog(Long recordId, String filePath) {
         PavilionWorks pavilionWorks = pavilionWorksRepository.getOne(recordId);
