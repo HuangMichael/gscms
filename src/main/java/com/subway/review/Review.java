@@ -6,7 +6,7 @@ import javax.persistence.*;
 import java.io.Serializable;
 
 /**
- * �����б�实体�?
+ * 触及审核列表
  *
  * @author huangbin
  * @generate by autoCode
