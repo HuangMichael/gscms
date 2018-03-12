@@ -76,6 +76,7 @@
 </div>
 
 
+
 <div class="modal fade " id="uploadModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel2">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
@@ -86,12 +87,7 @@
                 <h4 class="modal-title pull-left" id="myModalLabel2">请选择文件</h4>
             </div>
             <div class="modal-body">
-                <form action="" class="dropzone" id="myDropZone" enctype="multipart/form-data" method="post">
-                    <div class="fallback">
-                        <input name="file" type="file"/>
-                    </div>
-                </form>
-                <button id="uploadBtn"onclick="alert(123)">上传</button>
+                <div id="dropZone" class="dropzone"></div>
             </div>
         </div>
     </div>

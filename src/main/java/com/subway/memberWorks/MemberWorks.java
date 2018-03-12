@@ -11,7 +11,7 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * »áÔ±×÷Æ·ĞÅÏ¢
+ * ä¼šå‘˜ä½œå“ä¿¡æ¯
  */
 @Entity
 @Table(name = "T_MEMBER_WORKS")
@@ -19,30 +19,34 @@ import java.util.Date;
 public class MemberWorks implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
-    private Long id;//ĞòºÅ Ö÷¼ü
+    private Long id;//åºå· ä¸»é”®
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "unit_id", referencedColumnName = "id")
-    private Unit unit;//ËùÊôĞ­»á
+    private Unit unit;//æ‰€å±åä¼š
 
     @ManyToOne(fetch = FetchType.LAZY)
     @JoinColumn(name = "member_id", referencedColumnName = "id")
-    private Member member;  //ËùÊô»áÔ±
+    private Member member;  //æ‰€å±ä¼šå‘˜
 
     @Column(length = 50, nullable = false)
-    private String name;//×÷Æ·Ãû³Æ
+    private String name;//ä½œå“åç§°
 
     @Column(length = 1, nullable = false)
-    private String isFocus;//ÊÇ·ñ½¹µã×÷Æ·
+    private String isFocus;//æ˜¯å¦ç„¦ç‚¹ä½œå“
 
     @Column(length = 1)
-    private String memberType;//»áÔ±ÀàĞÍ
+    private String worksType; //ä½œå“ç±»å‹
+
+
+    @Column(length = 200)
+    private String photoUrl;//ä½œå“è·¯å¾„
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE)
-    private Date uploadTime;//ÉÏ´«Ê±¼ä
+    private Date uploadTime;//ä¸Šä¼ æ—¶é—´
 
     @DateTimeFormat(iso = DateTimeFormat.ISO.DATE_TIME)
-    private Date releaseTime;//·¢²¼Ê±¼ä
+    private Date releaseTime;//å‘å¸ƒæ—¶é—´
 
     private Long sortNo;
 

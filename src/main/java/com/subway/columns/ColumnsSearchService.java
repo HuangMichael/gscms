@@ -10,7 +10,7 @@ import org.springframework.stereotype.Service;
 import java.util.List;
 
 /**
- * վ�����业务查询�?
+ * 栏目信息查询业务类
  *
  * @author huangbin
  * @generate by autoCode

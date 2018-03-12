@@ -46,7 +46,6 @@ public class BaseController {
     protected CommonDataService commonDataService;
 
 
-    protected BaseService baseService;
 
 
 

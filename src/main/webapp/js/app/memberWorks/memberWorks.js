@@ -11,7 +11,7 @@ $(function () {
     dataTableName = "#memberWorksListTable";
     docName = "会员作品";
     mainObject = "memberWorks";
-
+    var recordId = null;
     var searchVue = new Vue({
         el: "#searchBox"
     });
@@ -74,6 +74,39 @@ $(function () {
         el: formName,
         data: {
             memberWorks: null,
+        }
+    });
+
+
+    $("#dropZone").dropzone({
+        url: "/" + mainObject + "/upload",
+        addRemoveLinks: true,
+        dictRemoveLinks: "移除文件",
+        dictCancelUpload: "取消上传",
+        maxFiles: 3,
+        maxFilesize: 5,
+        autoProcessQueue: true,
+        acceptedFiles: ".jpg,.png",
+        init: function () {
+            this.on("success", function (file, data) {
+                //上传完成后触发的方法
+                if (data.result) {
+                    $("#uploadModal").modal("hide");
+
+                    $(dataTableName).bootgrid("reload");
+                    showMessageBox("info", data["resultDesc"]);
+                } else {
+                    showMessageBox("danger", data["resultDesc"]);
+                }
+            });
+            this.on('sending', function (file, xhr, formData) {
+                //传递参数时在sending事件中formData，需要在前端代码加enctype="multipart/form-data"属性
+                formData.append("mainObject", mainObject);
+                formData.append("recordId", recordId);
+            });
+            this.on("removedfile", function (file) {
+                console.log("File " + file.name + "removed");
+            });
         }
     });
 });
