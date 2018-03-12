@@ -123,13 +123,12 @@ public class BaseService {
     }
 
 
-
     /**
      * @param file 多媒体文件
      * @return 上传文件
      */
     public Boolean upload(MultipartFile file, String tempDir, Long recordId) {
-        String realDir = ConstantUtils.CONTEXT_PATH+"/upload/" + tempDir + "/";
+        String realDir = ConstantUtils.CONTEXT_PATH + "/upload/" + tempDir + "/";
         //项目多媒体存放的文件夹，加上时间戳来唯一标识该时间上传的所有的文件
         if (!UploadUtil.createDirectory(realDir)) {
             //目录创建失败则返回null，目录存在或者创建成功就继续执行
@@ -139,9 +138,18 @@ public class BaseService {
         String filePath = realDir + "\\" + fileName;//绝对文件路径
         boolean result = UploadUtil.uploadFile(file, filePath);//上传文件到Tomcat，作为临时文件;
         String relativePath = "/upload/" + tempDir + "/" + fileName;
-//        writeUploadLog(recordId, relativePath);
+        this.writeUploadLog(relativePath, recordId);
         return result;
 
+    }
+
+
+    /**
+     * @param relativePath
+     * @param recordId
+     */
+    public void writeUploadLog(String relativePath, Long recordId) {
+        log.info("我是超类 啥也不干");
     }
 
 }
