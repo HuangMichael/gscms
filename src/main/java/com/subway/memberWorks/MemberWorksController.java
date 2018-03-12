@@ -68,6 +68,17 @@ public class MemberWorksController extends BaseController {
 
 
     /**
+     * @param id 记录id
+     * @return 根据id 删除记录
+     */
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ReturnObject delete(@PathVariable("id") Long id) {
+        return memberWorksService.delete(id);
+    }
+
+
+    /**
      * @param request
      * @param response
      * @param param

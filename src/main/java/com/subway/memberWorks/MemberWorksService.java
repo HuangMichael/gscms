@@ -3,8 +3,11 @@ package com.subway.memberWorks;
 import java.util.List;
 import java.util.Map;
 
+import com.subway.columnsContent.ColumnsContent;
 import com.subway.member.Member;
+import com.subway.object.ReturnObject;
 import com.subway.service.app.BaseService;
+import com.subway.service.commonData.CommonDataService;
 import com.subway.utils.ConstantUtils;
 import com.subway.utils.UploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,9 @@ public class MemberWorksService extends BaseService {
 
     @Autowired
     MemberWorksRepository memberWorksRepository;
+
+    @Autowired
+    CommonDataService commonDataService;
 
     /**
      * @return
@@ -51,6 +57,17 @@ public class MemberWorksService extends BaseService {
      */
     public MemberWorks findById(Long id) {
         return memberWorksRepository.getOne(id);
+    }
+
+
+    /**
+     * @param id 记录id
+     * @return 根据id删除记录
+     */
+    public ReturnObject delete(Long id) {
+        memberWorksRepository.delete(id);
+        MemberWorks memberWorks = memberWorksRepository.getOne(id);
+        return commonDataService.getReturnType(memberWorks == null, "记录删除成功", "记录删除失败");
     }
 
 
