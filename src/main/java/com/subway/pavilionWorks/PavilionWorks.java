@@ -39,6 +39,10 @@ public class PavilionWorks implements Serializable {
     private String isFocus;//是否焦点图片
 
 
+    @Column(length = 200)
+    private String photoUrl;//作品路径
+
+
     @Column(length = 1)
     private String hasPhoto;//是否有会员照片
 
