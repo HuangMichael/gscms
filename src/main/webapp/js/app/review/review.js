@@ -10,7 +10,7 @@ $(function () {
 
 //导出必须配置的两个量
     dataTableName = "#reviewListTable";
-    docName = "初审列表信息";
+    docName = "内容审核信息";
     mainObject = "review";
 
     var recordId = null;
