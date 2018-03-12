@@ -56,6 +56,17 @@ public class PavilionWorksController extends BaseController {
     }
 
 
+    /**
+     * @param id 记录id
+     * @return 根据id 删除记录
+     */
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ReturnObject delete(@PathVariable("id") Long id) {
+        return pavilionWorksService.delete(id);
+    }
+
+
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {

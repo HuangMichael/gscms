@@ -3,8 +3,10 @@ package com.subway.pavilionWorks;
 import java.util.List;
 import java.util.Map;
 
+import com.subway.object.ReturnObject;
 import com.subway.pavilionAuthor.PavilionAuthor;
 import com.subway.service.app.BaseService;
+import com.subway.service.commonData.CommonDataService;
 import com.subway.utils.ConstantUtils;
 import com.subway.utils.UploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -28,22 +30,44 @@ public class PavilionWorksService extends BaseService {
     @Autowired
     PavilionWorksRepository pavilionWorksRepository;
 
+    @Autowired
+    CommonDataService commonDataService;
+
+    /**
+     * @return
+     */
     public List<PavilionWorks> findAll() {
         return pavilionWorksRepository.findAll();
     }
 
 
+    /**
+     * @param pageable
+     * @return
+     */
     public Page<PavilionWorks> findAll(Pageable pageable) {
         return pavilionWorksRepository.findAll(pageable);
     }
 
 
+    /**
+     * @param id
+     * @return
+     */
     public PavilionWorks findById(Long id) {
         return pavilionWorksRepository.getOne(id);
     }
 
 
-
+    /**
+     * @param id 记录id
+     * @return 根据id删除记录
+     */
+    public ReturnObject delete(Long id) {
+        pavilionWorksRepository.delete(id);
+        PavilionWorks pavilionWorks = pavilionWorksRepository.getOne(id);
+        return commonDataService.getReturnType(pavilionWorks == null, "记录删除成功", "记录删除失败");
+    }
 
 
     /**
