@@ -78,7 +78,8 @@ public class MemberService extends BaseService {
      * @param recordId 记录id
      * @param filePath 文件的路径
      */
-    public void writeUploadLog(Long recordId, String filePath) {
+    public void writeUploadLog(String filePath, Long recordId) {
+        super.writeUploadLog(filePath, recordId);
         Member member = memberRepository.getOne(recordId);
         member.setPhotoUrl(filePath);
         member.setHasPhoto(ConstantUtils.STATUS_YES);

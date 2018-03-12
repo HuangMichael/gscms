@@ -21,6 +21,15 @@ $(function () {
         {"param": "name", "paramDesc": "站点名称"}
     ];
 
+
+    vdm = new Vue({
+        el: "#form",
+        data: {
+            site: null
+        }
+    });
+
+
     var grid = $(dataTableName).bootgrid({
         ajax: true,
         selection: true,
@@ -31,9 +40,6 @@ $(function () {
         },
         url: "/" + mainObject + "/data",
         formatters: {
-            "upload": function (column, row) {
-                return "<button type=\"button\" class=\"btn btn-xs btn-default command-upload\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-upload\"></span></button> "
-            },
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
                     "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
@@ -114,7 +120,7 @@ function del(id) {
  */
 function edit(id) {
     var object = findByIdAndObjectName(id, mainObject);
-    vdm.$set("member", object);
+    vdm.$set("site", object);
     $("#editModal").modal("show");
 }
 

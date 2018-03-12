@@ -73,7 +73,8 @@ public class PavilionWorksService extends BaseService {
      * @param recordId 记录id
      * @param filePath 文件的路径
      */
-    public void writeUploadLog(Long recordId, String filePath) {
+    public void writeUploadLog(String filePath, Long recordId) {
+        super.writeUploadLog(filePath, recordId);
         PavilionWorks pavilionWorks = pavilionWorksRepository.getOne(recordId);
         pavilionWorks.setPhotoUrl(filePath);
         pavilionWorksRepository.save(pavilionWorks);
