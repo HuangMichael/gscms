@@ -21,12 +21,12 @@
                                     <div class="form-group" style="margin-bottom:10px;position:inherit"
                                          id="searchBox">
                                         <div class="col-md-2">
-                                            <input class="form-control" id="name"
-                                                   name="name"
-                                                   placeholder="关键字"/>
+                                            <input class="form-control" id="title"
+                                                   name="title"
+                                                   placeholder="标题名称"/>
                                         </div>
                                         <div class="col-md-2">
-                                            <select class="form-control" id="auditStatus">
+                                            <select class="form-control" id="auditStatus" onchange="search()">
                                                 <option value="0">未审核</option>
                                                 <option value="1">初审通过</option>
                                                 <option value="2">复审通过</option>

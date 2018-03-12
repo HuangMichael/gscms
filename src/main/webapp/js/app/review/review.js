@@ -21,7 +21,7 @@ $(function () {
     });
 
     searchModel = [
-        {"param": "name", "paramDesc": "标题名称"},
+        {"param": "title", "paramDesc": "标题名称"},
         {"param": "auditStatus", "paramDesc": "审核状态"}
     ];
 

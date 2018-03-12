@@ -1,11 +1,12 @@
 package com.subway.template;
 
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
 
 /**
- * ģ�����ʵ����
+ * 模板控制器类
  *
  * @author huangbin
  * @generate by autoCode
@@ -14,6 +15,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "t_template")
 @Data
+@NoArgsConstructor
 public class Template {
 
 

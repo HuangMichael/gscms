@@ -44,6 +44,32 @@
                                                        data-url="/template/data">
                                                     <thead>
                                                     <tr>
+
+
+                                                        <%--@Column(length = 20, nullable = false)--%>
+                                                        <%--private String templateName; //模板名称--%>
+
+                                                        <%--@Column(length = 50, nullable = false)--%>
+                                                        <%--private String templateUrl;//模板路径--%>
+
+                                                        <%--@Column(length = 50, nullable = false)--%>
+                                                        <%--private String templateDesc;//模板描述--%>
+
+
+                                                        <%--@Column(length = 100, nullable = false)--%>
+                                                        <%--private String fileName; //模板名称--%>
+
+                                                        <%--@Column(length = 100, nullable = false)--%>
+                                                        <%--private String fileUrl; //模板名称--%>
+
+
+                                                        <%--@Column(length = 20, nullable = false)--%>
+                                                        <%--private String sortNo;//排序--%>
+
+                                                        <%--@Column(length = 1, nullable = false)--%>
+                                                        <%--private String status;//状态--%>
+
+
                                                         <th data-column-id="id" data-width="5%">序号</th>
 
                                                         <th data-column-id="sortNo" data-width="10%">排序</th>
