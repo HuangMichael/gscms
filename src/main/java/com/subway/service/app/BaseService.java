@@ -135,7 +135,7 @@ public class BaseService {
             return null;
         }
         String fileName = file.getOriginalFilename().replace(" ", "");//文件名，去掉文件名中的空格
-        String filePath = realDir + "\\" + fileName;//绝对文件路径
+        String filePath = realDir + "/" + fileName;//绝对文件路径
         boolean result = UploadUtil.uploadFile(file, filePath);//上传文件到Tomcat，作为临时文件;
         String relativePath = "/upload/" + tempDir + "/" + fileName;
         this.writeUploadLog(relativePath, recordId);

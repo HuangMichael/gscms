@@ -75,7 +75,8 @@ public class PavilionAuthorService extends BaseService {
      * @param recordId 记录id
      * @param filePath 文件的路径
      */
-    public void writeUploadLog(Long recordId, String filePath) {
+    @Override
+    public void writeUploadLog(String filePath, Long recordId) {
         PavilionAuthor pavilionAuthor = pavilionAuthorRepository.getOne(recordId);
         pavilionAuthor.setPhotoUrl(filePath);
         pavilionAuthor.setHasPhoto(ConstantUtils.STATUS_YES);

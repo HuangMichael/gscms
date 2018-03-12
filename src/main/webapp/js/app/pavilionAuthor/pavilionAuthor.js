@@ -100,7 +100,6 @@ $(function () {
                 //上传完成后触发的方法
                 if (data.result) {
                     $("#uploadModal").modal("hide");
-
                     $(dataTableName).bootgrid("reload");
                     showMessageBox("info", data["resultDesc"]);
                 } else {
