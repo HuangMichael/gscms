@@ -55,13 +55,32 @@ public class MemberWorksService extends BaseService {
 
 
     /**
+     * @param file 多媒体文件
+     * @return 上传文件
+     */
+    @Transactional
+    public Boolean upload(MultipartFile file, String tempDir, Long recordId) {
+        String realDir = ConstantUtils.CONTEXT_PATH + "/upload/" + tempDir + "/";//项目多媒体存放的文件夹，加上时间戳来唯一标识该时间上传的所有的文件
+        if (!UploadUtil.createDirectory(realDir)) {//目录创建失败则返回null，目录存在或者创建成功就继续执行
+            return null;
+        }
+        String fileName = file.getOriginalFilename().replace(" ", "");//文件名，去掉文件名中的空格
+        String filePath = realDir + "\\" + fileName;//绝对文件路径
+        boolean result = UploadUtil.uploadFile(file, filePath);//上传文件到Tomcat，作为临时文件;
+        String relativePath = "upload/" + tempDir + "/" + fileName;
+        writeUploadLog(relativePath, recordId);
+        return result;
+
+    }
+
+
+    /**
      * @param recordId 记录id
      * @param filePath 文件的路径
      */
-    public void writeUploadLog(Long recordId, String filePath) {
+    public void writeUploadLog(String filePath, Long recordId) {
         MemberWorks memberWorks = memberWorksRepository.getOne(recordId);
         memberWorks.setPhotoUrl(filePath);
         memberWorksRepository.save(memberWorks);
     }
-
 }

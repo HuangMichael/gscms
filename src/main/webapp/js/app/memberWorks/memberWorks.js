@@ -53,7 +53,12 @@ $(function () {
                 to: function (value) {
                     return (value) ? "有效" : "无效";
                 }
-            }
+            },
+            showImage: {
+                to: function (value) {
+                    return "<img src='" + value + "' class='img-thumbnail'  style='height:25px;width: 25px'>";
+                }
+            },
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
         /* Executes after data is loaded and rendered */
@@ -62,6 +67,7 @@ $(function () {
         }).end().find(".command-delete").on("click", function (e) {
             del($(this).data("row-id"));
         }).end().find(".command-upload").on("click", function (e) {
+            recordId = $(this).data("row-id");
             showUpload();
         });
     });
@@ -167,7 +173,7 @@ function edit(id) {
  * 显示上传下载
  */
 function showUpload() {
-    $("#myModal").modal("show");
+    $("#uploadModal").modal("show");
 
 }
 

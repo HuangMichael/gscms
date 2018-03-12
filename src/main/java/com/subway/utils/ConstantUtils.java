@@ -9,4 +9,7 @@ public class ConstantUtils {
     public static final String MEDIA_TYPE_IMG = "P";  //媒体类型P 表示图片
     public static final String MEDIA_TYPE_VIDEO = "V";  //媒体类型V 表示视频
     public static final String MEDIA_TYPE_DOC = "D";  //媒体类型D 表示文档
+
+    public static final String CONTEXT_PATH = " E:/dev/gscms/src/main/webapp";  //上下文路径
+
 }

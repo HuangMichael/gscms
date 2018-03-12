@@ -20,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * »áÔ±×÷Æ·æ§åˆ¶å™¨ç±»
+ * ä¼šå‘˜ä½œå“æ§åˆ¶å™¨ç±»
  *
  * @author huangbin
  * @generate by autoCode
@@ -84,19 +84,18 @@ public class MemberWorksController extends BaseController {
     }
 
 
-
     /**
-     * @param file    ¶àÃ½ÌåÎÄ¼ş
+     * @param file       å¤šåª’ä½“æ–‡ä»¶
      * @param mainObject
      * @param recordId
-     * @return ÉÏ´«¶àÃ½ÌåÎÄ¼ş ·µ»ØĞÅÏ¢
+     * @return ä¸Šä¼ å¤šåª’ä½“æ–‡ä»¶ è¿”å›ä¿¡æ¯
      * @throws Exception
      */
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public ReturnObject upload(@RequestParam("file") MultipartFile file, @RequestParam("mainObject") String mainObject, @RequestParam("recordId") Long recordId) throws Exception {
-        Boolean result = memberWorksService.upload(file, mainObject,recordId);
-        return getCommonDataService().getReturnType(result, "ÎÄ¼şÉÏ´«³É¹¦", "ÎÄ¼şÉÏ´«Ê§°Ü");
+        Boolean result = memberWorksService.upload(file, mainObject, recordId);
+        return getCommonDataService().getReturnType(result, "æ–‡ä»¶ä¸Šä¼ æˆåŠŸ", "æ–‡ä»¶ä¸Šä¼ å¤±è´¥");
     }
 
 
