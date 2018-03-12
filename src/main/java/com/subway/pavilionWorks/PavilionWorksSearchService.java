@@ -1,6 +1,7 @@
 package com.subway.pavilionWorks;
 
 import com.subway.service.app.BaseService;
+import com.subway.utils.ConstantUtils;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
@@ -23,15 +24,26 @@ public class PavilionWorksSearchService extends BaseService implements SortedSea
     PavilionWorksRepository pavilionWorksRepository;
 
 
+    /**
+     * @param searchPhrase 搜索关键字组合
+     * @param paramsSize
+     * @return
+     */
     public List<PavilionWorks> findByConditions(String searchPhrase, int paramsSize) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return pavilionWorksRepository.findAll();
+        return pavilionWorksRepository.findByNameContainingAndStatus(array[0], ConstantUtils.STATUS_YES);
     }
 
 
+    /**
+     * @param searchPhrase 搜索关键字组合
+     * @param paramsSize
+     * @param pageable
+     * @return
+     */
     public Page<PavilionWorks> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
         String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-        return pavilionWorksRepository.findAll(pageable);
+        return pavilionWorksRepository.findByNameContainingAndStatus(array[0], ConstantUtils.STATUS_YES, pageable);
     }
 
 }
