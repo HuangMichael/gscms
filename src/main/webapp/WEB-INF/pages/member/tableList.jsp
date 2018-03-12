@@ -1,8 +1,12 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
 <th data-column-id="id" data-type="numeric"
-    data-identifier="true" data-width="10%">序号
+    data-identifier="true" data-width="6%">序号
 </th>
 <th data-column-id="name" data-width="10%">会员名称</th>
+<th data-column-id="photoUrl" data-converter="showImage"
+    data-width="6%">头像
+</th>
+
 <th data-column-id="cardNo" data-width="10%">会员证号</th>
 <th data-column-id="enterDate" data-converter="datetime"
     data-width="20%">加入时间

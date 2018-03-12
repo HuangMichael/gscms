@@ -100,7 +100,8 @@ public class MemberController extends BaseController {
 
     /**
      * @param file    多媒体文件
-     * @param request 请求
+     * @param mainObject
+     * @param recordId
      * @return 上传多媒体文件 返回信息
      * @throws Exception
      */

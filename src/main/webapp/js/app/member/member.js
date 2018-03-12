@@ -43,6 +43,13 @@ $(function () {
             }
         },
         converters: {
+
+            showImage: {
+                to: function (value) {
+                    return "<img src='" + value + "' class='img-circle'  style='height:25px;width: 25px'>";
+                }
+            },
+
             datetime: {
                 to: function (value) {
                     return transformYMD(value);
@@ -50,7 +57,7 @@ $(function () {
             },
             showYes: {
                 to: function (value) {
-                    return (value==("1")) ? "是" : "否";
+                    return (value == ("1")) ? "是" : "否";
                 }
             },
             showStatus: {
@@ -99,6 +106,8 @@ $(function () {
                 //上传完成后触发的方法
                 if (data.result) {
                     $("#uploadModal").modal("hide");
+
+                    $(dataTableName).bootgrid("reload");
                     showMessageBox("info", data["resultDesc"]);
                 } else {
                     showMessageBox("danger", data["resultDesc"]);

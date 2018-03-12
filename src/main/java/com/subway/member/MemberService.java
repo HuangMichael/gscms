@@ -88,7 +88,10 @@ public class MemberService extends BaseService {
         String fileName = file.getOriginalFilename().replace(" ", "");//文件名，去掉文件名中的空格
         String filePath = realDir + "\\" + fileName;//绝对文件路径
         boolean result = UploadUtil.uploadFile(file, filePath);//上传文件到Tomcat，作为临时文件;
-        writeUploadLog(recordId, filePath);
+
+        String relativePath = "upload/" + tempDir + "/" + fileName;
+        log.info("relativePath------------------"+ relativePath);
+        writeUploadLog(recordId, relativePath);
         return result;
 
     }
