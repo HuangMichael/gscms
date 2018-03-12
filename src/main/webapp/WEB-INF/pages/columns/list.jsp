@@ -17,8 +17,6 @@
                         <div class="box-body">
                             <div id="contentDiv">
                                 <div class="box-body">
-
-
                                         <div class="form-group" style="margin-bottom:10px;position:inherit"
                                              id="searchBox">
                                             <div class="col-md-2">
@@ -42,8 +40,6 @@
                                             </tr>
                                             </thead>
                                         </table>
-
-
                                 </div>
                             </div>
                         </div>
@@ -55,5 +51,24 @@
         </div>
         <!-- /CONTENT-->
     </div>
+</div>
+
+<!-- 模态框（Modal） -->
+<div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button type="button" class="close" data-dismiss="modal">
+                    &times;
+                </button>
+                <h4 class="modal-title" id="myModalLabel1">
+                    编辑记录
+                </h4>
+            </div>
+            <div class="modal-body">
+                <%@include file="form.jsp" %>
+            </div>
+        </div><!-- /.modal-content -->
+    </div><!-- /.modal -->
 </div>
 <script type="text/javascript" src="/js/app/columns/columns.js"></script>

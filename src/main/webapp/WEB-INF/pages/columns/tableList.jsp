@@ -1,5 +1,5 @@
 <%@ page contentType="text/html;charset=UTF-8" %>
-<th data-column-id="id" data-width="10%">序号</th>
+<th data-column-id="id" data-width="6%">序号</th>
 <th data-column-id="id" data-type="numeric" data-identifier="true" data-visible="false" data-width="10%">ID</th>
 <th data-column-id="name" data-width="10%">栏目名称</th>
 <th data-column-id="type" data-width="10%">栏目类型</th>

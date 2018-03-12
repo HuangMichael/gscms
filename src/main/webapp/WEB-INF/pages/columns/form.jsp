@@ -1,67 +1,40 @@
 <%@ page contentType="text/html;charset=UTF-8" language="java" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="form" uri="http://www.springframework.org/tags/form" %>
-<form class="form-horizontal" role="form" id="woForm" method="post" action="/workOrder/save">
+<form class="form-horizontal" id="form" method="post" action="/workOrder/save">
     <div class="form-group">
         <div class="col-md-12">
-           <%-- <div class="form-group">
-                <label for="orderDesc" class="col-md-2 control-label">设备位置</label>
-                <div class="col-md-10">
-                    <input class="form-control" value="${locations.description}"/>
-                </div>
-            </div>--%>
-
-           <%-- <div class="form-group">
-                <label for="orderDesc" class="col-md-2 control-label">设备分类</label>
-
-                <div class="col-md-10">
-                    <form:select path="equipmentsClassificationList"  class="form-control"  id="equip_class_id">
-                        <form:options itemLabel="description" items="${equipmentsClassificationList}" itemValue="id"></form:options>
-                    </form:select>
-                </div>
-            </div>--%>
             <div class="form-group">
-                <label for="orderDesc" class="col-md-2 control-label">故障描述</label>
-
-                <div class="col-md-10">
-                    <input class="form-control" id="orderDesc" type="text" name="orderDesc" required="required"/>
+                <label for="name" class="col-md-2 control-label">站点名称</label>
+                <div class="col-md-4">
+                    <input class="form-control" id="name" name="name" v-model="columns.name"/>
                 </div>
-            </div>
-
-            <div class="form-group">
-                <label for="reporter" class="col-md-2 control-label">报告人员</label>
-
-                <div class="col-md-10">
-                    <input class="form-control" id="reporter" type="text"
-                           name="reporter"/>
+                <label for="type" class="col-md-2 control-label">栏目类型</label>
+                <div class="col-md-4">
+                    <input class="form-control" id="type" name="type" v-model="columns.type"/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="reportTelephone" class="col-md-2 control-label">报告电话</label>
-
-                <div class="col-md-10">
-                    <input class="form-control" id="reportTelephone" type="text"
-                           name="reporter"/>
+                <label for="beginTime" class="col-md-2 control-label">生效时间</label>
+                <div class="col-md-4">
+                    <input class="form-control" id="beginTime" name="beginTime" v-model="columns.beginTime"/>
+                </div>
+                <label for="endTime" class="col-md-2 control-label">失效时间</label>
+                <div class="col-md-4">
+                    <input class="form-control" id="endTime" name="beginTime" v-model="columns.endTime"/>
                 </div>
             </div>
             <div class="form-group">
-                <label for="reportTime" class="col-md-2 control-label">报告时间</label>
-
-                <div class="col-md-10">
-                    <input class="form-control" id="reportTime" type="date"
-                           name="reportTime"/>
+                <label for="status" class="col-md-2 control-label">状态</label>
+                <div class="col-md-4">
+                    <input class="form-control" id="status" name="status" v-model="columns.status"/>
+                </div>
+                <label for="sortNo" class="col-md-2 control-label">排序</label>
+                <div class="col-md-4">
+                    <input class="form-control" id="sortNo" name="sortNo" v-model="columns.sortNo"/>
                 </div>
             </div>
         </div>
-    </div>
-    <div class="modal-footer">
-        <button type="button" class="btn btn-default"
-                data-dismiss="modal">关闭
-        </button>
-        <button type="button" id="saveWorkOrder" name="saveWorkOrder"
-                class="btn btn-primary">保存
-        </button>
-    </div>
     </div>
 </form>
 
