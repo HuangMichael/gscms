@@ -2,6 +2,7 @@ package com.subway.pavilionAuthor;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
+import com.subway.memberWorks.MemberWorks;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.utils.PageUtils;
@@ -60,6 +61,19 @@ public class PavilionAuthorController extends BaseController {
     }
 
 
+
+    /**
+     * @param id 记录id
+     * @return 根据id 删除记录
+     */
+    @RequestMapping(value = "/delete/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public ReturnObject delete(@PathVariable("id") Long id) {
+        return pavilionAuthorService.delete(id);
+    }
+
+
+
     /**
      * @param request
      * @param response
@@ -78,7 +92,7 @@ public class PavilionAuthorController extends BaseController {
 
 
     /**
-     * @param file    多媒体文件
+     * @param file       多媒体文件
      * @param mainObject
      * @param recordId
      * @return 上传多媒体文件 返回信息
@@ -87,7 +101,7 @@ public class PavilionAuthorController extends BaseController {
     @RequestMapping(value = "/upload", method = RequestMethod.POST)
     @ResponseBody
     public ReturnObject upload(@RequestParam("file") MultipartFile file, @RequestParam("mainObject") String mainObject, @RequestParam("recordId") Long recordId) throws Exception {
-        Boolean result = pavilionAuthorService.upload(file, mainObject,recordId);
+        Boolean result = pavilionAuthorService.upload(file, mainObject, recordId);
         return getCommonDataService().getReturnType(result, "文件上传成功", "文件上传失败");
     }
 

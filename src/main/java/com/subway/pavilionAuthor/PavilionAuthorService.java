@@ -4,7 +4,10 @@ import java.util.List;
 import java.util.Map;
 
 import com.subway.member.Member;
+import com.subway.memberWorks.MemberWorks;
+import com.subway.object.ReturnObject;
 import com.subway.service.app.BaseService;
+import com.subway.service.commonData.CommonDataService;
 import com.subway.utils.ConstantUtils;
 import com.subway.utils.UploadUtil;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -27,6 +30,10 @@ public class PavilionAuthorService extends BaseService {
 
     @Autowired
     PavilionAuthorRepository pavilionAuthorRepository;
+
+
+    @Autowired
+    CommonDataService commonDataService;
 
     /**
      * @return
@@ -54,6 +61,15 @@ public class PavilionAuthorService extends BaseService {
     }
 
 
+    /**
+     * @param id 记录id
+     * @return 根据id删除记录
+     */
+    public ReturnObject delete(Long id) {
+        pavilionAuthorRepository.delete(id);
+        PavilionAuthor pavilionAuthor = pavilionAuthorRepository.getOne(id);
+        return commonDataService.getReturnType(pavilionAuthor == null, "记录删除成功", "记录删除失败");
+    }
 
 
     /**
@@ -62,7 +78,7 @@ public class PavilionAuthorService extends BaseService {
      */
     @Transactional
     public Boolean upload(MultipartFile file, String tempDir, Long recordId) {
-        String realDir = ConstantUtils.CONTEXT_PATH+"/upload/" + tempDir + "/";
+        String realDir = ConstantUtils.CONTEXT_PATH + "/upload/" + tempDir + "/";
         //项目多媒体存放的文件夹，加上时间戳来唯一标识该时间上传的所有的文件
         if (!UploadUtil.createDirectory(realDir)) {
             //目录创建失败则返回null，目录存在或者创建成功就继续执行
