@@ -64,6 +64,11 @@ $(function () {
                 to: function (value) {
                     return (value) ? "有效" : "无效";
                 }
+            },
+            showMemberType: {
+                to: function (value) {
+                    return (value=="1") ? "国家会员" : "省级会员";
+                }
             }
         }
     }).on("loaded.rs.jquery.bootgrid", function () {

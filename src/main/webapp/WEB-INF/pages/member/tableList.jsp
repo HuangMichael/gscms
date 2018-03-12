@@ -17,7 +17,7 @@
 <th data-column-id="hasPhoto" data-width="10%"
     data-converter="showYes">是否有照片
 </th>
-<th data-column-id="memberType" data-width="10%">会员类型</th>
+<th data-column-id="memberType" data-width="10%"  data-converter="showMemberType" >会员类型</th>
 <th data-column-id="status" data-width="10%"
     data-converter="showStatus">状态
 </th>

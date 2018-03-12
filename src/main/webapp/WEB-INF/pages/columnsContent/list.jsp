@@ -1,6 +1,7 @@
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" %>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <%@ taglib prefix="fmt" uri="http://java.sun.com/jsp/jstl/fmt" %>
+<%--<link rel="stylesheet" href="/js/ckeditor/contents.css"/>--%>
 <div class="container">
     <div class="row">
         <div id="content" class="col-lg-12">
@@ -55,7 +56,6 @@
 </div>
 
 
-
 <!-- 模态框（Modal） -->
 <div class="modal fade" id="editModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
     <div class="modal-dialog">
@@ -69,18 +69,10 @@
                 </h4>
             </div>
             <div class="modal-body">
-                <form class="form-control">
-                    <input type="file" name="file"/>
-                </form>
-            </div>
-            <div class="modal-footer">
-                <button type="button" class="btn btn-default" data-dismiss="modal">取消
-                </button>
-                <button type="button" class="btn btn-primary">
-                    保存
-                </button>
+                <%@include file="form.jsp" %>
             </div>
         </div><!-- /.modal-content -->
     </div><!-- /.modal -->
 </div>
+<%--<script type="text/javascript" src="/js/ckeditor/ckeditor.js"></script>--%>
 <script type="text/javascript" src="/js/app/columnsContent/columnsContent.js"></script>
