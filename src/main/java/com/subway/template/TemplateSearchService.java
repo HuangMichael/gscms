@@ -1,35 +1,47 @@
 package com.subway.template;
+
 import com.subway.service.app.BaseService;
 import com.subway.utils.search.SortedSearchable;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Service;
+
 import java.util.List;
 
 /**
-* Ä£°å¹ÜÀíÒµÎñ²éÑ¯Àà
-*
-* @author huangbin
-* @generate by autoCode
-* @Date 2018-3-1
-*/
+ *
+ * @author huangbin
+ * @generate by autoCode
+ * @Date 2018-3-1
+ */
 @Service
-public class  TemplateSearchService extends BaseService implements SortedSearchable {
+public class TemplateSearchService extends BaseService implements SortedSearchable {
 
-@Autowired
-TemplateRepository  templateRepository;
-
-
-public List< Template> findByConditions(String searchPhrase, int paramsSize) {
-String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-return  templateRepository.findAll();
-}
+    @Autowired
+    TemplateRepository templateRepository;
 
 
-public Page< Template> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
-String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
-return  templateRepository.findAll( pageable);
-}
+    /**
+     * @param searchPhrase æœç´¢å…³é”®å­—ç»„åˆ
+     * @param paramsSize
+     * @return
+     */
+    public List<Template> findByConditions(String searchPhrase, int paramsSize) {
+        String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
+        return templateRepository.findByTemplateDescContainingAndStatus(array[0],array[1]);
+    }
+
+
+    /**
+     * @param searchPhrase æœç´¢å…³é”®å­—ç»„åˆ
+     * @param paramsSize
+     * @param pageable
+     * @return
+     */
+    public Page<Template> findByConditions(String searchPhrase, int paramsSize, Pageable pageable) {
+        String array[] = super.assembleSearchArray(searchPhrase, paramsSize);
+        return templateRepository.findByTemplateDescContainingAndStatus(array[0],array[1],pageable);
+    }
 
 }

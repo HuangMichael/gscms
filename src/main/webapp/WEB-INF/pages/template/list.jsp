@@ -20,9 +20,16 @@
                                     <div class="form-group" style="margin-bottom:10px;position:inherit"
                                          id="searchBox">
                                         <div class="col-md-2">
-                                            <input class="form-control" id="name"
-                                                   name="name"
-                                                   placeholder="关键字"/>
+                                            <input class="form-control" id="templateDesc"
+                                                   name="templateDesc"
+                                                   placeholder="模板描述"/>
+                                        </div>
+
+                                        <div class="col-md-2">
+                                            <select class="form-control" id="status" onchange="search()">
+                                                <option value="1">有效</option>
+                                                <option value="0">无效</option>
+                                            </select>
                                         </div>
                                         <div class="col-md-2">
                                             <button id="searchBtn" class="btn btn-default" onclick="search()">查询

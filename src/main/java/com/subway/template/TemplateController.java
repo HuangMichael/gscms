@@ -18,49 +18,68 @@ import java.util.List;
 import java.util.Map;
 
 /**
-* 模板管理控制器类
-*
-* @author huangbin
-* @generate by autoCode
-* @Date 2018-3-1
-*/
+ * 妯℃澘绠＄悊鎺у埗鍣ㄧ被
+ *
+ * @author huangbin
+ * @generate by autoCode
+ * @Date 2018-3-1
+ */
 @Controller
 @EnableAutoConfiguration
 @RequestMapping("/template")
 public class TemplateController extends BaseController {
 
-@Autowired
-ResourceService resourceService;
-@Autowired
-TemplateService templateService;
-@Autowired
-TemplateSearchService templateSearchService;
+    @Autowired
+    ResourceService resourceService;
+    @Autowired
+    TemplateService templateService;
+    @Autowired
+    TemplateSearchService templateSearchService;
 
 
-@RequestMapping(value = "/data", method = RequestMethod.POST)
-@ResponseBody
-public MyPage data(HttpSession session, HttpServletRequest request, @RequestParam(value = "current", defaultValue = "0") int current, @RequestParam(value = "rowCount", defaultValue = "10") Long rowCount, @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
-Map
-<String, String[]> parameterMap = request.getParameterMap();
-Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
-return new PageUtils().searchBySortService(templateSearchService, searchPhrase, 1, current, rowCount, pageable);
-}
+    /**
+     * @param session
+     * @param request
+     * @param current
+     * @param rowCount
+     * @param searchPhrase
+     * @return
+     */
+    @RequestMapping(value = "/data", method = RequestMethod.POST)
+    @ResponseBody
+    public MyPage data(HttpSession session, HttpServletRequest request, @RequestParam(value = "current", defaultValue = "0") int current, @RequestParam(value = "rowCount", defaultValue = "10") Long rowCount, @RequestParam(value = "searchPhrase", required = false) String searchPhrase) {
+        Map<String, String[]> parameterMap = request.getParameterMap();
+        Pageable pageable = new PageRequest(current - 1, rowCount.intValue(), super.getSort(parameterMap));
+        return new PageUtils().searchBySortService(templateSearchService, searchPhrase, 1, current, rowCount, pageable);
+    }
 
 
-@RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
-@ResponseBody
-public Template findById(@PathVariable("id") Long id) {
-return templateService.findById(id);
-}
+    /**
+     * @param id
+     * @return
+     */
+    @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
+    @ResponseBody
+    public Template findById(@PathVariable("id") Long id) {
+        return templateService.findById(id);
+    }
 
 
-@ResponseBody
-@RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
-public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
-List< Template> dataList = templateSearchService.findByConditions(param, 2);
-templateService.setDataList(dataList);
-templateService.exportExcel(request, response, docName, titles, colNames);
-}
+    /**
+     * @param request
+     * @param response
+     * @param param
+     * @param docName
+     * @param titles
+     * @param colNames
+     */
+    @ResponseBody
+    @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
+    public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
+        List<Template> dataList = templateSearchService.findByConditions(param, 2);
+        templateService.setDataList(dataList);
+        templateService.exportExcel(request, response, docName, titles, colNames);
+    }
 
 
 }

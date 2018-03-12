@@ -1,9 +1,13 @@
 package com.subway.template;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.Pageable;
 import org.springframework.data.jpa.repository.JpaRepository;
+
+import java.util.List;
 
 
 /**
-* Ä£°å¹ÜÀíÊı¾İ¿â·ÃÎÊ½Ó¿Ú
+* æ¨¡æ¿ç®¡ç†æ•°æ®åº“è®¿é—®æ¥å£
 *
 * @author huangbin
 * @generate by autoCode
@@ -12,5 +16,21 @@ import org.springframework.data.jpa.repository.JpaRepository;
 
 public interface TemplateRepository extends JpaRepository<Template, Long> {
 
+
+    /**
+     * @param templateDesc
+     * @param status
+     * @return
+     */
+    List<Template> findByTemplateDescContainingAndStatus(String templateDesc, String status);
+
+
+
+    /**
+     * @param templateDesc
+     * @param status
+     * @return
+     */
+    Page<Template> findByTemplateDescContainingAndStatus(String templateDesc, String status, Pageable pageable);
 
 }
