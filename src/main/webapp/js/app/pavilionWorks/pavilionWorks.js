@@ -55,7 +55,18 @@ $(function () {
                 to: function (value) {
                     return value == '1' ? ("启用") : "禁用";
                 }
-            }
+            },
+            showImage: {
+                to: function (value) {
+
+                    if (value) {
+                        return "<img src='" + value + "' class='img-thumbnail'  style='height:25px;width: 25px'>";
+                    } else {
+                        return "<img src='upload/memberWorks/no_pic.jpg' class='img-thumbnail'  style='height:25px;width: 25px'>";
+                    }
+
+                }
+            },
         }
     }).on("loaded.rs.jquery.bootgrid", function () {
         /* Executes after data is loaded and rendered */
