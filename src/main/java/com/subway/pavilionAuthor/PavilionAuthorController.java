@@ -2,6 +2,7 @@ package com.subway.pavilionAuthor;
 
 import com.subway.controller.common.BaseController;
 import com.subway.domain.app.MyPage;
+import com.subway.object.ReturnObject;
 import com.subway.service.app.ResourceService;
 import com.subway.utils.PageUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,6 +11,7 @@ import org.springframework.data.domain.PageRequest;
 import org.springframework.data.domain.Pageable;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
 
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
@@ -18,7 +20,7 @@ import java.util.List;
 import java.util.Map;
 
 /**
- * չ��������Ϣ
+ * 展馆作者信息
  *
  * @author huangbin
  * @generate by autoCode
@@ -47,6 +49,10 @@ public class PavilionAuthorController extends BaseController {
     }
 
 
+    /**
+     * @param id
+     * @return
+     */
     @RequestMapping(value = "/findById/{id}", method = RequestMethod.GET)
     @ResponseBody
     public PavilionAuthor findById(@PathVariable("id") Long id) {
@@ -54,12 +60,35 @@ public class PavilionAuthorController extends BaseController {
     }
 
 
+    /**
+     * @param request
+     * @param response
+     * @param param
+     * @param docName
+     * @param titles
+     * @param colNames
+     */
     @ResponseBody
     @RequestMapping(value = "/exportExcel", method = RequestMethod.GET)
     public void exportExcel(HttpServletRequest request, HttpServletResponse response, @RequestParam("param") String param, @RequestParam("docName") String docName, @RequestParam("titles") String titles[], @RequestParam("colNames") String[] colNames) {
         List<PavilionAuthor> dataList = pavilionAuthorSearchService.findByConditions(param, 2);
         pavilionAuthorService.setDataList(dataList);
         pavilionAuthorService.exportExcel(request, response, docName, titles, colNames);
+    }
+
+
+    /**
+     * @param file    多媒体文件
+     * @param mainObject
+     * @param recordId
+     * @return 上传多媒体文件 返回信息
+     * @throws Exception
+     */
+    @RequestMapping(value = "/upload", method = RequestMethod.POST)
+    @ResponseBody
+    public ReturnObject upload(@RequestParam("file") MultipartFile file, @RequestParam("mainObject") String mainObject, @RequestParam("recordId") Long recordId) throws Exception {
+        Boolean result = pavilionAuthorService.upload(file, mainObject,recordId);
+        return getCommonDataService().getReturnType(result, "文件上传成功", "文件上传失败");
     }
 
 
