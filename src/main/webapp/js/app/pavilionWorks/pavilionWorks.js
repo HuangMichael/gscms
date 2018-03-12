@@ -35,6 +35,9 @@ $(function () {
             "upload": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-upload\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-upload\"></span></button> "
             },
+            "download": function (column, row) {
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-download\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-download\"></span></button> "
+            },
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
                     "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
@@ -77,6 +80,9 @@ $(function () {
         }).end().find(".command-upload").on("click", function (e) {
             recordId = $(this).data("row-id");
             showUpload();
+        }).end().find(".command-download").on("click", function (e) {
+            recordId = $(this).data("row-id");
+            download(recordId);
         });
     });
 
@@ -176,4 +182,18 @@ function edit(id) {
 function showUpload() {
     $("#uploadModal").modal("show");
 
+}
+
+
+/**
+ * 显示下载
+ */
+function download(id) {
+    var object = findByIdAndObjectName(id, mainObject);
+    var photo =object["photoUrl"];
+    if(photo){
+        window.open(photo);
+    }else{
+        showMessageBox("danger","对不起，照片还未上传");
+    }
 }

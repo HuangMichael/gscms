@@ -20,11 +20,16 @@
                                     <div class="form-group" style="margin-bottom:10px;position:inherit"
                                          id="searchBox">
                                         <div class="col-md-2">
+
+
                                             <input class="form-control" id="name"
                                                    name="name"
                                                    placeholder="会员名称"/>
                                         </div>
                                         <div class="col-md-2">
+                                            <button id="clearBtn" class="btn btn-default"
+                                                    onclick="resetSearch()">清空
+                                            </button>
                                             <button id="searchBtn" class="btn btn-default" onclick="search()">查询
                                             </button>
                                         </div>

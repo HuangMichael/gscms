@@ -7,7 +7,8 @@
 <th data-column-id="createTime" data-width="10%" data-converter="datetime">创建时间</th>
 <th data-column-id="sortNo" data-width="10%">排序</th>
 <th data-column-id="status" data-width="10%" data-converter="showStatus">状态</th>
-<th data-column-id="upload" data-formatter="upload" data-sortable="false" data-width="8%">上传</th>
+<th data-column-id="upload" data-formatter="upload" data-sortable="false" data-width="4%">上传</th>
+<th data-column-id="download" data-formatter="download" data-sortable="false" data-width="4%">下载</th>
 <th data-column-id="commands" data-formatter="commands"
     data-sortable="false" data-width="10%">编辑|删除
 </th>

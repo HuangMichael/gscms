@@ -33,6 +33,9 @@ $(function () {
             "upload": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-upload\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-upload\"></span></button> "
             },
+            "download": function (column, row) {
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-download\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-download\"></span></button> "
+            },
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
                     "<button type=\"button\" class=\"btn btn-xs btn-default command-delete\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-trash-o\"></span></button>";
@@ -57,9 +60,9 @@ $(function () {
             showImage: {
                 to: function (value) {
 
-                    if(value){
+                    if (value) {
                         return "<img src='" + value + "' class='img-thumbnail'  style='height:25px;width: 25px'>";
-                    }else{
+                    } else {
                         return "<img src='upload/memberWorks/no_pic.jpg' class='img-thumbnail'  style='height:25px;width: 25px'>";
                     }
 
@@ -75,6 +78,8 @@ $(function () {
         }).end().find(".command-upload").on("click", function (e) {
             recordId = $(this).data("row-id");
             showUpload();
+        }).end().find(".command-download").on("click", function (e) {
+            download($(this).data("row-id"));
         });
     });
     $("#searchBtn").trigger("click");
@@ -176,10 +181,23 @@ function edit(id) {
 
 
 /**
- * 显示上传下载
+ * 显示上传
  */
 function showUpload() {
     $("#uploadModal").modal("show");
 
 }
 
+
+/**
+ * 显示下载
+ */
+function download(id) {
+    var object = findByIdAndObjectName(id, mainObject);
+    var photo =object["photoUrl"];
+    if(photo){
+        window.open(photo);
+    }else{
+        showMessageBox("danger","对不起，照片还未上传");
+    }
+}
