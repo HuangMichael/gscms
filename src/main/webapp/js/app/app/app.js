@@ -31,8 +31,8 @@ $(function () {
         },
         url: "/" + mainObject + "/data",
         formatters: {
-            "upload": function (column, row) {
-                return "<button type=\"button\" class=\"btn btn-xs btn-default command-upload\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-upload\"></span></button> "
+            "genApp": function (column, row) {
+                return "<button type=\"button\" class=\"btn btn-xs btn-default command-upload\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-plus-circle\"></span></button> "
             },
             "commands": function (column, row) {
                 return "<button type=\"button\" class=\"btn btn-xs btn-default command-edit\" data-row-id=\"" + row.id + "\"><span class=\"fa fa-pencil\"></span></button> " +
@@ -76,7 +76,7 @@ $(function () {
             del($(this).data("row-id"));
         }).end().find(".command-upload").on("click", function (e) {
             recordId = $(this).data("row-id");
-            showUpload();
+            genApp(recordId);
         });
     });
 
@@ -192,13 +192,12 @@ function showUpload() {
 
 
 /**
- *
+ *生成app
  */
-function genApp() {
-    var selectedId = $(dataTableName).bootgrid("getSelectedRows");
+function genApp(recordId) {
     var url = "/app/autoCode";
     var data = {
-        appId: selectedId[0]
+        appId: recordId
     };
     $.post(url, data, function (data) {
         if (data.result) {
