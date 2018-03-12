@@ -12,4 +12,11 @@ public class ConstantUtils {
 
     public static final String CONTEXT_PATH = " E:/dev/gscms/src/main/webapp";  //上下文路径
 
+
+    public static final String AUDIT_STATUS_0 = "0"; //未审核
+    public static final String AUDIT_STATUS_1 = "1"; //初审
+    public static final String AUDIT_STATUS_2 = "2"; //复审
+    public static final String AUDIT_STATUS_3 = "3"; //终审
+    public static final String AUDIT_STATUS_4 = "4"; //发布
+
 }

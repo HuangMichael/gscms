@@ -58,8 +58,8 @@ public class ColumnsContent implements Serializable {
     private String sortNo;
 
 
-    @Column(length = 10, nullable = false)
-    private String auditStatus;
+    @Column(length = 1, nullable = false)
+    private String auditStatus; //1未审核 2初审 3复审  4 发布
 
 
     @Column(length = 1, nullable = false)

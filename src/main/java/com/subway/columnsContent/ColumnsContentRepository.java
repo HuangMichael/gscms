@@ -20,17 +20,39 @@ public interface ColumnsContentRepository extends JpaRepository<ColumnsContent, 
 
 
     /**
-     * @param title  标题
-     * @param status 状态
+     * @param title       标题
+     * @param status      状态
+     * @param auditStatus 审核状态
+     * @return
+     */
+    List<ColumnsContent> findByTitleContainingAndStatusAndAuditStatus(String title, String status, String auditStatus);
+
+
+    /**
+     * @param title       标题
+     * @param status      状态
+     * @param auditStatus 审核状态
+     * @param pageable
+     * @return
+     */
+    Page<ColumnsContent> findByTitleContainingAndStatusAndAuditStatus(String title, String status, String auditStatus, Pageable pageable);
+
+
+    /**
+     * @param title       标题
+     * @param status      状态
      * @return
      */
     List<ColumnsContent> findByTitleContainingAndStatus(String title, String status);
 
 
     /**
-     * @param title  标题
-     * @param status 状态
+     * @param title       标题
+     * @param status      状态
+     * @param pageable
      * @return
      */
     Page<ColumnsContent> findByTitleContainingAndStatus(String title, String status, Pageable pageable);
+
+
 }

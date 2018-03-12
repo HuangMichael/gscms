@@ -24,8 +24,19 @@
                                             <input class="form-control" id="name"
                                                    name="name"
                                                    placeholder="关键字"/>
+
+                                            <select class="form-control" id="auditStatus">
+                                                <option value="0">未审核</option>
+                                                <option value="1">初审通过</option>
+                                                <option value="2">复审通过</option>
+                                                <option value="3">终审通过</option>
+                                                <option value="4">已发布</option>
+                                            </select>
                                         </div>
                                         <div class="col-md-2">
+                                            <button id="clearBtn" class="btn btn-default"
+                                                    onclick="resetSearch()">清空
+                                            </button>
                                             <button id="searchBtn" class="btn btn-default" onclick="search()">查询
                                             </button>
                                         </div>
@@ -35,9 +46,7 @@
                                                class="table table-bordered table-hover table-striped">
                                             <thead>
                                             <tr>
-                                                <th data-column-id="id" data-width="5%">序号</th>
-                                                <th data-column-id="sortNo" data-width="10%">排序</th>
-                                                <th data-column-id="status" data-width="5%">状态</th>
+                                                <%@include file="tableList.jsp" %>
                                             </tr>
                                             </thead>
                                         </table>
