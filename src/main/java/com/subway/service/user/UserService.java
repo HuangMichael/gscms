@@ -3,10 +3,12 @@ package com.subway.service.user;
 import com.subway.dao.user.UserRepository;
 import com.subway.domain.person.Person;
 import com.subway.domain.user.User;
+import com.subway.member.Member;
 import com.subway.object.ReturnObject;
 import com.subway.service.app.BaseService;
 import com.subway.service.commonData.CommonDataService;
 import com.subway.utils.CommonStatusType;
+import com.subway.utils.ConstantUtils;
 import com.subway.utils.MD5Util;
 import com.subway.utils.RedisUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -240,5 +242,7 @@ public class UserService extends BaseService {
         }
         return result;
     }
+
+
 
 }

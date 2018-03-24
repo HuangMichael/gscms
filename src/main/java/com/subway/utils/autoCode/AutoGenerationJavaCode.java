@@ -59,6 +59,7 @@ public class AutoGenerationJavaCode {
         templateList.add(new com.subway.template.Template("jsTemplate.ftl", ".js", "E:\\dev\\gscms\\src\\main\\webapp\\js\\app\\"));
         templateList.add(new com.subway.template.Template("listTemplate.ftl", "list.jsp", "E:\\dev\\gscms\\src\\main\\webapp\\WEB-INF\\pages\\"));
         templateList.add(new com.subway.template.Template("tableListTemplate.ftl", "tableList.jsp", "E:\\dev\\gscms\\src\\main\\webapp\\WEB-INF\\pages\\"));
+        templateList.add(new com.subway.template.Template("formTemplate.ftl", "form.jsp", "E:\\dev\\gscms\\src\\main\\webapp\\WEB-INF\\pages\\"));
 
     }
 
